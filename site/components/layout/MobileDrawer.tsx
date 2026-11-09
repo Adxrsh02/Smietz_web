@@ -56,7 +56,7 @@ export function MobileDrawer({ open, onClose }: Props) {
           </button>
         </div>
 
-        <nav aria-label="Mobile" className="flex-1 overflow-y-auto px-3 py-3">
+        <nav aria-label="Mobile" data-lenis-prevent className="flex-1 overflow-y-auto px-3 py-3">
           <ul>
             {drawerNav.map((item) => {
               const active = isActive(pathname, item.href);

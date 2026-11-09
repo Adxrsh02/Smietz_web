@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, type RefObject } from "react";
+import { startSmoothScroll, stopSmoothScroll } from "./smooth-scroll";
 
 const FOCUSABLE =
   'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
@@ -35,6 +36,7 @@ export function useModal({ active, containerRef, onClose, onArrow }: Options) {
     const { overflow, paddingRight } = document.body.style;
     const scrollbar = window.innerWidth - document.documentElement.clientWidth;
     document.body.style.overflow = "hidden";
+    stopSmoothScroll(); // pause Lenis while the dialog is open
     if (scrollbar > 0) document.body.style.paddingRight = `${scrollbar}px`;
 
     const focusables = () =>
@@ -82,6 +84,7 @@ export function useModal({ active, containerRef, onClose, onArrow }: Options) {
     return () => {
       document.removeEventListener("keydown", onKeyDown);
       document.body.style.overflow = overflow;
+      startSmoothScroll();
       document.body.style.paddingRight = paddingRight;
       previouslyFocused?.focus?.();
     };

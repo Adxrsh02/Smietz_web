@@ -82,6 +82,7 @@ export function GalleryGrid({ items, filters, columns = "three" }: Props) {
                 <SiteImage
                   name={item.image}
                   fill
+                  priority={i < 4}
                   sizes="(min-width: 1024px) 380px, (min-width: 768px) 33vw, 50vw"
                 />
                 <span className="absolute right-2.5 bottom-2.5 flex size-10 items-center justify-center rounded-full bg-white/90 text-primary ring-1 ring-gold/30">

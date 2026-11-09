@@ -3,6 +3,7 @@ import { Great_Vibes, Playfair_Display, Plus_Jakarta_Sans } from "next/font/goog
 import { business } from "@/content/business";
 import { FloatingWhatsApp, MobileActionBar } from "@/components/layout/ActionBars";
 import { SiteFooter } from "@/components/layout/SiteFooter";
+import { SmoothScroll } from "@/components/layout/SmoothScroll";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { siteUrl } from "@/lib/site";
 import "./globals.css";
@@ -46,7 +47,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en-IN" className={`${playfair.variable} ${jakarta.variable} ${script.variable}`}>
+    <html lang="en-IN" data-scroll-behavior="smooth" className={`${playfair.variable} ${jakarta.variable} ${script.variable}`}>
       <body className="min-h-dvh">
         <a
           href="#main"
@@ -54,6 +55,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         >
           Skip to content
         </a>
+        <SmoothScroll />
         <SiteHeader />
         <main id="main" tabIndex={-1} className="pt-[72px] pb-24 outline-none md:pb-0">
           {children}

@@ -99,6 +99,7 @@ export function CategoryTile({
         <SiteImage
           name={cat.image}
           fill
+          priority={index < 3}
           sizes="(min-width: 1024px) 380px, (min-width: 768px) 45vw, 92vw"
         />
         <span className="absolute top-3 left-3 rounded-full bg-white/90 px-3 py-1 type-label-sm text-on-surface ring-1 ring-gold/30">
