@@ -73,13 +73,13 @@ Cloudinary URLs are resized automatically (`f_auto,q_auto`, responsive widths) b
 
 ## Deployment (Cloudflare Workers, static assets)
 
-The build produces plain files in `site/out`. `site/wrangler.jsonc` serves them as an assets-only Worker named `smietz-beauty-hub`, with `404.html` for unknown URLs. `site/public/_headers` adds security headers and caching.
+The build produces plain files in `site/out`. `site/wrangler.jsonc` serves them as an assets-only Worker named `smietz-web`, with `404.html` for unknown URLs. `site/public/_headers` adds security headers and caching.
 
 Set up once in the Cloudflare dashboard (**Workers & Pages → Create application → GitHub**, pick this repo) with:
 
 | Setting | Value |
 |---|---|
-| Worker / project name | `smietz-beauty-hub` (must match `wrangler.jsonc`) |
+| Worker / project name | `smietz-web` (must match `wrangler.jsonc`) |
 | Root directory | `/site` |
 | Build command | `npm ci && npm run build` |
 | Deploy command | `npx wrangler deploy` |
