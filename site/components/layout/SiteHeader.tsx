@@ -84,9 +84,9 @@ export function SiteHeader() {
               <Icon name="phone" size={18} className="text-primary" />
               {business.phone.display}
             </a>
-            <WhatsAppButton size="sm" className="hidden lg:inline-flex">
-              Book Appointment
-            </WhatsAppButton>
+            <div className="hidden lg:block">
+              <WhatsAppButton size="sm">Book Appointment</WhatsAppButton>
+            </div>
             <button
               type="button"
               onClick={() => setMenuOpen(true)}

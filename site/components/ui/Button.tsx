@@ -9,7 +9,7 @@ export type ButtonVariant = "cta" | "primary" | "ghost" | "light" | "ghost-light
 type Size = "md" | "lg" | "sm";
 
 const base =
-  "inline-flex items-center justify-center gap-2.5 rounded-full font-semibold whitespace-nowrap select-none transition-all duration-200 motion-safe:hover:-translate-y-0.5 active:translate-y-0 disabled:opacity-60 disabled:pointer-events-none";
+  "inline-flex items-center justify-center gap-2.5 rounded-full text-center font-semibold select-none transition-all duration-200 motion-safe:hover:-translate-y-0.5 active:translate-y-0 disabled:opacity-60 disabled:pointer-events-none";
 
 const variants: Record<ButtonVariant, string> = {
   // Saffron CTA with dark ink text (white fails contrast on #F47721).
@@ -23,9 +23,9 @@ const variants: Record<ButtonVariant, string> = {
 };
 
 const sizes: Record<Size, string> = {
-  sm: "h-10 px-5 type-label",
-  md: "h-12 px-6 text-base",
-  lg: "h-14 px-8 text-base",
+  sm: "min-h-10 px-5 py-2 type-label",
+  md: "min-h-12 px-6 py-2.5 text-base",
+  lg: "min-h-14 px-7 py-3 text-base",
 };
 
 type CommonProps = {

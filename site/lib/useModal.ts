@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, type RefObject } from "react";
+import { useEffect, useRef, type RefObject } from "react";
 
 const FOCUSABLE =
   'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
@@ -18,6 +18,14 @@ type Options = {
  * body scroll lock, and focus restoration to the trigger on close.
  */
 export function useModal({ active, containerRef, onClose, onArrow }: Options) {
+  // Keep the latest callbacks in refs so the effect below only runs on open/close.
+  const onCloseRef = useRef(onClose);
+  const onArrowRef = useRef(onArrow);
+  useEffect(() => {
+    onCloseRef.current = onClose;
+    onArrowRef.current = onArrow;
+  });
+
   useEffect(() => {
     if (!active) return;
     const container = containerRef.current;
@@ -43,12 +51,12 @@ export function useModal({ active, containerRef, onClose, onArrow }: Options) {
     const onKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
         e.preventDefault();
-        onClose();
+        onCloseRef.current();
         return;
       }
-      if (onArrow && (e.key === "ArrowLeft" || e.key === "ArrowRight")) {
+      if (onArrowRef.current && (e.key === "ArrowLeft" || e.key === "ArrowRight")) {
         e.preventDefault();
-        onArrow(e.key === "ArrowLeft" ? -1 : 1);
+        onArrowRef.current(e.key === "ArrowLeft" ? -1 : 1);
         return;
       }
       if (e.key !== "Tab") return;
@@ -77,5 +85,5 @@ export function useModal({ active, containerRef, onClose, onArrow }: Options) {
       document.body.style.paddingRight = paddingRight;
       previouslyFocused?.focus?.();
     };
-  }, [active, containerRef, onClose, onArrow]);
+  }, [active, containerRef]);
 }

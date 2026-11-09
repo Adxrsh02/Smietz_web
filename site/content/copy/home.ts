@@ -99,7 +99,7 @@ export const homeCopy = {
     ],
   },
   bridal: {
-    eyebrow: "Bridal & Pre-Bridal Beauty",
+    eyebrow: "Bridal",
     title: "Bridal & Pre-Bridal Beauty",
     text: "Bridal and pre-bridal packages are available at Smietz Beauty Hub.",
     cta: "Explore Bridal",
