@@ -55,7 +55,7 @@ export default function NotFound() {
         <ul className="mx-auto mt-4 grid max-w-xl gap-3 text-left">
           {pathways.map((p) => (
             <li key={p.href}>
-              <Link
+              <Link prefetch={false}
                 href={p.href}
                 className="card-lift flex min-h-14 items-center gap-4 rounded-tile border border-line bg-surface-container-lowest px-4 py-3"
               >

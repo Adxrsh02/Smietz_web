@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useCallback, useRef } from "react";
 import { getImage, type ImageKey } from "@/content/images";
+import { isCloudinary } from "@/lib/cloudinary";
 import { whatsappUrl } from "@/lib/whatsapp";
 import { useModal } from "@/lib/useModal";
 import { Badge } from "../ui/primitives";
@@ -89,7 +90,8 @@ export function Lightbox({ items, index, onClose, onIndexChange }: Props) {
               src={img.src}
               alt={img.alt}
               fill
-              priority
+              loading="eager"
+              unoptimized={!isCloudinary(img.src)}
               sizes="(min-width: 1024px) 960px, 100vw"
               className="rounded-card object-contain"
             />

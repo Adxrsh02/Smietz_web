@@ -4,6 +4,7 @@ import { business } from "@/content/business";
 import { FloatingWhatsApp, MobileActionBar } from "@/components/layout/ActionBars";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { SiteHeader } from "@/components/layout/SiteHeader";
+import { siteUrl } from "@/lib/site";
 import "./globals.css";
 
 const playfair = Playfair_Display({
@@ -28,6 +29,8 @@ const jakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
+  alternates: { canonical: "./" },
   title: {
     default: `${business.name} | ${business.tagline}`,
     template: `%s | ${business.name}`,

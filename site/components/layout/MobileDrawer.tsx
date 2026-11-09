@@ -42,7 +42,7 @@ export function MobileDrawer({ open, onClose }: Props) {
         className="absolute inset-y-0 right-0 flex w-[min(24rem,92vw)] flex-col bg-background shadow-float outline-none motion-safe:animate-drawer-in"
       >
         <div className="flex h-[72px] shrink-0 items-center justify-between border-b border-gold/20 px-5">
-          <Link href="/" onClick={onClose} aria-label={`${business.name} home`}>
+          <Link prefetch={false} href="/" onClick={onClose} aria-label={`${business.name} home`}>
             <Logo size="md" />
           </Link>
           <button
@@ -63,7 +63,7 @@ export function MobileDrawer({ open, onClose }: Props) {
               const isSub = item.href.startsWith("/services/");
               return (
                 <li key={item.href}>
-                  <Link
+                  <Link prefetch={false}
                     href={item.href}
                     onClick={onClose}
                     aria-current={active ? "page" : undefined}

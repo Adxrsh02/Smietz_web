@@ -17,17 +17,6 @@ export function GoldDivider({ className }: { className?: string }) {
   );
 }
 
-/* ---------- Eyebrow ---------- */
-export function Eyebrow({
-  children,
-  className,
-}: {
-  children: ReactNode;
-  className?: string;
-}) {
-  return <p className={cn("type-eyebrow text-primary", className)}>{children}</p>;
-}
-
 /* ---------- SectionHeading ---------- */
 type HeadingProps = {
   eyebrow?: string;
@@ -169,7 +158,7 @@ export function ChipLink({
     );
   }
   return (
-    <Link href={href} className={classes}>
+    <Link prefetch={false} href={href} className={classes}>
       {children}
     </Link>
   );

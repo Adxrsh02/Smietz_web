@@ -1,22 +1,10 @@
 import Link from "next/link";
-import { cacheLife } from "next/cache";
 import { business, mapsDirectionsUrl } from "@/content/business";
 import { footerCompany, serviceNav } from "@/content/navigation";
 import { whatsappUrl } from "@/lib/whatsapp";
 import { Icon, WhatsAppIcon } from "../ui/icons";
 import { GoldDivider } from "../ui/primitives";
 import { Logo } from "./Logo";
-
-// Computed in a cached scope so the page stays statically prerendered.
-async function currentYear() {
-  "use cache";
-  cacheLife("days");
-  return new Date().getFullYear();
-}
-
-async function FooterYear() {
-  return <>{await currentYear()}</>;
-}
 
 const linkClass =
   "inline-block py-1.5 type-body text-on-surface-variant transition-colors hover:text-primary";
@@ -28,7 +16,7 @@ export function SiteFooter() {
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1.3fr]">
           {/* Brand */}
           <div className="max-w-sm">
-            <Link href="/" aria-label={`${business.name} home`} className="inline-block">
+            <Link prefetch={false} href="/" aria-label={`${business.name} home`} className="inline-block">
               <Logo size="lg" />
             </Link>
             <p className="type-h3 mt-5 text-primary-dark">{business.tagline}</p>
@@ -52,7 +40,7 @@ export function SiteFooter() {
             <ul className="mt-4">
               {footerCompany.map((l) => (
                 <li key={l.href}>
-                  <Link href={l.href} className={linkClass}>
+                  <Link prefetch={false} href={l.href} className={linkClass}>
                     {l.label}
                   </Link>
                 </li>
@@ -66,7 +54,7 @@ export function SiteFooter() {
             <ul className="mt-4">
               {serviceNav.map((l) => (
                 <li key={l.href}>
-                  <Link href={l.href} className={linkClass}>
+                  <Link prefetch={false} href={l.href} className={linkClass}>
                     {l.label}
                   </Link>
                 </li>
@@ -123,7 +111,7 @@ export function SiteFooter() {
 
         <GoldDivider className="mt-12" />
         <p className="type-small mt-6 text-center text-on-surface-variant">
-          © <FooterYear /> {business.name}. {business.location.area}, {business.location.city}.
+          © {new Date().getFullYear()} {business.name}. {business.location.area}, {business.location.city}.
         </p>
       </div>
     </footer>

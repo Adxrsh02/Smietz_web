@@ -36,7 +36,9 @@ export function Logo({ size = "md", className, priority }: Props) {
         alt=""
         width={logo.width}
         height={logo.height}
-        priority={priority}
+        loading={priority ? "eager" : undefined}
+        fetchPriority={priority ? "high" : undefined}
+        unoptimized
         sizes="200px"
         className="absolute max-w-none mix-blend-multiply"
         style={{

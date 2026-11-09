@@ -65,7 +65,7 @@ export default function BridalPage() {
             {b.prep.items.map((item, i) => (
               <li key={item.title}>
                 <Reveal delay={i * 90} className="h-full">
-                  <Link
+                  <Link prefetch={false}
                     href={item.href}
                     className="card-lift group flex h-full flex-col overflow-hidden rounded-card border border-line bg-surface-container-lowest"
                   >

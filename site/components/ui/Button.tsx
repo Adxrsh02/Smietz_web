@@ -93,7 +93,7 @@ export function ButtonLink({
     );
   }
   return (
-    <Link href={href} className={classes} {...rest}>
+    <Link prefetch={false} href={href} className={classes} {...rest}>
       <Inner icon={icon} iconAfter={iconAfter}>
         {children}
       </Inner>
@@ -203,7 +203,7 @@ export function TextLink({
     );
   }
   return (
-    <Link href={href} className={classes} {...rest}>
+    <Link prefetch={false} href={href} className={classes} {...rest}>
       {children}
       {arrow}
     </Link>

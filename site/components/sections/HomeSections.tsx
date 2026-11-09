@@ -120,7 +120,7 @@ export function FeaturedServices() {
           {f.items.map((item, i) => (
             <li key={item.title}>
               <Reveal delay={(i % 3) * 80} className="h-full">
-                <Link
+                <Link prefetch={false}
                   href={item.href}
                   className="card-lift group flex h-full flex-col overflow-hidden rounded-card border border-line bg-surface-container-lowest"
                 >
@@ -243,7 +243,7 @@ export function GalleryTeaser() {
           {g.images.map((img, i) => (
             <li key={img}>
               <Reveal delay={(i % 3) * 70}>
-                <Link
+                <Link prefetch={false}
                   href="/gallery"
                   className="img-zoom group relative block aspect-square overflow-hidden rounded-card ring-1 ring-gold/25 md:aspect-[4/3]"
                   aria-label="Open the gallery"

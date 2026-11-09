@@ -2,7 +2,6 @@ import Image from "next/image";
 import { getImage, type ImageKey } from "@/content/images";
 import { isCloudinary } from "@/lib/cloudinary";
 import { cn } from "@/lib/cn";
-import { CloudinaryImage } from "./CloudinaryImage";
 
 type Props = {
   /** Key in content/images.ts. */
@@ -24,30 +23,35 @@ export function SiteImage({ name, className, sizes, priority, fill, alt }: Props
   const img = getImage(name);
   const position = "position" in img ? img.position : undefined;
   const resolvedAlt = alt ?? img.alt;
-  const Component = isCloudinary(img.src) ? CloudinaryImage : Image;
+  // Static export: only Cloudinary images go through the (custom) loader.
+  const unoptimized = !isCloudinary(img.src);
   const style = position ? { objectPosition: position } : undefined;
 
   if (fill) {
     return (
-      <Component
+      <Image
         src={img.src}
         alt={resolvedAlt}
         fill
+        unoptimized={unoptimized}
         sizes={sizes ?? "100vw"}
-        priority={priority}
+        loading={priority ? "eager" : undefined}
+        fetchPriority={priority ? "high" : undefined}
         className={cn("object-cover", className)}
         style={style}
       />
     );
   }
   return (
-    <Component
+    <Image
       src={img.src}
       alt={resolvedAlt}
+      unoptimized={unoptimized}
       width={img.width}
       height={img.height}
       sizes={sizes}
-      priority={priority}
+      loading={priority ? "eager" : undefined}
+        fetchPriority={priority ? "high" : undefined}
       className={className}
       style={style}
     />

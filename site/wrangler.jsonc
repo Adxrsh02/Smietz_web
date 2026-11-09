@@ -1,0 +1,12 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  // Must match the Worker name in the Cloudflare dashboard (Workers Builds fails otherwise).
+  "name": "smietz-beauty-hub",
+  "compatibility_date": "2026-11-09",
+  // Assets-only Worker: serves the static export from ./out. No Worker script needed.
+  "assets": {
+    "directory": "./out",
+    // Serve out/404.html with a 404 status for unknown URLs.
+    "not_found_handling": "404-page"
+  }
+}

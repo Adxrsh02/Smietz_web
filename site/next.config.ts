@@ -1,17 +1,14 @@
 import type { NextConfig } from "next";
 
+// Static export: the site has no server features, so it ships as plain files in ./out
+// and is served by Cloudflare Workers static assets (see wrangler.jsonc).
 const nextConfig: NextConfig = {
-  cacheComponents: true,
-  partialPrefetching: true,
+  output: "export",
   images: {
-    // Real photos will be served from Cloudinary (see content/images.ts).
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "res.cloudinary.com",
-        pathname: "/**",
-      },
-    ],
+    // The default optimizer needs a server. Cloudinary images are resized by Cloudinary
+    // via lib/image-loader.ts; local demo images are rendered with `unoptimized`.
+    loader: "custom",
+    loaderFile: "./lib/image-loader.ts",
   },
   turbopack: {
     rules: {

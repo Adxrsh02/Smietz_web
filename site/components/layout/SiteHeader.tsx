@@ -33,7 +33,7 @@ export function SiteHeader() {
         )}
       >
         <div className="container-site flex h-full items-center justify-between gap-4">
-          <Link
+          <Link prefetch={false}
             href="/"
             aria-label={`${business.name} home`}
             className="flex shrink-0 items-center"
@@ -51,7 +51,7 @@ export function SiteHeader() {
                 const active = isActive(pathname, item.href);
                 return (
                   <li key={item.href}>
-                    <Link
+                    <Link prefetch={false}
                       href={item.href}
                       aria-current={active ? "page" : undefined}
                       className={cn(

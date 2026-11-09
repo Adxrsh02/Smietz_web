@@ -91,7 +91,7 @@ export function CategoryTile({
 }) {
   const cat = serviceCategories.find((c) => c.id === id)!;
   return (
-    <Link
+    <Link prefetch={false}
       href={`/services#${cat.id}`}
       className="card-lift group flex h-full flex-col overflow-hidden rounded-card border border-line bg-surface-container-lowest"
     >

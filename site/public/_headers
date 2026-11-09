@@ -1,0 +1,24 @@
+# Cloudflare Workers static assets headers (file must sit in the assets root).
+# Note: where several rules match, duplicate header names are comma-joined, so
+# Cache-Control is only set on specific paths, never on /*.
+
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Frame-Options: DENY
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://res.cloudinary.com; font-src 'self'; connect-src 'self'; media-src 'self'; object-src 'none'; frame-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'
+
+# Hashed build output: cache for a year.
+/_next/static/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Unhashed images and icons: cache for a week.
+/images/*
+  Cache-Control: public, max-age=604800
+/icon.png
+  Cache-Control: public, max-age=604800
+/apple-icon.png
+  Cache-Control: public, max-age=604800
+
+# HTML pages use Cloudflare's default (max-age=0, must-revalidate) so a new deploy shows immediately.
