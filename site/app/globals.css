@@ -151,6 +151,16 @@
   --shadow-cta: 0 8px 20px -4px rgba(244, 119, 33, 0.35);
   --shadow-float: 0 12px 32px -8px rgba(26, 38, 33, 0.25);
 
+  --animate-drawer-in: drawer-in 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+  @keyframes drawer-in {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+
   --animate-pulse-gold: pulse-gold 2.6s ease-out infinite;
   @keyframes pulse-gold {
     0% {
