@@ -78,6 +78,7 @@
   /* Typography (DESIGN.md): sizes, line heights, tracking, weights */
   --font-display: var(--font-playfair), Georgia, "Times New Roman", serif;
   --font-body: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+  --font-script: var(--font-signature), "Brush Script MT", cursive;
 
   --text-display-hero: 3.5rem;
   --text-display-hero--line-height: 4.25rem;
@@ -367,6 +368,39 @@ body {
 }
 @media (prefers-reduced-motion: reduce) {
   .reveal-pending {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Portrait entrance: image fades and settles from 1.04 to 1, then the caption slides up.
+   Visible by default; PortraitReveal only applies the pending state after hydration,
+   below the fold, when motion is allowed. */
+.portrait-pending .portrait-media {
+  opacity: 0;
+  transform: scale(1.04);
+}
+.portrait-pending .portrait-caption {
+  opacity: 0;
+  transform: translateY(24px);
+}
+.portrait-in .portrait-media {
+  opacity: 1;
+  transform: none;
+  transition:
+    opacity 0.9s ease,
+    transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.portrait-in .portrait-caption {
+  opacity: 1;
+  transform: none;
+  transition:
+    opacity 0.7s ease 0.45s,
+    transform 0.85s cubic-bezier(0.22, 1, 0.36, 1) 0.45s;
+}
+@media (prefers-reduced-motion: reduce) {
+  .portrait-pending .portrait-media,
+  .portrait-pending .portrait-caption {
     opacity: 1;
     transform: none;
   }

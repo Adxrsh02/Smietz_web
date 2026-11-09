@@ -31,7 +31,6 @@ export const homeCopy = {
       "A legacy of beauty, care and personalised attention associated with Sushama.",
     paragraphs: [brandIntro[1], brandIntro[2]],
     cta: "Discover Our Story",
-    image: "salon-interior-1" as ImageKey,
   },
   featured: {
     eyebrow: "Our Services",

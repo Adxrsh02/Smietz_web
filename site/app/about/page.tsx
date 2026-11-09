@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { aboutCopy } from "@/content/copy/about";
 import { PageHero } from "@/components/layout/PageHero";
 import { CtaBand } from "@/components/sections/CtaBand";
+import { ExpertName, ExpertPortrait } from "@/components/sections/ExpertPortrait";
 import { Icon, isIconName } from "@/components/ui/icons";
 import { Card, IconTile, SectionHeading } from "@/components/ui/primitives";
 import { Reveal } from "@/components/ui/Reveal";
@@ -25,24 +26,27 @@ export default function AboutPage() {
         crumbs={[{ label: "About Us" }]}
       />
 
-      <section className="section-y">
-        <div className="container-site grid items-center gap-10 md:grid-cols-2 lg:gap-20">
-          <Reveal className="relative mx-auto w-full max-w-md md:max-w-none">
-            <div className="relative aspect-[4/5] overflow-hidden rounded-lg ring-1 ring-gold/40 shadow-float">
-              <SiteImage name={a.story.image} fill sizes="(min-width: 1024px) 520px, (min-width: 768px) 45vw, 92vw" />
-            </div>
-          </Reveal>
+      {/* Sushama: portrait left, text right on desktop; stacked with the portrait first on mobile */}
+      <section className="section-y" aria-labelledby="expert-heading">
+        <div className="container-site grid items-center gap-12 md:grid-cols-2 lg:gap-20">
+          <ExpertPortrait variant="plain" />
           <Reveal delay={120}>
-            <p className="type-eyebrow text-primary">{a.story.eyebrow}</p>
-            <h2 className="type-h2 mt-3 text-on-surface">{a.story.title}</h2>
-            <blockquote className="mt-6 border-l-2 border-gold pl-5 font-display text-xl leading-8 text-primary-dark italic">
-              {a.story.quote}
-            </blockquote>
-            {a.story.paragraphs.map((p) => (
-              <p key={p} className="type-body mt-5 text-on-surface-variant">
+            <ExpertName />
+            <span id="expert-heading" className="sr-only">
+              Sushama, 35 years of beauty expertise
+            </span>
+            {a.expert.paragraphs.map((p) => (
+              <p key={p} className="type-body mt-6 text-on-surface-variant first-of-type:mt-7">
                 {p}
               </p>
             ))}
+            {/* Decorative signature only */}
+            <p
+              aria-hidden="true"
+              className="font-script mt-8 -rotate-2 text-6xl leading-none text-primary-dark select-none md:text-7xl"
+            >
+              Sushama
+            </p>
           </Reveal>
         </div>
       </section>
@@ -82,7 +86,33 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="section-y bg-surface-container-low" aria-labelledby="corners-heading">
+      {/* Our Salon: the real reception photo moved here from Home */}
+      <section className="section-y bg-surface-container-low" aria-labelledby="salon-heading">
+        <div className="container-site grid items-center gap-10 md:grid-cols-2 lg:gap-20">
+          <Reveal className="order-2 md:order-1">
+            <p className="type-eyebrow text-primary">{a.salon.eyebrow}</p>
+            <h2 id="salon-heading" className="type-h2 mt-3 text-on-surface">
+              {a.salon.title}
+            </h2>
+            <div
+              aria-hidden="true"
+              className="gold-rule mt-4 w-28 [background:linear-gradient(to_right,var(--color-gold),transparent)]"
+            />
+            <p className="type-body mt-6 text-on-surface-variant">{a.salon.text}</p>
+          </Reveal>
+          <Reveal delay={100} className="order-1 mx-auto w-full max-w-md md:order-2 md:max-w-none">
+            <div className="relative mx-auto aspect-[3/4] max-w-md overflow-hidden rounded-lg shadow-float ring-1 ring-gold/40">
+              <SiteImage
+                name={a.salon.image}
+                fill
+                sizes="(min-width: 1024px) 448px, (min-width: 768px) 45vw, 92vw"
+              />
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="section-y" aria-labelledby="corners-heading">
         <div className="container-site">
           <SectionHeading id="corners-heading" eyebrow={a.corners.eyebrow} title={a.corners.title} />
           <ul className="mt-12 grid gap-5 md:grid-cols-3 md:gap-6">
@@ -102,12 +132,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <CtaBand
-        eyebrow={a.cta.eyebrow}
-        title={a.cta.title}
-        text={a.cta.text}
-        label="Book on WhatsApp"
-      />
+      <CtaBand eyebrow={a.cta.eyebrow} title={a.cta.title} text={a.cta.text} label="Book on WhatsApp" />
     </>
   );
 }

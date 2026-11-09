@@ -33,20 +33,23 @@ export const images = {
     demo: false,
     note: "Authentic photo from assets.md.",
   },
+  "sushama-portrait": {
+    // Served from Cloudinary with f_auto,q_auto and responsive widths (see lib/cloudinary.ts).
+    src: "https://res.cloudinary.com/qlxaljlj/image/upload/v1794223413/Gemini_Generated_Image_dup93qdup93qdup9.png",
+    alt: "Sushama, beauty expert at Smietz Beauty Hub, Mulund West",
+    width: 1792,
+    height: 2400,
+    demo: false,
+    // Face sits in the upper third; the frame is the image's native 3:4, so it is never cropped.
+    position: "center 20%",
+    note: "Real portrait of Sushama, from assets.md.",
+  },
   "about-sanctuary": {
     src: "/images/demo/about-sanctuary.jpg",
     alt: "Bright salon interior with a reception desk, arched windows and styling chairs along a long corridor.",
     width: 512,
     height: 279,
     demo: true,
-  },
-  "about-portrait": {
-    src: "/images/demo/about-portrait.jpg",
-    alt: "Placeholder portrait of a smiling woman standing in a salon treatment room.",
-    width: 512,
-    height: 279,
-    demo: true,
-    note: "AI-generated demo portrait. Not used on the site: it must not stand in for Sushama. Replace with her real photo when supplied.",
   },
   "about-facial-suite": {
     src: "/images/demo/about-facial-suite.jpg",
@@ -434,14 +437,6 @@ export const images = {
     width: 512,
     height: 286,
     demo: true,
-  },
-  "testimonials-portrait": {
-    src: "/images/demo/testimonials-portrait.jpg",
-    alt: "Placeholder portrait of a woman in a green uniform seated in a salon.",
-    width: 286,
-    height: 512,
-    demo: true,
-    note: "AI-generated demo portrait. Not used on the site.",
   },
   "testimonials-video-poster": {
     src: "/images/demo/testimonials-video-poster.jpg",

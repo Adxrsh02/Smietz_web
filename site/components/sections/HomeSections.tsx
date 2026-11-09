@@ -9,6 +9,7 @@ import { Badge, Card, IconTile, SectionHeading } from "../ui/primitives";
 import { Reveal } from "../ui/Reveal";
 import { SiteImage } from "../ui/SiteImage";
 import { EnquireLink } from "../services/ServiceCards";
+import { ExpertPortrait } from "./ExpertPortrait";
 
 const c = homeCopy;
 
@@ -87,21 +88,12 @@ export function ExperienceSection() {
   return (
     <section className="section-y">
       <div className="container-site grid items-center gap-10 md:grid-cols-2 lg:gap-20">
-        <Reveal className="relative mx-auto w-full max-w-md md:max-w-none">
-          <div className="relative aspect-[4/5] overflow-hidden rounded-lg ring-1 ring-gold/40 shadow-float">
-            <SiteImage name={e.image} fill sizes="(min-width: 1024px) 520px, (min-width: 768px) 45vw, 92vw" />
-          </div>
-          <div className="absolute -right-2 -bottom-6 flex size-28 flex-col items-center justify-center rounded-full bg-primary-dark text-center text-white ring-4 ring-background md:-right-6 md:size-32">
-            <span className="type-h1 leading-none">35</span>
-            <span className="type-label-sm mt-1">Years</span>
-          </div>
-        </Reveal>
+        <ExpertPortrait variant="overlay" />
         <Reveal delay={120}>
           <p className="type-eyebrow text-primary">{e.eyebrow}</p>
           <h2 className="type-h2 mt-3 text-on-surface">{e.title}</h2>
-          <blockquote className="mt-6 border-l-2 border-gold pl-5 font-display text-xl leading-8 text-primary-dark italic">
-            {e.quote}
-          </blockquote>
+          {/* Brand line from business-info; deliberately not styled as a quote. */}
+          <p className="font-display mt-6 text-xl leading-8 text-primary-dark italic">{e.quote}</p>
           {e.paragraphs.map((p) => (
             <p key={p} className="type-body mt-5 text-on-surface-variant">
               {p}

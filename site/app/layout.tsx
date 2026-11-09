@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Playfair_Display, Plus_Jakarta_Sans } from "next/font/google";
+import { Great_Vibes, Playfair_Display, Plus_Jakarta_Sans } from "next/font/google";
 import { business } from "@/content/business";
 import { FloatingWhatsApp, MobileActionBar } from "@/components/layout/ActionBars";
 import { SiteFooter } from "@/components/layout/SiteFooter";
@@ -8,7 +8,16 @@ import "./globals.css";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
+  style: ["normal", "italic"],
   variable: "--font-playfair",
+  display: "swap",
+});
+
+// Decorative signature script. Used only for the "Sushama" signature on the About page.
+const script = Great_Vibes({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-signature",
   display: "swap",
 });
 
@@ -34,7 +43,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en-IN" className={`${playfair.variable} ${jakarta.variable}`}>
+    <html lang="en-IN" className={`${playfair.variable} ${jakarta.variable} ${script.variable}`}>
       <body className="min-h-dvh">
         <a
           href="#main"
