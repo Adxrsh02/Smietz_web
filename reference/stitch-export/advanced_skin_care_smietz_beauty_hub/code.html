@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}#mobile-drawer-toggle:checked ~ #mobile-menu-drawer{transform:translateX(0);pointer-events:auto;opacity:1;}#mobile-drawer-toggle:checked ~ #mobile-menu-backdrop{opacity:1;pointer-events:auto;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface": "#effdf4", "surface-tint": "#006b55", "primary-container": "#006d56", "tertiary-fixed": "#ffdbca", "primary": "#005240", "on-tertiary-container": "#ffd2bb", "on-error-container": "#93000a", "secondary-container": "#fdd487", "outline": "#6e7a74", "surface-variant": "#d8e6de", "tertiary-fixed-dim": "#ffb68e", "tertiary": "#793400", "surface-bright": "#effdf4", "on-secondary-fixed-variant": "#5d4200", "surface-dim": "#cfddd5", "on-primary-fixed": "#002118", "tertiary-container": "#9e4600", "surface-container": "#e3f1e9", "on-secondary-fixed": "#261900", "surface-container-low": "#e9f7ef", "on-tertiary": "#ffffff", "surface-container-highest": "#d8e6de", "primary-fixed": "#9df3d6", "on-tertiary-fixed": "#331200", "on-surface": "#121e19", "on-error": "#ffffff", "secondary-fixed": "#ffdea4", "error-container": "#ffdad6", "on-primary": "#ffffff", "surface-container-lowest": "#ffffff", "inverse-surface": "#27332e", "secondary-fixed-dim": "#e8c176", "inverse-primary": "#81d7ba", "on-primary-container": "#95ebce", "on-background": "#121e19", "outline-variant": "#bec9c3", "on-secondary": "#ffffff", "on-primary-fixed-variant": "#00513f", "secondary": "#775a19", "background": "#effdf4", "on-surface-variant": "#3e4945", "error": "#ba1a1a", "on-tertiary-fixed-variant": "#773300", "primary-fixed-dim": "#81d7ba", "surface-container-high": "#deebe3", "on-secondary-container": "#785a19", "inverse-on-surface": "#e6f4ec" }, "borderRadius": { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" }, "spacing": { "gutter": "1.5rem", "margin-desktop": "3.5rem", "space-lg": "1.5rem", "space-xs": "0.25rem", "gutter-desktop": "2rem", "space-xl": "2.5rem", "margin": "1.25rem", "space-md": "1rem", "space-sm": "0.5rem" }, "fontFamily": { "display-hero-mobile": [ "Playfair Display" ], "eyebrow": [ "Plus Jakarta Sans" ], "display-hero": [ "Playfair Display" ], "body-md": [ "Plus Jakarta Sans" ], "title-md": [ "Plus Jakarta Sans" ], "headline-lg": [ "Playfair Display" ], "headline-lg-mobile": [ "Playfair Display" ], "label-sm": [ "Plus Jakarta Sans" ], "body-lg": [ "Plus Jakarta Sans" ], "headline-md": [ "Playfair Display" ], "headline-sm": [ "Playfair Display" ], "body-sm": [ "Plus Jakarta Sans" ], "headline-md-mobile": [ "Playfair Display" ], "label-md": [ "Plus Jakarta Sans" ] }, "fontSize": { "display-hero-mobile": [ "36px", { "lineHeight": "46px", "letterSpacing": "-0.01em", "fontWeight": "600" } ], "eyebrow": [ "12px", { "lineHeight": "16px", "letterSpacing": "0.18em", "fontWeight": "700" } ], "display-hero": [ "56px", { "lineHeight": "68px", "letterSpacing": "-0.02em", "fontWeight": "600" } ], "body-md": [ "16px", { "lineHeight": "26px", "fontWeight": "400" } ], "title-md": [ "18px", { "lineHeight": "26px", "fontWeight": "600" } ], "headline-lg": [ "40px", { "lineHeight": "52px", "letterSpacing": "-0.01em", "fontWeight": "500" } ], "headline-lg-mobile": [ "28px", { "lineHeight": "38px", "fontWeight": "500" } ], "label-sm": [ "12px", { "lineHeight": "16px", "fontWeight": "600" } ], "body-lg": [ "18px", { "lineHeight": "28px", "fontWeight": "400" } ], "headline-md": [ "32px", { "lineHeight": "42px", "fontWeight": "500" } ], "headline-sm": [ "22px", { "lineHeight": "30px", "fontWeight": "600" } ], "body-sm": [ "14px", { "lineHeight": "22px", "fontWeight": "400" } ], "headline-md-mobile": [ "24px", { "lineHeight": "32px", "fontWeight": "500" } ], "label-md": [ "14px", { "lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "600" } ] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-on-surface antialiased selection:bg-secondary-fixed selection:text-on-secondary-fixed max-w-[430px] mx-auto min-h-screen relative shadow-2xl flex flex-col"><input class="hidden" id="mobile-drawer-toggle" type="checkbox"/><header class="fixed top-0 max-w-[430px] w-full z-50 bg-surface/95 backdrop-blur-xl shadow-[0_2px_16px_rgba(26,38,33,0.06)]"><div class="h-16 px-4 flex items-center justify-between"><a class="flex items-center gap-2.5" data-path="home" href="#"><img alt="Smietz Beauty Hub Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ALJJyrA27V14_dXUb964qE5WWM8SpZZxR6ii0TCaO5mPZzq3mfzKLObH2JhTjowxtoWaJ1XEcnzbSH5OYshadODHaauhZZthqqCe4heNy8owb_F8WBaTzUsjAH_iqDyjcegkGDBmmvAyq8d0mg24ofe0BhXxtseWZKzskseO3Bz7qk60GfY4ufKbWaus80B46-iiQB8Oem_HC9Z-265sL5yOarNUZ_Qa_wKHblzMPviU02rA"/><div class="flex flex-col"><span class="font-headline-sm text-[18px] leading-tight text-primary font-semibold tracking-tight">Smietz</span><span class="font-eyebrow text-[9px] uppercase text-secondary font-bold tracking-widest">Beauty Hub</span></div></a><div class="flex items-center gap-2"><a aria-label="Call Salon" class="w-10 h-10 rounded-full flex items-center justify-center bg-surface-container text-primary hover:bg-secondary-fixed active:scale-95 transition-transform" href="tel:+919604523931"><span class="material-symbols-outlined text-[20px]">call</span></a><label aria-label="Toggle Navigation Menu" class="w-10 h-10 rounded-full flex items-center justify-center bg-primary text-on-primary active:scale-95 transition-transform cursor-pointer shadow-sm" for="mobile-drawer-toggle"><span class="material-symbols-outlined text-[22px]">menu</span></label></div></div></header><div class="fixed inset-0 bg-inverse-surface/60 backdrop-blur-sm z-50 opacity-0 pointer-events-none transition-opacity duration-300 max-w-[430px] mx-auto" id="mobile-menu-backdrop"><label class="absolute inset-0 cursor-pointer" for="mobile-drawer-toggle"></label></div><div class="fixed inset-y-0 right-0 w-[88%] max-w-[360px] bg-surface z-50 shadow-2xl transform translate-x-full transition-all duration-300 ease-out flex flex-col justify-between overflow-y-auto" id="mobile-menu-drawer"><div class="p-5"><div class="flex items-center justify-between pb-4 border-b border-outline-variant/40"><div class="flex items-center gap-2.5"><img alt="Smietz Logo" class="h-7 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ALJJyrA27V14_dXUb964qE5WWM8SpZZxR6ii0TCaO5mPZzq3mfzKLObH2JhTjowxtoWaJ1XEcnzbSH5OYshadODHaauhZZthqqCe4heNy8owb_F8WBaTzUsjAH_iqDyjcegkGDBmmvAyq8d0mg24ofe0BhXxtseWZKzskseO3Bz7qk60GfY4ufKbWaus80B46-iiQB8Oem_HC9Z-265sL5yOarNUZ_Qa_wKHblzMPviU02rA"/><span class="font-headline-sm text-base text-primary font-semibold">Smietz Luxury Menu</span></div><label aria-label="Close Menu" class="w-9 h-9 rounded-full flex items-center justify-center bg-surface-container text-on-surface hover:bg-surface-variant cursor-pointer" for="mobile-drawer-toggle"><span class="material-symbols-outlined text-[20px]">close</span></label></div><nav class="py-4 flex flex-col gap-1" data-active-classes="bg-surface-container-high text-primary font-semibold"><a class="flex items-center justify-between px-3.5 py-3 rounded-lg text-on-surface hover:bg-surface-container font-label-md text-label-md transition-colors" data-path="home" href="#"><span class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px] text-primary">spa</span>Home</span><span class="material-symbols-outlined text-[16px] text-outline">chevron_right</span></a><a class="flex items-center justify-between px-3.5 py-3 rounded-lg text-on-surface hover:bg-surface-container font-label-md text-label-md transition-colors" data-path="about-us" href="#"><span class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px] text-primary">auto_awesome</span>About Us</span><span class="material-symbols-outlined text-[16px] text-outline">chevron_right</span></a><a class="flex items-center justify-between px-3.5 py-3 rounded-lg text-on-surface hover:bg-surface-container font-label-md text-label-md transition-colors" data-path="all-services" href="#"><span class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px] text-primary">list_alt</span>All Services</span><span class="material-symbols-outlined text-[16px] text-outline">chevron_right</span></a><a class="flex items-center justify-between px-3.5 py-3 rounded-lg text-on-surface hover:bg-surface-container font-label-md text-label-md transition-colors pl-6" data-path="hair-care" href="#"><span class="flex items-center gap-3"><span class="material-symbols-outlined text-[18px] text-secondary">content_cut</span>Hair Care</span><span class="material-symbols-outlined text-[16px] text-outline">chevron_right</span></a><a class="flex items-center justify-between px-3.5 py-3 rounded-lg text-on-surface hover:bg-surface-container font-label-md text-label-md transition-colors pl-6" data-path="skin-care-facials" href="#"><span class="flex items-center gap-3"><span class="material-symbols-outlined text-[18px] text-secondary">face_3</span>Skin Care &amp; Facials</span><span class="material-symbols-outlined text-[16px] text-outline">chevron_right</span></a><a aria-current="page" class="flex items-center justify-between px-3.5 py-3 rounded-lg transition-colors pl-6 bg-surface-container-high text-primary font-semibold" data-path="advanced-skin-care" href="#"><span class="flex items-center gap-3"><span class="material-symbols-outlined text-[18px] text-secondary">biotech</span>Advanced Skin Care</span><span class="material-symbols-outlined text-[16px] text-outline">chevron_right</span></a><a class="flex items-center justify-between px-3.5 py-3 rounded-lg text-on-surface hover:bg-surface-container font-label-md text-label-md transition-colors" data-path="bridal" href="#"><span class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px] text-primary">diamond</span>Bridal Trousseau</span><span class="material-symbols-outlined text-[16px] text-outline">chevron_right</span></a><a class="flex items-center justify-between px-3.5 py-3 rounded-lg text-on-surface hover:bg-surface-container font-label-md text-label-md transition-colors" data-path="gallery" href="#"><span class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px] text-primary">photo_library</span>Gallery</span><span class="material-symbols-outlined text-[16px] text-outline">chevron_right</span></a><a class="flex items-center justify-between px-3.5 py-3 rounded-lg text-on-surface hover:bg-surface-container font-label-md text-label-md transition-colors" data-path="contact" href="#"><span class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px] text-primary">pin_drop</span>Contact &amp; Location</span><span class="material-symbols-outlined text-[16px] text-outline">chevron_right</span></a></nav></div><div class="p-5 bg-surface-container-low border-t border-outline-variant/30 flex flex-col gap-3"><a class="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-full bg-tertiary-container hover:bg-tertiary text-on-tertiary font-label-md text-label-md shadow-md active:scale-[0.98] transition-transform" href="https://wa.me/919604523931?text=Hello%20Smietz%20Beauty%20Hub,%20I%20would%20like%20to%20book%20an%20appointment" rel="noopener noreferrer" target="_blank"><span class="material-symbols-outlined text-[18px]">calendar_month</span><span>WhatsApp Appointment</span></a><a class="w-full flex items-center justify-center gap-2 py-2.5 px-4 rounded-full border border-primary text-primary font-label-md text-label-md hover:bg-primary hover:text-on-primary transition-colors" href="tel:+919604523931"><span class="material-symbols-outlined text-[18px]">call</span><span>+91 96045 23931</span></a><div class="text-center font-eyebrow text-[10px] text-outline uppercase tracking-wider pt-1">35 Years Heritage • Mulund West</div></div></div><main class="w-full pt-16 pb-28 bg-surface flex-grow"><div class="flex flex-col w-full">
+<!-- Breadcrumbs -->
+<div class="px-5 pt-3 pb-2 flex items-center gap-1.5 font-label-sm text-label-sm text-outline">
+<a class="hover:text-primary transition-colors" data-path="home" href="#">Home</a>
+<span class="material-symbols-outlined text-[13px] text-outline-variant">chevron_right</span>
+<a class="hover:text-primary transition-colors" data-path="all-services" href="#">Services</a>
+<span class="material-symbols-outlined text-[13px] text-outline-variant">chevron_right</span>
+<span class="text-primary font-medium">Advanced Skin Care</span>
+</div>
+<!-- Hero Section -->
+<section class="px-5 pt-3 pb-6 flex flex-col gap-4">
+<div class="flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="font-eyebrow text-eyebrow text-secondary uppercase tracking-widest">Precision Dermal Aesthetics</span>
+</div>
+<div class="flex flex-col gap-2">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary font-serif font-medium">
+        Advanced Skin Care
+      </h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+        State-of-the-art non-invasive aesthetic treatments in private clinical suites, backed by 35 years of trusted care in Mulund West.
+      </p>
+</div>
+<!-- Editorial Clinical Imagery Card -->
+<div class="relative w-full h-52 rounded-xl overflow-hidden shadow-sm bg-surface-container-low mt-1">
+<img alt="Advanced Skin Care Clinical Suite" class="w-full h-full object-cover" data-alt="Serene luxury clinical dermal spa interior suite in warm natural morning light. Soft ivory walls, refined sage emerald linens, subtle gold architectural accents, immaculate glass serum vials on a polished marble tray, tranquil wellness atmosphere with airy botanicals in Mulund West beauty sanctuary." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjw9pQA05cFYuHkMogUwzZoOojLdISsXM6hNraS6Ns-W8qAyLGbcWUFnVB4-7YOqggDMwemWgBLR5ShAE3-ShJhYbIBMDTtsp8NI6F7Wt_diBLQKmZUOYoh7T4JO4CGSbw2n-HVOVljiwtZKQ8VmvBWrmTBKfzdPOd-ejKjkE9-HuXFQ_Rnzo62V2ZOQhTQRnUpvs_RgcFJgb2fiTycpbM30Wc2eyWv0o5VMePLms"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-transparent"></div>
+<div class="absolute bottom-3 left-4 right-4 flex items-center justify-between text-on-primary">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-secondary-container">verified</span>
+<span class="font-label-sm text-label-sm tracking-wide">Private Treatment Suites</span>
+</div>
+<span class="font-eyebrow text-[10px] text-on-primary-container bg-primary-container/80 px-2 py-0.5 rounded-full uppercase tracking-wider">Bespoke Protocols</span>
+</div>
+</div>
+</section>
+<!-- Sticky Category Sub-navigation (Chips) -->
+<nav class="sticky top-16 z-30 bg-surface/95 backdrop-blur-md px-5 py-2.5 shadow-sm">
+<div class="flex items-center gap-2 overflow-x-auto no-scrollbar py-0.5">
+<a class="chip-item shrink-0 px-3.5 py-1.5 rounded-full bg-primary text-on-primary font-label-sm text-label-sm shadow-sm transition-all" href="#treatments-group">
+        Advanced Treatments
+      </a>
+<a class="chip-item shrink-0 px-3.5 py-1.5 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm hover:bg-surface-container-high transition-all" href="#consultation-ethos">
+        Consultation Process
+      </a>
+<a class="chip-item shrink-0 px-3.5 py-1.5 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm hover:bg-surface-container-high transition-all" href="#laser-hair-reduction">
+        Laser &amp; Hair Reduction
+      </a>
+<a class="chip-item shrink-0 px-3.5 py-1.5 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm hover:bg-surface-container-high transition-all" href="#clinical-faq">
+        FAQs
+      </a>
+</div>
+</nav>
+<!-- Serene Non-Medical Advisory Callout -->
+<div class="px-5 pt-4 pb-2">
+<div class="bg-surface-container-low rounded-lg p-3.5 flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5">spa</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+        Every dermal session begins with a gentle diagnostic mapping to harmonize non-invasive technologies with your unique skin biology.
+      </p>
+</div>
+</div>
+<!-- Service Groups: Elegant Clinical Cards -->
+<section class="px-5 py-5 flex flex-col gap-4" id="treatments-group">
+<div class="flex items-baseline justify-between">
+<h2 class="font-headline-sm text-headline-sm text-primary font-serif">Curated Advanced Therapies</h2>
+<span class="font-eyebrow text-eyebrow text-outline tracking-wider uppercase">6 Protocols</span>
+</div>
+<!-- 1. Microdermabrasion -->
+<article class="bg-surface-container-lowest rounded-lg p-4 shadow-sm flex flex-col gap-3">
+<div class="flex items-start justify-between gap-2">
+<div class="flex flex-col">
+<span class="font-eyebrow text-eyebrow text-secondary uppercase tracking-wider">Surface Refinement</span>
+<h3 class="font-title-md text-title-md text-on-surface mt-0.5">Microdermabrasion</h3>
+</div>
+<div class="w-8 h-8 rounded-full bg-surface-container-low flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[18px]">auto_fix_high</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+        Gentle diamond-tip exfoliation designed to polish micro-texture and soften superficial dullness, revealing refreshed skin luminosity.
+      </p>
+<div class="bg-surface-container-low rounded-DEFAULT p-3 flex flex-col gap-1.5">
+<span class="font-label-sm text-label-sm text-primary font-semibold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[15px] text-secondary">flare</span>
+          What to expect:
+        </span>
+<ul class="font-body-sm text-body-sm text-on-surface-variant flex flex-col gap-1 pl-1">
+<li class="flex items-center gap-2">
+<span class="w-1 h-1 rounded-full bg-secondary"></span>
+<span>Mild tactile sensation during treatment</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="w-1 h-1 rounded-full bg-secondary"></span>
+<span>Immediate velvety smoothness upon completion</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="w-1 h-1 rounded-full bg-secondary"></span>
+<span>Zero downtime; return to your day instantly</span>
+</li>
+</ul>
+</div>
+<div class="pt-1 flex items-center justify-between">
+<a class="inline-flex items-center gap-1.5 text-tertiary-container hover:text-tertiary font-label-md text-label-md transition-colors" href="https://wa.me/919604523931?text=Hello%20Smietz%20Beauty%20Hub,%20I%20would%20like%20to%20enquire%20about%20Microdermabrasion" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[17px]">chat</span>
+<span>Enquire on WhatsApp</span>
+</a>
+<a class="font-label-sm text-label-sm text-primary hover:text-primary-container flex items-center gap-1" href="tel:+919604523931">
+<span>Book Consultation</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</a>
+</div>
+</article>
+<!-- 2. RF Skin Tightening -->
+<article class="bg-surface-container-lowest rounded-lg p-4 shadow-sm flex flex-col gap-3">
+<div class="flex items-start justify-between gap-2">
+<div class="flex flex-col">
+<span class="font-eyebrow text-eyebrow text-secondary uppercase tracking-wider">Collagen Support</span>
+<h3 class="font-title-md text-title-md text-on-surface mt-0.5">Radio Frequency (RF) Skin Tightening</h3>
+</div>
+<div class="w-8 h-8 rounded-full bg-surface-container-low flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[18px]">waves</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+        Controlled, gentle dermal warming that supports natural skin elasticity and promotes firmer-looking facial contours over continuous sessions.
+      </p>
+<div class="bg-surface-container-low rounded-DEFAULT p-3 flex flex-col gap-1.5">
+<span class="font-label-sm text-label-sm text-primary font-semibold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[15px] text-secondary">flare</span>
+          What to expect:
+        </span>
+<ul class="font-body-sm text-body-sm text-on-surface-variant flex flex-col gap-1 pl-1">
+<li class="flex items-center gap-2">
+<span class="w-1 h-1 rounded-full bg-secondary"></span>
+<span>Warm, relaxing, and soothing facial warmth</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="w-1 h-1 rounded-full bg-secondary"></span>
+<span>Gradual natural lifting and toning feel</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="w-1 h-1 rounded-full bg-secondary"></span>
+<span>No peeling or recovery window necessary</span>
+</li>
+</ul>
+</div>
+<div class="pt-1 flex items-center justify-between">
+<a class="inline-flex items-center gap-1.5 text-tertiary-container hover:text-tertiary font-label-md text-label-md transition-colors" href="https://wa.me/919604523931?text=Hello%20Smietz%20Beauty%20Hub,%20I%20would%20like%20to%20enquire%20about%20RF%20Skin%20Tightening" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[17px]">chat</span>
+<span>Enquire on WhatsApp</span>
+</a>
+<a class="font-label-sm text-label-sm text-primary hover:text-primary-container flex items-center gap-1" href="tel:+919604523931">
+<span>Book Consultation</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</a>
+</div>
+</article>
+<!-- 3. Carbon Laser Facial -->
+<article class="bg-surface-container-lowest rounded-lg p-4 shadow-sm flex flex-col gap-3">
+<div class="flex items-start justify-between gap-2">
+<div class="flex flex-col">
+<span class="font-eyebrow text-eyebrow text-secondary uppercase tracking-wider">Pore Clarification</span>
+<h3 class="font-title-md text-title-md text-on-surface mt-0.5">Carbon Laser Facial (Hollywood Treatment)</h3>
+</div>
+<div class="w-8 h-8 rounded-full bg-surface-container-low flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[18px]">wb_sunny</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+        A liquid carbon veil combined with gentle laser illumination to draw impurities from deep within pores, encouraging porcelain clarity and glow.
+      </p>
+<div class="bg-surface-container-low rounded-DEFAULT p-3 flex flex-col gap-1.5">
+<span class="font-label-sm text-label-sm text-primary font-semibold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[15px] text-secondary">flare</span>
+          What to expect:
+        </span>
+<ul class="font-body-sm text-body-sm text-on-surface-variant flex flex-col gap-1 pl-1">
+<li class="flex items-center gap-2">
+<span class="w-1 h-1 rounded-full bg-secondary"></span>
+<span>Subtle tingling sensation as the carbon lifts</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="w-1 h-1 rounded-full bg-secondary"></span>
+<span>Visibly clarified and luminous complexion</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="w-1 h-1 rounded-full bg-secondary"></span>
+<span>Popular choice 48 hours prior to grand events</span>
+</li>
+</ul>
+</div>
+<div class="pt-1 flex items-center justify-between">
+<a class="inline-flex items-center gap-1.5 text-tertiary-container hover:text-tertiary font-label-md text-label-md transition-colors" href="https://wa.me/919604523931?text=Hello%20Smietz%20Beauty%20Hub,%20I%20would%20like%20to%20enquire%20about%20the%20Carbon%20Laser%20Facial" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[17px]">chat</span>
+<span>Enquire on WhatsApp</span>
+</a>
+<a class="font-label-sm text-label-sm text-primary hover:text-primary-container flex items-center gap-1" href="tel:+919604523931">
+<span>Book Consultation</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</a>
+</div>
+</article>
+<!-- 4. Hydra Facial Treatment -->
+<article class="bg-surface-container-lowest rounded-lg p-4 shadow-sm flex flex-col gap-3">
+<div class="flex items-start justify-between gap-2">
+<div class="flex flex-col">
+<span class="font-eyebrow text-eyebrow text-secondary uppercase tracking-wider">Hydration &amp; Infusion</span>
+<h3 class="font-title-md text-title-md text-on-surface mt-0.5">Hydra Facial Treatment</h3>
+</div>
+<div class="w-8 h-8 rounded-full bg-surface-container-low flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[18px]">water_drop</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+        Patented vortex-clearing infusion delivering concentrated botanical serums, targeted antioxidants, and intensive moisture to parched skin.
+      </p>
+<div class="bg-surface-container-low rounded-DEFAULT p-3 flex flex-col gap-1.5">
+<span class="font-label-sm text-label-sm text-primary font-semibold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[15px] text-secondary">flare</span>
+          What to expect:
+        </span>
+<ul class="font-body-sm text-body-sm text-on-surface-variant flex flex-col gap-1 pl-1">
+<li class="flex items-center gap-2">
+<span class="w-1 h-1 rounded-full bg-secondary"></span>
+<span>Refreshing cooling sensation during serum glide</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="w-1 h-1 rounded-full bg-secondary"></span>
+<span>Plump, radiant, glass-skin glow</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="w-1 h-1 rounded-full bg-secondary"></span>
+<span>No irritation or post-session redness</span>
+</li>
+</ul>
+</div>
+<div class="pt-1 flex items-center justify-between">
+<a class="inline-flex items-center gap-1.5 text-tertiary-container hover:text-tertiary font-label-md text-label-md transition-colors" href="https://wa.me/919604523931?text=Hello%20Smietz%20Beauty%20Hub,%20I%20would%20like%20to%20enquire%20about%20Hydra%20Facial%20Treatment" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[17px]">chat</span>
+<span>Enquire on WhatsApp</span>
+</a>
+<a class="font-label-sm text-label-sm text-primary hover:text-primary-container flex items-center gap-1" href="tel:+919604523931">
+<span>Book Consultation</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</a>
+</div>
+</article>
+<!-- 5. Micro Needling with Booster -->
+<article class="bg-surface-container-lowest rounded-lg p-4 shadow-sm flex flex-col gap-3">
+<div class="flex items-start justify-between gap-2">
+<div class="flex flex-col">
+<span class="font-eyebrow text-eyebrow text-secondary uppercase tracking-wider">Cellular Awakening</span>
+<h3 class="font-title-md text-title-md text-on-surface mt-0.5">Micro Needling with Booster</h3>
+</div>
+<div class="w-8 h-8 rounded-full bg-surface-container-low flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[18px]">grain</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+        Targeted micro-point stimulation combined with custom peptide and botanical boosters, designed to improve uneven texture and restore dermal firmness.
+      </p>
+<div class="bg-surface-container-low rounded-DEFAULT p-3 flex flex-col gap-1.5">
+<span class="font-label-sm text-label-sm text-primary font-semibold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[15px] text-secondary">flare</span>
+          What to expect:
+        </span>
+<ul class="font-body-sm text-body-sm text-on-surface-variant flex flex-col gap-1 pl-1">
+<li class="flex items-center gap-2">
+<span class="w-1 h-1 rounded-full bg-secondary"></span>
+<span>Applied topical numbing balm for serene comfort</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="w-1 h-1 rounded-full bg-secondary"></span>
+<span>Mild pinkness settling comfortably within hours</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="w-1 h-1 rounded-full bg-secondary"></span>
+<span>Progressively smoothed and refined dermal feel</span>
+</li>
+</ul>
+</div>
+<div class="pt-1 flex items-center justify-between">
+<a class="inline-flex items-center gap-1.5 text-tertiary-container hover:text-tertiary font-label-md text-label-md transition-colors" href="https://wa.me/919604523931?text=Hello%20Smietz%20Beauty%20Hub,%20I%20would%20like%20to%20enquire%20about%20Micro%20Needling%20with%20Booster" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[17px]">chat</span>
+<span>Enquire on WhatsApp</span>
+</a>
+<a class="font-label-sm text-label-sm text-primary hover:text-primary-container flex items-center gap-1" href="tel:+919604523931">
+<span>Book Consultation</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</a>
+</div>
+</article>
+<!-- 6. HIFU Face Lift -->
+<article class="bg-surface-container-lowest rounded-lg p-4 shadow-sm flex flex-col gap-3">
+<div class="flex items-start justify-between gap-2">
+<div class="flex flex-col">
+<span class="font-eyebrow text-eyebrow text-secondary uppercase tracking-wider">Structural Definition</span>
+<h3 class="font-title-md text-title-md text-on-surface mt-0.5">HIFU Face Lift (Non-Surgical)</h3>
+</div>
+<div class="w-8 h-8 rounded-full bg-surface-container-low flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[18px]">architecture</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+        High-intensity focused ultrasound delivering thermal energy to deeper structural tissues, supporting jawline definition and cheek contouring.
+      </p>
+<div class="bg-surface-container-low rounded-DEFAULT p-3 flex flex-col gap-1.5">
+<span class="font-label-sm text-label-sm text-primary font-semibold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[15px] text-secondary">flare</span>
+          What to expect:
+        </span>
+<ul class="font-body-sm text-body-sm text-on-surface-variant flex flex-col gap-1 pl-1">
+<li class="flex items-center gap-2">
+<span class="w-1 h-1 rounded-full bg-secondary"></span>
+<span>Deep, brief pulses of warming sensation</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="w-1 h-1 rounded-full bg-secondary"></span>
+<span>Gradual visual contouring unfolding over 4–8 weeks</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="w-1 h-1 rounded-full bg-secondary"></span>
+<span>Non-invasive with zero post-treatment downtime</span>
+</li>
+</ul>
+</div>
+<div class="pt-1 flex items-center justify-between">
+<a class="inline-flex items-center gap-1.5 text-tertiary-container hover:text-tertiary font-label-md text-label-md transition-colors" href="https://wa.me/919604523931?text=Hello%20Smietz%20Beauty%20Hub,%20I%20would%20like%20to%20enquire%20about%20HIFU%20Face%20Lift" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[17px]">chat</span>
+<span>Enquire on WhatsApp</span>
+</a>
+<a class="font-label-sm text-label-sm text-primary hover:text-primary-container flex items-center gap-1" href="tel:+919604523931">
+<span>Book Consultation</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</a>
+</div>
+</article>
+</section>
+<!-- Consultation First Process Band (Deep Emerald Container) -->
+<section class="px-5 py-3" id="consultation-ethos">
+<div class="bg-primary text-on-primary rounded-xl p-5 shadow-lg flex flex-col gap-4 relative overflow-hidden">
+<!-- Decorative background accent -->
+<div class="absolute -right-8 -bottom-8 w-32 h-32 rounded-full bg-primary-container opacity-50 pointer-events-none"></div>
+<div class="flex items-center gap-2.5">
+<div class="w-9 h-9 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">assignment_turned_in</span>
+</div>
+<div class="flex flex-col">
+<span class="font-eyebrow text-eyebrow text-secondary-fixed uppercase tracking-wider">Safety &amp; Precision</span>
+<h2 class="font-headline-sm text-headline-sm text-on-primary font-serif">Our Consultation-First Ethos</h2>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-primary-container leading-relaxed">
+        Advanced treatments are only performed after a personal dermal evaluation by Sushama and our aesthetic specialists to ensure optimal compatibility with your skin type.
+      </p>
+<div class="grid grid-cols-3 gap-2 pt-1">
+<div class="bg-primary-container/60 rounded-DEFAULT p-2.5 flex flex-col items-center text-center gap-1">
+<span class="material-symbols-outlined text-secondary-fixed text-[20px]">person_search</span>
+<span class="font-label-sm text-[11px] text-on-primary font-medium">1. Skin Analysis</span>
+</div>
+<div class="bg-primary-container/60 rounded-DEFAULT p-2.5 flex flex-col items-center text-center gap-1">
+<span class="material-symbols-outlined text-secondary-fixed text-[20px]">tune</span>
+<span class="font-label-sm text-[11px] text-on-primary font-medium">2. Custom Protocol</span>
+</div>
+<div class="bg-primary-container/60 rounded-DEFAULT p-2.5 flex flex-col items-center text-center gap-1">
+<span class="material-symbols-outlined text-secondary-fixed text-[20px]">self_improvement</span>
+<span class="font-label-sm text-[11px] text-on-primary font-medium">3. Gentle Care</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Laser & Hair Reduction Section -->
+<section class="px-5 py-6 flex flex-col gap-4" id="laser-hair-reduction">
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="font-eyebrow text-eyebrow text-secondary uppercase tracking-widest">Permanent Silkiness</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-primary font-serif">Laser &amp; Hair Reduction</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+        Experience smooth, hassle-free grooming tailored for delicate Indian skin textures. Our advanced sessions focus on gentle comfort, minimal sessions, and lasting softness.
+      </p>
+</div>
+<!-- Prominent Required Badge -->
+<div class="bg-secondary-container/40 rounded-DEFAULT px-3.5 py-2.5 flex items-center gap-2.5 text-on-secondary-container">
+<span class="material-symbols-outlined text-[19px] shrink-0 text-secondary">info</span>
+<span class="font-label-sm text-label-sm font-semibold tracking-wide">
+        Consultation &amp; patch test required prior to first booking
+      </span>
+</div>
+<!-- Laser Details Card with Strict Placeholders -->
+<div class="bg-surface-container-lowest rounded-lg p-4 shadow-sm flex flex-col gap-3.5">
+<!-- Treatment Areas -->
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2 text-primary font-label-md text-label-md">
+<span class="material-symbols-outlined text-[18px] text-secondary">body_system</span>
+<span>Target Treatment Areas</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant bg-surface-container-low p-2.5 rounded-DEFAULT leading-relaxed">
+          Face, Underarms, Arms, Legs, Full Body — customized area maps and individualized packages are available during your in-clinic consultation.
+        </p>
+</div>
+<!-- Technology Specification -->
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2 text-primary font-label-md text-label-md">
+<span class="material-symbols-outlined text-[18px] text-secondary">biotech</span>
+<span>Cooling Laser Technology</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant bg-surface-container-low p-2.5 rounded-DEFAULT leading-relaxed">
+          Modern diode and triple-wavelength cooling systems designed for touch cooling and calm epidermal protection — full specifications reviewed in clinic.
+        </p>
+</div>
+<!-- Eligibility & Skin Assessment -->
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2 text-primary font-label-md text-label-md">
+<span class="material-symbols-outlined text-[18px] text-secondary">checklist_rtl</span>
+<span>Eligibility &amp; Skin Assessment</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant bg-surface-container-low p-2.5 rounded-DEFAULT leading-relaxed">
+          Personalized patch test and epidermal tone assessment scheduled during consultation to ensure full peace of mind and personalized comfort.
+        </p>
+</div>
+<!-- Action Button for Laser -->
+<a class="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-full bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md shadow-sm active:scale-[0.98] transition-transform mt-1" href="https://wa.me/919604523931?text=Hello%20Smietz%20Beauty%20Hub,%20I%20would%20like%20to%20schedule%20a%20Laser%20Hair%20Reduction%20Consultation" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[18px]">calendar_today</span>
+<span>Schedule Laser Consultation on WhatsApp</span>
+</a>
+</div>
+</section>
+<!-- FAQ Accordion Section -->
+<section class="px-5 py-4 flex flex-col gap-3" id="clinical-faq">
+<div class="flex flex-col gap-1">
+<span class="font-eyebrow text-eyebrow text-secondary uppercase tracking-widest">Clarity &amp; Reassurance</span>
+<h2 class="font-headline-sm text-headline-sm text-primary font-serif">Frequently Asked Questions</h2>
+</div>
+<div class="flex flex-col gap-2 mt-1" id="faq-container">
+<!-- FAQ 1 -->
+<div class="bg-surface-container-lowest rounded-lg shadow-sm overflow-hidden transition-all duration-200">
+<button class="faq-toggle w-full p-4 text-left flex items-center justify-between gap-3 text-on-surface font-title-md text-title-md cursor-pointer" type="button">
+<span class="font-medium text-sm">Is there any downtime after advanced skin care sessions?</span>
+<span class="material-symbols-outlined text-[20px] text-primary transition-transform duration-300 faq-icon">expand_more</span>
+</button>
+<div class="faq-content hidden px-4 pb-4 pt-1 font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+          Most of our advanced aesthetic procedures, such as Hydra Facial, RF Tightening, and Microdermabrasion, have zero required recovery time. You can seamlessly resume work or social commitments right away. For micro needling, a gentle pink flush typically settles within a few hours.
+        </div>
+</div>
+<!-- FAQ 2 -->
+<div class="bg-surface-container-lowest rounded-lg shadow-sm overflow-hidden transition-all duration-200">
+<button class="faq-toggle w-full p-4 text-left flex items-center justify-between gap-3 text-on-surface font-title-md text-title-md cursor-pointer" type="button">
+<span class="font-medium text-sm">Are these aesthetic treatments uncomfortable or painful?</span>
+<span class="material-symbols-outlined text-[20px] text-primary transition-transform duration-300 faq-icon">expand_more</span>
+</button>
+<div class="faq-content hidden px-4 pb-4 pt-1 font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+          Your comfort is central to our philosophy. Our clients generally describe treatments as soothing, cooling, or mildly warming. For protocols that stimulate the skin, like micro needling, we apply a gentle calming balm beforehand to ensure your experience is relaxing.
+        </div>
+</div>
+<!-- FAQ 3 -->
+<div class="bg-surface-container-lowest rounded-lg shadow-sm overflow-hidden transition-all duration-200">
+<button class="faq-toggle w-full p-4 text-left flex items-center justify-between gap-3 text-on-surface font-title-md text-title-md cursor-pointer" type="button">
+<span class="font-medium text-sm">Why is an initial dermal consultation mandatory?</span>
+<span class="material-symbols-outlined text-[20px] text-primary transition-transform duration-300 faq-icon">expand_more</span>
+</button>
+<div class="faq-content hidden px-4 pb-4 pt-1 font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+          Skin condition is ever-changing due to climate, stress, and lifestyle. A private skin evaluation allows Sushama and our senior team to assess skin hydration, barrier integrity, and sensitivity before recommending any targeted aesthetic therapy.
+        </div>
+</div>
+<!-- FAQ 4 -->
+<div class="bg-surface-container-lowest rounded-lg shadow-sm overflow-hidden transition-all duration-200">
+<button class="faq-toggle w-full p-4 text-left flex items-center justify-between gap-3 text-on-surface font-title-md text-title-md cursor-pointer" type="button">
+<span class="font-medium text-sm">How should I prepare my skin before an appointment?</span>
+<span class="material-symbols-outlined text-[20px] text-primary transition-transform duration-300 faq-icon">expand_more</span>
+</button>
+<div class="faq-content hidden px-4 pb-4 pt-1 font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+          We recommend pausing active exfoliants (like glycolic acid or retinol) 48 to 72 hours prior to your session, staying well hydrated, and avoiding direct prolonged sun exposure. We will furnish specific post-care guidance suited to your skin during your appointment.
+        </div>
+</div>
+</div>
+</section>
+<!-- Final WhatsApp CTA Section -->
+<section class="px-5 pt-4 pb-6">
+<div class="bg-surface-container rounded-xl p-5 text-center flex flex-col items-center gap-3.5 shadow-sm">
+<div class="w-12 h-12 rounded-full bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-[26px]">chat_bubble</span>
+</div>
+<div class="flex flex-col gap-1">
+<h2 class="font-headline-sm text-headline-sm text-primary font-serif">Have questions regarding your skin?</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+          Talk directly with our aesthetic specialists in Mulund West. We are happy to guide you toward the right treatment path.
+        </p>
+</div>
+<a class="w-full py-3.5 px-6 rounded-full bg-tertiary-container hover:bg-tertiary text-on-tertiary font-label-md text-label-md font-semibold shadow-md active:scale-[0.98] transition-all flex items-center justify-center gap-2" href="https://wa.me/919604523931?text=Hello%20Smietz%20Beauty%20Hub,%20I%20would%20like%20to%20book%20a%20skin%20consultation" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[20px]">chat</span>
+<span>Book Consultation on WhatsApp</span>
+</a>
+<span class="font-label-sm text-[11px] text-outline">
+        Private Consultations • Tue–Sun 10:00 AM – 8:00 PM
+      </span>
+</div>
+</section>
+</div>
+<script>
+  // Simple interactive accordion logic for FAQs
+  document.querySelectorAll('.faq-toggle').forEach(button => {
+    button.addEventListener('click', () => {
+      const content = button.nextElementSibling;
+      const icon = button.querySelector('.faq-icon');
+      const isExpanded = !content.classList.contains('hidden');
+
+      // Close all other accordions for clean mobile presentation
+      document.querySelectorAll('.faq-content').forEach(c => c.classList.add('hidden'));
+      document.querySelectorAll('.faq-icon').forEach(i => i.classList.remove('rotate-180'));
+
+      if (!isExpanded) {
+        content.classList.remove('hidden');
+        icon.classList.add('rotate-180');
+      }
+    });
+  });
+
+  // Smooth scroll active state chip tracking
+  const chips = document.querySelectorAll('.chip-item');
+  chips.forEach(chip => {
+    chip.addEventListener('click', (e) => {
+      chips.forEach(c => {
+        c.classList.remove('bg-primary', 'text-on-primary');
+        c.classList.add('bg-surface-container', 'text-on-surface');
+      });
+      chip.classList.add('bg-primary', 'text-on-primary');
+      chip.classList.remove('bg-surface-container', 'text-on-surface');
+    });
+  });
+</script></main><aside class="fixed bottom-20 right-4 z-40 max-w-[430px]"><a aria-label="Chat on WhatsApp" class="group relative flex items-center justify-center w-12 h-12 bg-primary-container text-on-tertiary rounded-full shadow-[0_8px_20px_rgba(0,109,86,0.4)] active:scale-95 transition-all" href="https://wa.me/919604523931?text=Hello%20Smietz%20Beauty%20Hub" rel="noopener noreferrer" target="_blank"><span class="absolute -inset-1 rounded-full bg-secondary-fixed/50 animate-ping opacity-60 pointer-events-none"></span><span class="material-symbols-outlined text-2xl group-hover:scale-110 transition-transform">chat</span></a></aside><footer class="w-full bg-surface-container-low text-on-surface-variant pt-10 pb-24 px-5 border-t border-outline-variant/30"><div class="flex flex-col gap-6"><div class="flex items-center gap-3"><img alt="Smietz Beauty Hub" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ALJJyrA27V14_dXUb964qE5WWM8SpZZxR6ii0TCaO5mPZzq3mfzKLObH2JhTjowxtoWaJ1XEcnzbSH5OYshadODHaauhZZthqqCe4heNy8owb_F8WBaTzUsjAH_iqDyjcegkGDBmmvAyq8d0mg24ofe0BhXxtseWZKzskseO3Bz7qk60GfY4ufKbWaus80B46-iiQB8Oem_HC9Z-265sL5yOarNUZ_Qa_wKHblzMPviU02rA"/><div class="flex flex-col"><span class="font-headline-sm text-base text-primary font-semibold">Smietz</span><span class="font-eyebrow text-[9px] uppercase text-secondary font-bold -mt-0.5 tracking-widest">Beauty Hub</span></div></div><p class="font-title-md text-sm text-primary font-serif italic">35 Years of Beauty &amp; Wellness Expertise</p><p class="font-body-sm text-xs leading-relaxed text-on-surface-variant">Premier destination in Mumbai for restorative clinical facials, hair transformation therapies, and bespoke bridal trousseau makeovers.</p><div class="flex flex-col gap-2.5 pt-2"><div class="flex items-start gap-2.5"><span class="material-symbols-outlined text-secondary text-[18px] shrink-0 mt-0.5">location_on</span><p class="font-body-sm text-xs text-on-surface-variant">Shop No. 2, BPS Plaza, Devidayal Road, Mulund West, Mumbai 400080</p></div><div class="flex items-center gap-2.5"><span class="material-symbols-outlined text-secondary text-[18px] shrink-0">schedule</span><p class="font-body-sm text-xs text-on-surface-variant">Tue – Sun: 10:00 AM – 8:00 PM (Mon Closed)</p></div><div class="flex items-center gap-2.5"><span class="material-symbols-outlined text-secondary text-[18px] shrink-0">call</span><a class="font-body-sm text-xs text-primary font-medium hover:underline" href="tel:+919604523931">+91 96045 23931</a></div></div><div class="pt-2"><span class="font-eyebrow text-[10px] text-secondary font-bold uppercase tracking-wider block mb-2">Quick Navigation</span><div class="grid grid-cols-2 gap-2 text-xs" data-active-classes="text-primary font-semibold"><a class="text-on-surface-variant hover:text-primary py-0.5" data-path="home" href="#">Home</a><a class="text-on-surface-variant hover:text-primary py-0.5" data-path="about-us" href="#">About Us</a><a class="text-on-surface-variant hover:text-primary py-0.5" data-path="all-services" href="#">All Services</a><a class="text-on-surface-variant hover:text-primary py-0.5" data-path="hair-care" href="#">Hair Care</a><a class="text-on-surface-variant hover:text-primary py-0.5" data-path="skin-care-facials" href="#">Skin Care &amp; Facials</a><a class="text-on-surface-variant hover:text-primary py-0.5" data-path="advanced-skin-care" href="#">Advanced Skin Care</a><a class="text-on-surface-variant hover:text-primary py-0.5" data-path="bridal" href="#">Bridal Trousseau</a><a class="text-on-surface-variant hover:text-primary py-0.5" data-path="contact" href="#">Contact &amp; Map</a></div></div><div class="pt-4 border-t border-outline-variant/30 text-center"><p class="font-label-sm text-[11px] text-outline">© 2025 Smietz Beauty Hub. Mulund West, Mumbai.</p></div></div></footer><nav aria-label="Bottom Action Bar" class="fixed bottom-0 max-w-[430px] w-full z-50 bg-surface/95 backdrop-blur-xl shadow-[0_-4px_16px_rgba(26,38,33,0.08)] px-4 py-2.5 pb-safe"><div class="flex items-center gap-3"><a class="flex-1 flex items-center justify-center gap-1.5 py-3 px-3 rounded-full bg-surface-container-high text-primary hover:bg-secondary-fixed font-label-md text-label-md font-semibold active:scale-[0.98] transition-all shadow-sm" href="tel:+919604523931"><span class="material-symbols-outlined text-[20px]">call</span><span>Call Reception</span></a><a class="flex-1 flex items-center justify-center gap-1.5 py-3 px-3 rounded-full bg-tertiary-container text-on-tertiary font-label-md text-label-md font-semibold shadow-[0_4px_14px_rgba(158,70,0,0.3)] active:scale-[0.98] transition-all" href="https://wa.me/919604523931?text=Hello%20Smietz%20Beauty%20Hub,%20I%20would%20like%20to%20book%20an%20appointment" rel="noopener noreferrer" target="_blank"><span class="material-symbols-outlined text-[20px]">chat_bubble</span><span>WhatsApp</span></a></div></nav></body></html>

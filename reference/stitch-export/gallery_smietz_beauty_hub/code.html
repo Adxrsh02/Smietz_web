@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}#mobile-drawer-toggle:checked ~ #mobile-menu-drawer{transform:translateX(0);pointer-events:auto;opacity:1;}#mobile-drawer-toggle:checked ~ #mobile-menu-backdrop{opacity:1;pointer-events:auto;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface": "#effdf4", "surface-tint": "#006b55", "primary-container": "#006d56", "tertiary-fixed": "#ffdbca", "primary": "#005240", "on-tertiary-container": "#ffd2bb", "on-error-container": "#93000a", "secondary-container": "#fdd487", "outline": "#6e7a74", "surface-variant": "#d8e6de", "tertiary-fixed-dim": "#ffb68e", "tertiary": "#793400", "surface-bright": "#effdf4", "on-secondary-fixed-variant": "#5d4200", "surface-dim": "#cfddd5", "on-primary-fixed": "#002118", "tertiary-container": "#9e4600", "surface-container": "#e3f1e9", "on-secondary-fixed": "#261900", "surface-container-low": "#e9f7ef", "on-tertiary": "#ffffff", "surface-container-highest": "#d8e6de", "primary-fixed": "#9df3d6", "on-tertiary-fixed": "#331200", "on-surface": "#121e19", "on-error": "#ffffff", "secondary-fixed": "#ffdea4", "error-container": "#ffdad6", "on-primary": "#ffffff", "surface-container-lowest": "#ffffff", "inverse-surface": "#27332e", "secondary-fixed-dim": "#e8c176", "inverse-primary": "#81d7ba", "on-primary-container": "#95ebce", "on-background": "#121e19", "outline-variant": "#bec9c3", "on-secondary": "#ffffff", "on-primary-fixed-variant": "#00513f", "secondary": "#775a19", "background": "#effdf4", "on-surface-variant": "#3e4945", "error": "#ba1a1a", "on-tertiary-fixed-variant": "#773300", "primary-fixed-dim": "#81d7ba", "surface-container-high": "#deebe3", "on-secondary-container": "#785a19", "inverse-on-surface": "#e6f4ec" }, "borderRadius": { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" }, "spacing": { "gutter": "1.5rem", "margin-desktop": "3.5rem", "space-lg": "1.5rem", "space-xs": "0.25rem", "gutter-desktop": "2rem", "space-xl": "2.5rem", "margin": "1.25rem", "space-md": "1rem", "space-sm": "0.5rem" }, "fontFamily": { "display-hero-mobile": [ "Playfair Display" ], "eyebrow": [ "Plus Jakarta Sans" ], "display-hero": [ "Playfair Display" ], "body-md": [ "Plus Jakarta Sans" ], "title-md": [ "Plus Jakarta Sans" ], "headline-lg": [ "Playfair Display" ], "headline-lg-mobile": [ "Playfair Display" ], "label-sm": [ "Plus Jakarta Sans" ], "body-lg": [ "Plus Jakarta Sans" ], "headline-md": [ "Playfair Display" ], "headline-sm": [ "Playfair Display" ], "body-sm": [ "Plus Jakarta Sans" ], "headline-md-mobile": [ "Playfair Display" ], "label-md": [ "Plus Jakarta Sans" ] }, "fontSize": { "display-hero-mobile": [ "36px", { "lineHeight": "46px", "letterSpacing": "-0.01em", "fontWeight": "600" } ], "eyebrow": [ "12px", { "lineHeight": "16px", "letterSpacing": "0.18em", "fontWeight": "700" } ], "display-hero": [ "56px", { "lineHeight": "68px", "letterSpacing": "-0.02em", "fontWeight": "600" } ], "body-md": [ "16px", { "lineHeight": "26px", "fontWeight": "400" } ], "title-md": [ "18px", { "lineHeight": "26px", "fontWeight": "600" } ], "headline-lg": [ "40px", { "lineHeight": "52px", "letterSpacing": "-0.01em", "fontWeight": "500" } ], "headline-lg-mobile": [ "28px", { "lineHeight": "38px", "fontWeight": "500" } ], "label-sm": [ "12px", { "lineHeight": "16px", "fontWeight": "600" } ], "body-lg": [ "18px", { "lineHeight": "28px", "fontWeight": "400" } ], "headline-md": [ "32px", { "lineHeight": "42px", "fontWeight": "500" } ], "headline-sm": [ "22px", { "lineHeight": "30px", "fontWeight": "600" } ], "body-sm": [ "14px", { "lineHeight": "22px", "fontWeight": "400" } ], "headline-md-mobile": [ "24px", { "lineHeight": "32px", "fontWeight": "500" } ], "label-md": [ "14px", { "lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "600" } ] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-on-surface antialiased selection:bg-secondary-fixed selection:text-on-secondary-fixed max-w-[430px] mx-auto min-h-screen relative shadow-2xl flex flex-col"><input class="hidden" id="mobile-drawer-toggle" type="checkbox"/><header class="fixed top-0 max-w-[430px] w-full z-50 bg-surface/95 backdrop-blur-xl shadow-[0_2px_16px_rgba(26,38,33,0.06)]"><div class="h-16 px-4 flex items-center justify-between"><a class="flex items-center gap-2.5" data-path="home" href="#"><img alt="Smietz Beauty Hub Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ALJJyrA27V14_dXUb964qE5WWM8SpZZxR6ii0TCaO5mPZzq3mfzKLObH2JhTjowxtoWaJ1XEcnzbSH5OYshadODHaauhZZthqqCe4heNy8owb_F8WBaTzUsjAH_iqDyjcegkGDBmmvAyq8d0mg24ofe0BhXxtseWZKzskseO3Bz7qk60GfY4ufKbWaus80B46-iiQB8Oem_HC9Z-265sL5yOarNUZ_Qa_wKHblzMPviU02rA"/><div class="flex flex-col"><span class="font-headline-sm text-[18px] leading-tight text-primary font-semibold tracking-tight">Smietz</span><span class="font-eyebrow text-[9px] uppercase text-secondary font-bold tracking-widest">Beauty Hub</span></div></a><div class="flex items-center gap-2"><a aria-label="Call Salon" class="w-10 h-10 rounded-full flex items-center justify-center bg-surface-container text-primary hover:bg-secondary-fixed active:scale-95 transition-transform" href="tel:+919604523931"><span class="material-symbols-outlined text-[20px]">call</span></a><label aria-label="Toggle Navigation Menu" class="w-10 h-10 rounded-full flex items-center justify-center bg-primary text-on-primary active:scale-95 transition-transform cursor-pointer shadow-sm" for="mobile-drawer-toggle"><span class="material-symbols-outlined text-[22px]">menu</span></label></div></div></header><div class="fixed inset-0 bg-inverse-surface/60 backdrop-blur-sm z-50 opacity-0 pointer-events-none transition-opacity duration-300 max-w-[430px] mx-auto" id="mobile-menu-backdrop"><label class="absolute inset-0 cursor-pointer" for="mobile-drawer-toggle"></label></div><div class="fixed inset-y-0 right-0 w-[88%] max-w-[360px] bg-surface z-50 shadow-2xl transform translate-x-full transition-all duration-300 ease-out flex flex-col justify-between overflow-y-auto" id="mobile-menu-drawer"><div class="p-5"><div class="flex items-center justify-between pb-4 border-b border-outline-variant/40"><div class="flex items-center gap-2.5"><img alt="Smietz Logo" class="h-7 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ALJJyrA27V14_dXUb964qE5WWM8SpZZxR6ii0TCaO5mPZzq3mfzKLObH2JhTjowxtoWaJ1XEcnzbSH5OYshadODHaauhZZthqqCe4heNy8owb_F8WBaTzUsjAH_iqDyjcegkGDBmmvAyq8d0mg24ofe0BhXxtseWZKzskseO3Bz7qk60GfY4ufKbWaus80B46-iiQB8Oem_HC9Z-265sL5yOarNUZ_Qa_wKHblzMPviU02rA"/><span class="font-headline-sm text-base text-primary font-semibold">Smietz Luxury Menu</span></div><label aria-label="Close Menu" class="w-9 h-9 rounded-full flex items-center justify-center bg-surface-container text-on-surface hover:bg-surface-variant cursor-pointer" for="mobile-drawer-toggle"><span class="material-symbols-outlined text-[20px]">close</span></label></div><nav class="py-4 flex flex-col gap-1" data-active-classes="bg-surface-container-high text-primary font-semibold"><a class="flex items-center justify-between px-3.5 py-3 rounded-lg text-on-surface hover:bg-surface-container font-label-md text-label-md transition-colors" data-path="home" href="#"><span class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px] text-primary">spa</span>Home</span><span class="material-symbols-outlined text-[16px] text-outline">chevron_right</span></a><a class="flex items-center justify-between px-3.5 py-3 rounded-lg text-on-surface hover:bg-surface-container font-label-md text-label-md transition-colors" data-path="about-us" href="#"><span class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px] text-primary">auto_awesome</span>About Us</span><span class="material-symbols-outlined text-[16px] text-outline">chevron_right</span></a><a class="flex items-center justify-between px-3.5 py-3 rounded-lg text-on-surface hover:bg-surface-container font-label-md text-label-md transition-colors" data-path="all-services" href="#"><span class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px] text-primary">list_alt</span>All Services</span><span class="material-symbols-outlined text-[16px] text-outline">chevron_right</span></a><a class="flex items-center justify-between px-3.5 py-3 rounded-lg text-on-surface hover:bg-surface-container font-label-md text-label-md transition-colors pl-6" data-path="hair-care" href="#"><span class="flex items-center gap-3"><span class="material-symbols-outlined text-[18px] text-secondary">content_cut</span>Hair Care</span><span class="material-symbols-outlined text-[16px] text-outline">chevron_right</span></a><a class="flex items-center justify-between px-3.5 py-3 rounded-lg text-on-surface hover:bg-surface-container font-label-md text-label-md transition-colors pl-6" data-path="skin-care-facials" href="#"><span class="flex items-center gap-3"><span class="material-symbols-outlined text-[18px] text-secondary">face_3</span>Skin Care &amp; Facials</span><span class="material-symbols-outlined text-[16px] text-outline">chevron_right</span></a><a class="flex items-center justify-between px-3.5 py-3 rounded-lg text-on-surface hover:bg-surface-container font-label-md text-label-md transition-colors" data-path="advanced-skin-care" href="#"><span class="flex items-center gap-3"><span class="material-symbols-outlined text-[18px] text-secondary">biotech</span>Advanced Skin Care</span><span class="material-symbols-outlined text-[16px] text-outline">chevron_right</span></a><a class="flex items-center justify-between px-3.5 py-3 rounded-lg text-on-surface hover:bg-surface-container font-label-md text-label-md transition-colors" data-path="bridal-makeup" href="#"><span class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px] text-primary">diamond</span>Bridal &amp; Makeup</span><span class="material-symbols-outlined text-[16px] text-outline">chevron_right</span></a><a aria-current="page" class="flex items-center justify-between px-3.5 py-3 rounded-lg transition-colors bg-surface-container-high text-primary font-semibold" data-path="gallery" href="#"><span class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px] text-primary">photo_library</span>Gallery</span><span class="material-symbols-outlined text-[16px] text-outline">chevron_right</span></a><a class="flex items-center justify-between px-3.5 py-3 rounded-lg text-on-surface hover:bg-surface-container font-label-md text-label-md transition-colors" data-path="testimonials" href="#"><span class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px] text-primary">reviews</span>Testimonials</span><span class="material-symbols-outlined text-[16px] text-outline">chevron_right</span></a><a class="flex items-center justify-between px-3.5 py-3 rounded-lg text-on-surface hover:bg-surface-container font-label-md text-label-md transition-colors" data-path="contact-book-appointment" href="#"><span class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px] text-primary">calendar_month</span>Contact &amp; Book Appointment</span><span class="material-symbols-outlined text-[16px] text-outline">chevron_right</span></a></nav></div><div class="p-5 bg-surface-container-low border-t border-outline-variant/30 flex flex-col gap-3"><a class="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-full bg-tertiary-container hover:bg-tertiary text-on-tertiary font-label-md text-label-md shadow-md active:scale-[0.98] transition-transform" href="https://wa.me/919604523931?text=Hello%20Smietz%20Beauty%20Hub,%20I%20would%20like%20to%20book%20an%20appointment" rel="noopener noreferrer" target="_blank"><span class="material-symbols-outlined text-[18px]">calendar_month</span><span>WhatsApp Appointment</span></a><a class="w-full flex items-center justify-center gap-2 py-2.5 px-4 rounded-full border border-primary text-primary font-label-md text-label-md hover:bg-primary hover:text-on-primary transition-colors" href="tel:+919604523931"><span class="material-symbols-outlined text-[18px]">call</span><span>+91 96045 23931</span></a><div class="text-center font-eyebrow text-[10px] text-outline uppercase tracking-wider pt-1">35 Years Heritage • Mulund West</div></div></div><main class="w-full pt-16 pb-28 bg-surface flex-grow"><div class="flex flex-col w-full px-4 space-y-6">
+<!-- Breadcrumbs -->
+<nav aria-label="Breadcrumbs" class="flex items-center gap-1.5 pt-2">
+<a class="font-eyebrow text-eyebrow text-secondary hover:text-primary transition-colors flex items-center gap-1" data-path="home" href="#">
+<span class="material-symbols-outlined text-[14px]">home</span>
+<span>Home</span>
+</a>
+<span class="text-outline text-[11px]">/</span>
+<span class="font-eyebrow text-eyebrow text-primary font-semibold tracking-wider">Gallery</span>
+</nav>
+<!-- Editorial Page Intro -->
+<section class="flex flex-col gap-2">
+<div class="inline-flex items-center gap-2 self-start px-2.5 py-1 rounded-full bg-secondary-container/40 text-on-secondary-fixed-variant">
+<span class="material-symbols-outlined text-[13px] text-secondary">photo_camera</span>
+<span class="font-eyebrow text-eyebrow uppercase tracking-widest text-secondary font-bold">Visual Sanctuary</span>
+</div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary font-medium tracking-tight">
+      Our Portfolio &amp; Gallery
+    </h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+      A visual chronicle of 35 years of salon artistry, serene aesthetic spaces, and timeless transformations in Mulund West.
+    </p>
+</section>
+<!-- Horizontal Scroll Filter Chips -->
+<section class="w-full -mx-4 px-4 overflow-x-auto no-scrollbar">
+<div class="flex items-center gap-2 min-w-max pb-1" id="filter-chip-bar">
+<button class="gallery-chip px-3.5 py-1.5 rounded-full font-label-sm text-label-sm bg-primary text-on-primary shadow-sm transition-all active:scale-95 flex items-center gap-1.5" data-filter="all" type="button">
+<span class="material-symbols-outlined text-[15px]">spa</span>
+<span>All Works</span>
+</button>
+<button class="gallery-chip px-3.5 py-1.5 rounded-full font-label-sm text-label-sm bg-surface-container text-on-surface-variant hover:bg-secondary-fixed/50 hover:text-primary transition-all active:scale-95" data-filter="interiors" type="button">
+        Salon Interiors
+      </button>
+<button class="gallery-chip px-3.5 py-1.5 rounded-full font-label-sm text-label-sm bg-surface-container text-on-surface-variant hover:bg-secondary-fixed/50 hover:text-primary transition-all active:scale-95" data-filter="hair" type="button">
+        Hair Artistry
+      </button>
+<button class="gallery-chip px-3.5 py-1.5 rounded-full font-label-sm text-label-sm bg-surface-container text-on-surface-variant hover:bg-secondary-fixed/50 hover:text-primary transition-all active:scale-95" data-filter="skin" type="button">
+        Skin &amp; Facials
+      </button>
+<button class="gallery-chip px-3.5 py-1.5 rounded-full font-label-sm text-label-sm bg-surface-container text-on-surface-variant hover:bg-secondary-fixed/50 hover:text-primary transition-all active:scale-95" data-filter="bridal" type="button">
+        Bridal Couture
+      </button>
+<button class="gallery-chip px-3.5 py-1.5 rounded-full font-label-sm text-label-sm bg-surface-container text-on-surface-variant hover:bg-secondary-fixed/50 hover:text-primary transition-all active:scale-95" data-filter="transformations" type="button">
+        Transformations
+      </button>
+<button class="gallery-chip px-3.5 py-1.5 rounded-full font-label-sm text-label-sm bg-surface-container text-on-surface-variant hover:bg-secondary-fixed/50 hover:text-primary transition-all active:scale-95" data-filter="instagram" type="button">
+        Instagram
+      </button>
+</div>
+</section>
+<!-- Interactive 2-Column Responsive Masonry Grid -->
+<section class="grid grid-cols-2 gap-3" id="gallery-grid">
+<!-- Item 1: Bridal Hair (Tall) -->
+<div class="gallery-card group relative flex flex-col rounded-lg bg-surface-container-lowest overflow-hidden shadow-sm hover:shadow-md transition-all duration-300" data-category="bridal" onclick="openLightbox(0)">
+<div class="relative w-full aspect-[3/4] overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" data-alt="Opulent Indian bridal hairstyle seen from the back, intricate braided chignon adorned with fragrant white jasmine mogra blooms and baby's breath, soft studio warm rim light on lustrous dark hair with gold silk saree details, editorial beauty photography in emerald and ivory tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrCWGngNNsn7hpYPt9-EX1AGovYCtXChDHL7q37IoWVc8Am0PgCYJlOtUwVwh85GU0XScn-DOl2MsMduqI9HgdfQeuPACuiqe45xkh5w-yzH86aunVTX37lKEW4PAzI8_utsG6t_VAbBLeT7OeXsdhV3Is-HKMIx1kj3jQFpIUru0hhZbMNBcczVifV-jHrr0MVIvz95v5mVupQDp6ySsKK7sjHh44oO1UoX2Qksg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/70 via-transparent to-black/10 opacity-70 group-hover:opacity-90 transition-opacity"></div>
+<div class="absolute top-2.5 left-2.5">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-eyebrow text-[9px] uppercase tracking-wider font-bold shadow-xs">Bridal</span>
+</div>
+<div class="absolute bottom-2.5 right-2.5 w-7 h-7 rounded-full bg-surface/90 text-primary flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[16px]">zoom_in</span>
+</div>
+</div>
+<div class="p-2.5 flex flex-col">
+<h2 class="font-headline-sm text-[13px] leading-snug text-primary font-medium line-clamp-1">Bridal Hair &amp; Florals</h2>
+<p class="font-body-sm text-[11px] text-on-surface-variant line-clamp-1">Traditional Jasmine &amp; Chignon</p>
+</div>
+</div>
+<!-- Item 2: Private Suite (Interiors) -->
+<div class="gallery-card group relative flex flex-col rounded-lg bg-surface-container-lowest overflow-hidden shadow-sm hover:shadow-md transition-all duration-300" data-category="interiors" onclick="openLightbox(1)">
+<div class="relative w-full aspect-square overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" data-alt="Serene private clinical skincare therapy room in a luxury Mumbai salon, ergonomic ergonomic facial bed draped in crisp organic white linen, soft jade green ambient lighting, modern aesthetic device stand, minimalist brass fixtures and indoor bamboo fern" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcut7uL4dGOQiAtmG_atuvUFIr80sVyKq8jrmkOnb-lSHOQW5UoRO3G2oTMZSH1V1Tk8YG47tYDkH9FVJp_J_S7uT_Gkl1D07hIbId_J6bgZz4ea6tE51pHP5rHqT8x1Q5I9TEdA6V2Ww24k2-J7az1W0tmn8_8xKZaU3238agFSCuvBZdSZQSOJp10NjHsy6OkOPiZAfo0DdsuDixSV_H8ICCZT0Dwz0d_HrFRNc"/>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/70 via-transparent to-black/10 opacity-70 group-hover:opacity-90 transition-opacity"></div>
+<div class="absolute top-2.5 left-2.5">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-eyebrow text-[9px] uppercase tracking-wider font-bold shadow-xs">Interiors</span>
+</div>
+<div class="absolute bottom-2.5 right-2.5 w-7 h-7 rounded-full bg-surface/90 text-primary flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[16px]">zoom_in</span>
+</div>
+</div>
+<div class="p-2.5 flex flex-col">
+<h2 class="font-headline-sm text-[13px] leading-snug text-primary font-medium line-clamp-1">Clinical Facial Suite</h2>
+<p class="font-body-sm text-[11px] text-on-surface-variant line-clamp-1">Private restorative chambers</p>
+</div>
+</div>
+<!-- Item 3: Hair Transformation (Balayage) -->
+<div class="gallery-card group relative flex flex-col rounded-lg bg-surface-container-lowest overflow-hidden shadow-sm hover:shadow-md transition-all duration-300" data-category="hair" onclick="openLightbox(2)">
+<div class="relative w-full aspect-square overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" data-alt="High-gloss honey caramel balayage waves on long silky brunette hair, captured under diffuse salon studio light highlighting seamless gradient color melting and mirror-like shine, luxurious blowout finish, high-end editorial hair presentation" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBj4jmWNkliZVxtr7bMcsiDX2NXduGygD4OxS_A1Ra2gKGI8sNlOaQOefY_zYEuvdnPFs1NZQ0c-GC6U9Ny9Tiwn6r0HpCdNaOKQqGMHcBcYefyQbjljLHF0vBsMf0aef_WkydjvIdNKDqJH-HyItQ50U4xUfDInSP65daZl1Wk9Yky_hExxoGRmGgV1hKx3HhFvshFT-Rw__RFEF6GEQ0jw2wLP631GcXFoS78zZI"/>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/70 via-transparent to-black/10 opacity-70 group-hover:opacity-90 transition-opacity"></div>
+<div class="absolute top-2.5 left-2.5">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-eyebrow text-[9px] uppercase tracking-wider font-bold shadow-xs">Hair</span>
+</div>
+<div class="absolute bottom-2.5 right-2.5 w-7 h-7 rounded-full bg-surface/90 text-primary flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[16px]">zoom_in</span>
+</div>
+</div>
+<div class="p-2.5 flex flex-col">
+<h2 class="font-headline-sm text-[13px] leading-snug text-primary font-medium line-clamp-1">Honey Balayage Wave</h2>
+<p class="font-body-sm text-[11px] text-on-surface-variant line-clamp-1">Multi-dimensional gloss tone</p>
+</div>
+</div>
+<!-- Item 4: Hydra Facial Cleansing (Skin) -->
+<div class="gallery-card group relative flex flex-col rounded-lg bg-surface-container-lowest overflow-hidden shadow-sm hover:shadow-md transition-all duration-300" data-category="skin" onclick="openLightbox(3)">
+<div class="relative w-full aspect-[3/4] overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" data-alt="A gentle medical-grade hydra-dermabrasion facial wand gently gliding across a smiling woman's glowing cheek, fine water mist droplets and crystal clear botanical serum reflections, soft towel headwrap, clinical spa lighting in warm sage tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAUPcuxa5po_LxdsnI8nm34wp5_NkizRo3-MehmRc71kXI0y2T7IidQTnFELD8SI4P4iCK2Nsd5iA7uStMyOH0OckPavLR877xERAyoGvJqXD7xxNWaBlEOdKnixw3fv4JulN90UQjVDLdqwdWoiJI2d9RvLbvXw3FB2Ahi4LdzNKj8-Ewu51bztxDQY4qqDs4DTAq8Tt8l1ej_S1mxr7_h0LTPGtoPuhUtaE1lv8"/>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/70 via-transparent to-black/10 opacity-70 group-hover:opacity-90 transition-opacity"></div>
+<div class="absolute top-2.5 left-2.5">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-eyebrow text-[9px] uppercase tracking-wider font-bold shadow-xs">Skin</span>
+</div>
+<div class="absolute bottom-2.5 right-2.5 w-7 h-7 rounded-full bg-surface/90 text-primary flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[16px]">zoom_in</span>
+</div>
+</div>
+<div class="p-2.5 flex flex-col">
+<h2 class="font-headline-sm text-[13px] leading-snug text-primary font-medium line-clamp-1">Gentle Hydra Facial</h2>
+<p class="font-body-sm text-[11px] text-on-surface-variant line-clamp-1">Deep botanical infusion</p>
+</div>
+</div>
+<!-- Item 5: Pedicure Foot Soak (Skin & Transformations) -->
+<div class="gallery-card group relative flex flex-col rounded-lg bg-surface-container-lowest overflow-hidden shadow-sm hover:shadow-md transition-all duration-300" data-category="transformations" onclick="openLightbox(4)">
+<div class="relative w-full aspect-[3/4] overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" data-alt="Artisanal hammered brass pedicure basin filled with warm water, floating fragrant pink rose petals and marigolds with natural essential botanical oils, aesthetic salon stone floor background, warm atmospheric daylight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUYPUKO7DCRk1o6uqnmBXRExXXEMhcbwbZytOQlRS3ZTOxagbRLt5HsSdJqI33M9TbsD7wyyTiIY2LMkIRaDlcu-t4J2vL7iqAgFwHAxi8b5AOEEWZTk-xaMm9oDy3qZrb8ySZbtuk8fA8tq-tr9xIC28iebxrVkdrHmhAazc-UDh86LzTAnwABy-5YbOBB9qEfFuCvgn2lwW35xYeqAx6Co7yyj4qH96TQH5hJWI"/>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/70 via-transparent to-black/10 opacity-70 group-hover:opacity-90 transition-opacity"></div>
+<div class="absolute top-2.5 left-2.5">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-eyebrow text-[9px] uppercase tracking-wider font-bold shadow-xs">Wellness</span>
+</div>
+<div class="absolute bottom-2.5 right-2.5 w-7 h-7 rounded-full bg-surface/90 text-primary flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[16px]">zoom_in</span>
+</div>
+</div>
+<div class="p-2.5 flex flex-col">
+<h2 class="font-headline-sm text-[13px] leading-snug text-primary font-medium line-clamp-1">Floral Petal Soak</h2>
+<p class="font-body-sm text-[11px] text-on-surface-variant line-clamp-1">Aromatherapy bath ritual</p>
+</div>
+</div>
+<!-- Item 6: Salon Styling Lounge (Interiors) -->
+<div class="gallery-card group relative flex flex-col rounded-lg bg-surface-container-lowest overflow-hidden shadow-sm hover:shadow-md transition-all duration-300" data-category="interiors" onclick="openLightbox(5)">
+<div class="relative w-full aspect-square overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" data-alt="Panoramic perspective of Smietz Beauty Hub salon floor in Mulund West, custom arched backlit mirrors, plush emerald green leather salon styling chairs, polished terrazzo flooring, warm brass detailing and botanical indoor plants" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBbkfIoMjy7MmLRLiLYIA3miWQminkM9Pf3VXqEaX80j4GUEbZAVbrUsmd_pmJsHyBodEIQQGixfmBTmdgdG7zx5l_26o1Ysaa3owZm7Gjef4kJ4ObsgdGf4NHsEmXWpZ7N6abLFAOgI2w_vjkSRL8yRv-maFdpXZwBYwv9Y9v1i8i1BmnkKYr7Kw0NV-eKO8n8XhOq1oxihVdUZXNpe8Xmy2L808uTLsClKBA5g4"/>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/70 via-transparent to-black/10 opacity-70 group-hover:opacity-90 transition-opacity"></div>
+<div class="absolute top-2.5 left-2.5">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-eyebrow text-[9px] uppercase tracking-wider font-bold shadow-xs">Interiors</span>
+</div>
+<div class="absolute bottom-2.5 right-2.5 w-7 h-7 rounded-full bg-surface/90 text-primary flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[16px]">zoom_in</span>
+</div>
+</div>
+<div class="p-2.5 flex flex-col">
+<h2 class="font-headline-sm text-[13px] leading-snug text-primary font-medium line-clamp-1">Styling Studio Lounge</h2>
+<p class="font-body-sm text-[11px] text-on-surface-variant line-clamp-1">Arched mirror stations</p>
+</div>
+</div>
+<!-- Item 7: Glowing Bride (Bridal) -->
+<div class="gallery-card group relative flex flex-col rounded-lg bg-surface-container-lowest overflow-hidden shadow-sm hover:shadow-md transition-all duration-300" data-category="bridal" onclick="openLightbox(6)">
+<div class="relative w-full aspect-square overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" data-alt="Close up portrait of a radiant Indian bride smiling gently, flawless HD dewy makeup, kohl rimmed eyes, delicate matha patti forehead jewellery and traditional temple necklace, emerald green veil border accents, high fashion bridal editorial" src="https://lh3.googleusercontent.com/aida-public/AB6AXuALYIUXAQR0Oz4yFFglW_SnctmgEvmPDOIv0n7gUHw-iPFEXGqBtq7z9u7boqkWLA5j-BXGST6EIiHSjqZoMysX-jufGzj638tJ2p8U07H3WRFXgt0Cz6u1hSn1GtpivDjYRdeB_yFHKdiRvA3j5I0Va1nwzZyNHTj_2BH_c3KXijUzX49KatuAA8M853KaxKo_gQX5awufqO4rc2cXajwGzXU9-u9TcJOe24Fv8fo"/>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/70 via-transparent to-black/10 opacity-70 group-hover:opacity-90 transition-opacity"></div>
+<div class="absolute top-2.5 left-2.5">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-eyebrow text-[9px] uppercase tracking-wider font-bold shadow-xs">Bridal</span>
+</div>
+<div class="absolute bottom-2.5 right-2.5 w-7 h-7 rounded-full bg-surface/90 text-primary flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[16px]">zoom_in</span>
+</div>
+</div>
+<div class="p-2.5 flex flex-col">
+<h2 class="font-headline-sm text-[13px] leading-snug text-primary font-medium line-clamp-1">Trousseau Bridal Glow</h2>
+<p class="font-body-sm text-[11px] text-on-surface-variant line-clamp-1">Dewy HD bridal makeup</p>
+</div>
+</div>
+<!-- Item 8: Founder Consultation (Transformations) -->
+<div class="gallery-card group relative flex flex-col rounded-lg bg-surface-container-lowest overflow-hidden shadow-sm hover:shadow-md transition-all duration-300" data-category="transformations" onclick="openLightbox(7)">
+<div class="relative w-full aspect-[3/4] overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" data-alt="Master aesthetician Sushama in elegant dark uniform attentively consulting with an Indian client across a minimalist consult desk in a calm private consultation suite, discussing personalized skin rejuvenation regimen, warm professional ambiance" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMuPavJPMeLFUra6_FQCq5IidAQBRwgPQd4GnZJunK7spShvNZ4i7gztvJyOmSGjBssZRR-5cewZfvT8r30vhX54akxfUeDyruCHVMnexu-VqQwanXtq_LTmuhBfiI0-wikSLOs9zYXU_LsfGCpYaNcNQFqRwhxKdtvFNxYDGm-7IKNIPxpyw396yq24lUWVVCBLR9RlZaC4Wz7LFhD5klWRMzPF5l3PKNt0-GEME"/>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/70 via-transparent to-black/10 opacity-70 group-hover:opacity-90 transition-opacity"></div>
+<div class="absolute top-2.5 left-2.5">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-eyebrow text-[9px] uppercase tracking-wider font-bold shadow-xs">Consult</span>
+</div>
+<div class="absolute bottom-2.5 right-2.5 w-7 h-7 rounded-full bg-surface/90 text-primary flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[16px]">zoom_in</span>
+</div>
+</div>
+<div class="p-2.5 flex flex-col">
+<h2 class="font-headline-sm text-[13px] leading-snug text-primary font-medium line-clamp-1">Bespoke Consultation</h2>
+<p class="font-body-sm text-[11px] text-on-surface-variant line-clamp-1">35 years diagnostic masterclass</p>
+</div>
+</div>
+</section>
+<!-- Instagram Community Feed Band -->
+<section class="flex flex-col p-4 rounded-lg bg-surface-container-high/70 space-y-3.5 shadow-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-9 h-9 rounded-full bg-gradient-to-tr from-amber-500 via-rose-500 to-purple-600 p-[1.5px] flex items-center justify-center">
+<div class="w-full h-full bg-surface-container-lowest rounded-full flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">photo_camera</span>
+</div>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-sm text-primary font-medium leading-tight">@smietzbeautyhub</span>
+<span class="font-eyebrow text-[10px] text-secondary font-bold uppercase tracking-wider">Follow Our Journey</span>
+</div>
+</div>
+<a class="px-3 py-1 rounded-full bg-primary text-on-primary font-label-sm text-[11px] hover:bg-primary-container active:scale-95 transition-all" href="https://instagram.com" rel="noopener noreferrer" target="_blank">
+        Follow
+      </a>
+</div>
+<p class="font-body-sm text-xs text-on-surface-variant">
+      Daily backstage beauty stories, client transformations, and restorative skincare diaries straight from our Mulund West salon.
+    </p>
+<!-- 6-Tile Instagram Grid Preview -->
+<div class="grid grid-cols-3 gap-2 pt-1">
+<div class="relative aspect-square rounded-md overflow-hidden bg-surface-container group">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform" data-alt="Instagram square post preview of vibrant red bridal dupatta draping with intricate gold zari thread details in salon mirror" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsvGa8dbPeSEknytRXqPGyKskK6-LOJoxBBUMR4-73f7xumSSZFIST3kiEhpfZ3KcysmtpzDIwiLcR28tySABrdW_ePxiYXEnJxPDnNcjLMi82_ub2TJ15X2C8nkmpT481ed0NYXAKjKajzA-Wa8g6iqvELwO9dPsOMQ1lBYtOidwdJRVoi2BhpsWjblYMysMUEG0j-E6fkMXM5Oyivn1Rq-qyUaT2umGFokmTWLg"/>
+<div class="absolute inset-0 bg-inverse-surface/30 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity text-on-primary">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</div>
+</div>
+<div class="relative aspect-square rounded-md overflow-hidden bg-surface-container group">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform" data-alt="Instagram square preview of aesthetic organic facial cream dollop with green tea leaves on cool marble surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqdeA_Bzj9DKtjcnPZ3ZCj-gCjFez6FkkDzNAncEIUlqiW_CCEn8asNFbl4o53V014HaKWFD7I99oUNpB78QNzcn7jUIyvFK0XbklknymNYVrTBHuOjzuHd4198KVI890W9H_pT-eWtXA2bEfq3Ft2ih4pb47fdDC3JgYlrjRX9jewFImOgFxWQ35q7HLlLsvVACXmv_Qe0a0xJP4_EtnnkBVaUX-McPHQb8cgLfI"/>
+<div class="absolute inset-0 bg-inverse-surface/30 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity text-on-primary">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</div>
+</div>
+<div class="relative aspect-square rounded-md overflow-hidden bg-surface-container group">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform" data-alt="Instagram square preview of smooth precision shears cutting silky dark hair ends against a soft ivory backdrop" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDT0Mg77x9ycnxcWS_jAAsRgANFXfxkcAZkcl_O7pbMvzPthP04w8ZOfb_wTgxo0ifGnZIjpHdT9ORVdVTjk6JdTap8MBaeis8sgg044pBPst1M0C9T566m6CkjYkPjpH5o2hprbMDS_-m-m4BDXqWM5c1zUgC5EDeT_j-EN7eCfhym8uHfqt35o8qn0TQmr9FOyN6tenyLV8Kj8v-x1U5GppsVD4F-IcEYuhp9CBo"/>
+<div class="absolute inset-0 bg-inverse-surface/30 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity text-on-primary">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</div>
+</div>
+<div class="relative aspect-square rounded-md overflow-hidden bg-surface-container group">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform" data-alt="Instagram square preview of polished gold bangles and mehendi henna adornment on bride hands in salon styling chair" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfVEF_zYJ2CyjpzUvYwpSRiUwyRjw8Wjs3s36h9W9MncxIjEMr9yeM3l963xs6bFm0zkEeTgvKBoXZeo9xnpgAhm7RBH_a8GkFzZB479IzIupVdskquRQld02rieROZ7-NIFTVxffHORjiR8kTUN8jCg_D9pqe5YjRd_IOfZ8UXwOxlkCSUKIvJLSdDehbYtVcPJO0EA_n_bmyW8RlnACNTv5L_RhPkVHIksOkdgE"/>
+<div class="absolute inset-0 bg-inverse-surface/30 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity text-on-primary">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</div>
+</div>
+<div class="relative aspect-square rounded-md overflow-hidden bg-surface-container group">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform" data-alt="Instagram square preview of calming eucalyptus and mint botanical steam bowl glowing in private salon sanctuary" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaQzIdbDug7sXlOENxEKO_na5nv3-4SchGcNLp_PLgHuUC7vz2VZZrMm2__QKoyoPepVf8nBpgfozhI7ZTf1wlOI74CzOqpEHynTdMAHKJbc8J-sTD9dt4rDR7CC_IyDVJqk4bIynfLSk-U-hnkfOvouE6anVYeZk7GwiR4iWhLfTC_klIFiKqi811NbiXx8NrDPC2k1fVmy325PPnN_e2CIjXy2KqOunKCzA3tDw"/>
+<div class="absolute inset-0 bg-inverse-surface/30 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity text-on-primary">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</div>
+</div>
+<div class="relative aspect-square rounded-md overflow-hidden bg-surface-container group">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform" data-alt="Instagram square preview of happy smiling bride checking her traditional makeup reflection in an arched gold mirror" src="https://lh3.googleusercontent.com/aida-public/AB6AXuATywPTz0LP-NyoBZW6Rgq7qivvLwNSl2AiPi-hIswBdGNXbeApAkuWnYpwuQXQWBo_pDOpMhwhnhwK0A16PqThBFOFu4JVsdm8AtfDCARG72aX5kzK2ulmI9NcDl2RDtlwKyNInT9_8TOqYC0gQ6C9IkhlB2HwPgR2WZAbkr38X-h3eVBSGQA_99tvf4xA63aMji5pXiPFmyaKDOm5ET7t0Hf26LUszfYZL6F-_sk"/>
+<div class="absolute inset-0 bg-inverse-surface/30 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity text-on-primary">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA Band -->
+<section class="flex flex-col items-center text-center p-6 rounded-lg bg-surface-container-lowest shadow-sm space-y-3 relative overflow-hidden">
+<div class="w-12 h-12 rounded-full bg-secondary-fixed/50 flex items-center justify-center text-primary mb-1">
+<span class="material-symbols-outlined text-[24px]">magic_button</span>
+</div>
+<span class="font-eyebrow text-eyebrow text-secondary uppercase font-bold tracking-widest">Experience The Craft</span>
+<h3 class="font-headline-sm text-headline-sm text-primary font-medium">Inspired by Our Artistry?</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-xs leading-relaxed">
+      Whether crafting a showstopping bridal trousseau or designing your clinical skin regimen, our team is at your service.
+    </p>
+<a class="mt-2 w-full flex items-center justify-center gap-2 py-3 px-6 rounded-full bg-tertiary-container hover:bg-tertiary text-on-tertiary font-label-md text-label-md shadow-md active:scale-[0.98] transition-all" href="https://wa.me/919604523931?text=Hello%20Smietz%20Beauty%20Hub,%20I%20saw%20your%20Gallery%20and%20would%20like%20to%20consult%20about%20a%20look" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[18px]">chat_bubble</span>
+<span>Enquire on WhatsApp</span>
+</a>
+</section>
+</div>
+<!-- Interactive Lightbox Modal -->
+<div aria-modal="true" class="fixed inset-0 z-50 bg-inverse-surface/95 backdrop-blur-md hidden flex-col justify-between p-4 max-w-[430px] mx-auto transition-opacity duration-300" id="lightbox-modal" role="dialog">
+<!-- Lightbox Header -->
+<div class="flex items-center justify-between pt-2 pb-2 text-on-primary">
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-eyebrow text-[10px] uppercase font-bold tracking-wider" id="lightbox-badge">Bridal</span>
+<span class="font-label-sm text-label-sm text-outline-variant" id="lightbox-counter">1 of 8</span>
+</div>
+<button aria-label="Close Lightbox" class="w-10 h-10 rounded-full bg-surface/10 hover:bg-surface/20 flex items-center justify-center text-on-primary transition-colors" onclick="closeLightbox()" type="button">
+<span class="material-symbols-outlined text-[22px]">close</span>
+</button>
+</div>
+<!-- Main Image Preview Container -->
+<div class="relative flex-1 flex items-center justify-center my-2">
+<div class="relative w-full max-h-[530px] aspect-[4/5] rounded-lg overflow-hidden bg-black/40 shadow-2xl flex items-center justify-center">
+<img class="w-full h-full object-cover" data-alt="Active lightbox preview image showcasing premium beauty craft from Smietz Beauty Hub" id="lightbox-image" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpvqjqULW8DzsAvcSe1GqWH39CHcxvus2kz4jaBL6ewBrHyGSOMPwFroIK4BFpfmq4kOhogdmJ6RrsdHOUvTvz7nYKaRDbp7QlLbLdolevIxwQHYON4gFmEwSEEyUZ_8y3YLlgpMpB-fFMYy0tzEFt5K2sVPam4mCWCbBNW3slqcPsFV7-jFlg7XrRPS6fakWZicUKeXgi8p1INxQhY3pcPJdhAvAkmiMt0CU4iwo"/>
+</div>
+<!-- Navigation Arrows -->
+<button aria-label="Previous Image" class="absolute left-2 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-inverse-surface/80 text-on-primary shadow-lg flex items-center justify-center hover:bg-inverse-surface active:scale-90 transition-all" onclick="prevLightboxImage()" type="button">
+<span class="material-symbols-outlined text-[24px]">chevron_left</span>
+</button>
+<button aria-label="Next Image" class="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-inverse-surface/80 text-on-primary shadow-lg flex items-center justify-center hover:bg-inverse-surface active:scale-90 transition-all" onclick="nextLightboxImage()" type="button">
+<span class="material-symbols-outlined text-[24px]">chevron_right</span>
+</button>
+</div>
+<!-- Lightbox Caption & Call to Action -->
+<div class="bg-surface-container-lowest/95 rounded-lg p-3.5 shadow-lg flex flex-col gap-2.5 mb-2">
+<div class="flex flex-col">
+<h4 class="font-headline-sm text-sm text-primary font-semibold" id="lightbox-title">Bridal Hair Artistry &amp; Florals</h4>
+<p class="font-body-sm text-xs text-on-surface-variant" id="lightbox-desc">Bespoke Bridal Hair Styling &amp; Traditional Floral Artistry crafted with fragrant mogra and jasmine.</p>
+</div>
+<a class="w-full flex items-center justify-center gap-2 py-2.5 rounded-full bg-tertiary-container hover:bg-tertiary text-on-tertiary font-label-md text-label-md font-semibold shadow-md active:scale-95 transition-all" href="https://wa.me/919604523931?text=Hello%20Smietz%20Beauty%20Hub,%20I%20am%20enquiring%20about%20the%20Bridal%20Hair%20Artistry%20from%20your%20gallery" id="lightbox-whatsapp-link" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[18px]">chat_bubble</span>
+<span>Enquire About This Look</span>
+</a>
+</div>
+</div>
+<!-- Inline JavaScript for Lightbox & Dynamic Filtering -->
+<script>
+  const galleryItems = [
+    {
+      title: "Bridal Hair Artistry & Traditional Florals",
+      category: "Bridal",
+      filter: "bridal",
+      desc: "Delicate braided chignon adorned with fragrant white jasmine mogra blooms and baby's breath for the quintessential Mumbai bride.",
+      alt: "Opulent Indian bridal hairstyle seen from the back, intricate braided chignon adorned with fragrant white jasmine mogra blooms and baby's breath, soft studio warm rim light on lustrous dark hair with gold silk saree details, editorial beauty photography in emerald and ivory tones"
+    },
+    {
+      title: "Private Skincare & Facial Suite",
+      category: "Interiors",
+      filter: "interiors",
+      desc: "Serene clinical therapy sanctuary with calibrated mood lighting, medical grade hygiene protocols, and tranquil aesthetic beds.",
+      alt: "Serene private clinical skincare therapy room in a luxury Mumbai salon, ergonomic ergonomic facial bed draped in crisp organic white linen, soft jade green ambient lighting, modern aesthetic device stand, minimalist brass fixtures and indoor bamboo fern"
+    },
+    {
+      title: "Honey Caramel Balayage & Blowout",
+      category: "Hair",
+      filter: "hair",
+      desc: "Lustrous freehand dimensional lightening designed for seamless regrowth and mirror-finish hair vitality.",
+      alt: "High-gloss honey caramel balayage waves on long silky brunette hair, captured under diffuse salon studio light highlighting seamless gradient color melting and mirror-like shine, luxurious blowout finish, high-end editorial hair presentation"
+    },
+    {
+      title: "Clinical Hydra Facial Cleansing Ritual",
+      category: "Skin",
+      filter: "skin",
+      desc: "Gentle pore extraction followed by antioxidant vortex infusion for instantly plumper, dewy skin radiance.",
+      alt: "A gentle medical-grade hydra-dermabrasion facial wand gently gliding across a smiling woman's glowing cheek, fine water mist droplets and crystal clear botanical serum reflections, soft towel headwrap, clinical spa lighting in warm sage tones"
+    },
+    {
+      title: "Botanical Petal Foot Soak & Pedicure",
+      category: "Wellness",
+      filter: "transformations",
+      desc: "Warm brass foot basin scented with damask rose and essential aromatics, revitalizing tired city feet.",
+      alt: "Artisanal hammered brass pedicure basin filled with warm water, floating fragrant pink rose petals and marigolds with natural essential botanical oils, aesthetic salon stone floor background, warm atmospheric daylight"
+    },
+    {
+      title: "Main Styling Floor & Arched Mirrors",
+      category: "Interiors",
+      filter: "interiors",
+      desc: "Our iconic styling salon space in BPS Plaza featuring bespoke lighting arches and plush green leather seats.",
+      alt: "Panoramic perspective of Smietz Beauty Hub salon floor in Mulund West, custom arched backlit mirrors, plush emerald green leather salon styling chairs, polished terrazzo flooring, warm brass detailing and botanical indoor plants"
+    },
+    {
+      title: "Glowing Trousseau Bride in Temple Jewels",
+      category: "Bridal",
+      filter: "bridal",
+      desc: "High-definition bridal makeup balanced with regal jewellery, honoring 35 years of trousseau heritage.",
+      alt: "Close up portrait of a radiant Indian bride smiling gently, flawless HD dewy makeup, kohl rimmed eyes, delicate matha patti forehead jewellery and traditional temple necklace, emerald green veil border accents, high fashion bridal editorial"
+    },
+    {
+      title: "Sushama's Diagnostic Consultation",
+      category: "Consult",
+      filter: "transformations",
+      desc: "Founder Sushama curating custom scalp and skin rejuvenation formulas based on 35 years of Mulund clientele trust.",
+      alt: "Master aesthetician Sushama in elegant dark uniform attentively consulting with an Indian client across a minimalist consult desk in a calm private consultation suite, discussing personalized skin rejuvenation regimen, warm professional ambiance"
+    }
+  ];
+
+  let currentLightboxIndex = 0;
+
+  function openLightbox(index) {
+    currentLightboxIndex = index;
+    updateLightboxUI();
+    const modal = document.getElementById('lightbox-modal');
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    const modal = document.getElementById('lightbox-modal');
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+    document.body.style.overflow = '';
+  }
+
+  function nextLightboxImage() {
+    currentLightboxIndex = (currentLightboxIndex + 1) % galleryItems.length;
+    updateLightboxUI();
+  }
+
+  function prevLightboxImage() {
+    currentLightboxIndex = (currentLightboxIndex - 1 + galleryItems.length) % galleryItems.length;
+    updateLightboxUI();
+  }
+
+  function updateLightboxUI() {
+    const item = galleryItems[currentLightboxIndex];
+    document.getElementById('lightbox-badge').innerText = item.category;
+    document.getElementById('lightbox-counter').innerText = `${currentLightboxIndex + 1} of ${galleryItems.length}`;
+    document.getElementById('lightbox-title').innerText = item.title;
+    document.getElementById('lightbox-desc').innerText = item.desc;
+    
+    const imgEl = document.getElementById('lightbox-image');
+    imgEl.src = "placeholder";
+    imgEl.setAttribute('data-alt', item.alt);
+
+    const waLink = document.getElementById('lightbox-whatsapp-link');
+    waLink.href = `https://wa.me/919604523931?text=Hello%20Smietz%20Beauty%20Hub,%20I%20am%20enquiring%20about%20the%20${encodeURIComponent(item.title)}%20from%20your%20gallery`;
+  }
+
+  // Filter Chips Logic
+  const chips = document.querySelectorAll('.gallery-chip');
+  const cards = document.querySelectorAll('.gallery-card');
+
+  chips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      chips.forEach(c => {
+        c.className = "gallery-chip px-3.5 py-1.5 rounded-full font-label-sm text-label-sm bg-surface-container text-on-surface-variant hover:bg-secondary-fixed/50 hover:text-primary transition-all active:scale-95";
+      });
+      chip.className = "gallery-chip px-3.5 py-1.5 rounded-full font-label-sm text-label-sm bg-primary text-on-primary shadow-sm transition-all active:scale-95 flex items-center gap-1.5";
+
+      const selected = chip.getAttribute('data-filter');
+      cards.forEach(card => {
+        const itemCat = card.getAttribute('data-category');
+        if (selected === 'all' || selected === 'instagram' || itemCat === selected) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+</script></main><aside class="fixed bottom-20 right-4 z-40 max-w-[430px]"><a aria-label="Chat on WhatsApp" class="group relative flex items-center justify-center w-12 h-12 bg-primary-container text-on-tertiary rounded-full shadow-[0_8px_20px_rgba(0,109,86,0.4)] active:scale-95 transition-all" href="https://wa.me/919604523931?text=Hello%20Smietz%20Beauty%20Hub" rel="noopener noreferrer" target="_blank"><span class="absolute -inset-1 rounded-full bg-secondary-fixed/50 animate-ping opacity-60 pointer-events-none"></span><span class="material-symbols-outlined text-2xl group-hover:scale-110 transition-transform">chat</span></a></aside><footer class="w-full bg-surface-container-low text-on-surface-variant pt-10 pb-24 px-5 border-t border-outline-variant/30"><div class="flex flex-col gap-6"><div class="flex items-center gap-3"><img alt="Smietz Beauty Hub" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ALJJyrA27V14_dXUb964qE5WWM8SpZZxR6ii0TCaO5mPZzq3mfzKLObH2JhTjowxtoWaJ1XEcnzbSH5OYshadODHaauhZZthqqCe4heNy8owb_F8WBaTzUsjAH_iqDyjcegkGDBmmvAyq8d0mg24ofe0BhXxtseWZKzskseO3Bz7qk60GfY4ufKbWaus80B46-iiQB8Oem_HC9Z-265sL5yOarNUZ_Qa_wKHblzMPviU02rA"/><div class="flex flex-col"><span class="font-headline-sm text-base text-primary font-semibold">Smietz</span><span class="font-eyebrow text-[9px] uppercase text-secondary font-bold -mt-0.5 tracking-widest">Beauty Hub</span></div></div><p class="font-title-md text-sm text-primary font-serif italic">35 Years of Beauty &amp; Wellness Expertise</p><p class="font-body-sm text-xs leading-relaxed text-on-surface-variant">Premier destination in Mumbai for restorative clinical facials, hair transformation therapies, and bespoke bridal trousseau makeovers.</p><div class="flex flex-col gap-2.5 pt-2"><div class="flex items-start gap-2.5"><span class="material-symbols-outlined text-secondary text-[18px] shrink-0 mt-0.5">location_on</span><p class="font-body-sm text-xs text-on-surface-variant">Shop No. 2, BPS Plaza, Devidayal Road, Mulund West, Mumbai 400080</p></div><div class="flex items-center gap-2.5"><span class="material-symbols-outlined text-secondary text-[18px] shrink-0">schedule</span><p class="font-body-sm text-xs text-on-surface-variant">Tue – Sun: 10:00 AM – 8:00 PM (Mon Closed)</p></div><div class="flex items-center gap-2.5"><span class="material-symbols-outlined text-secondary text-[18px] shrink-0">call</span><a class="font-body-sm text-xs text-primary font-medium hover:underline" href="tel:+919604523931">+91 96045 23931</a></div></div><div class="pt-2"><span class="font-eyebrow text-[10px] text-secondary font-bold uppercase tracking-wider block mb-2">Quick Navigation</span><div class="grid grid-cols-2 gap-2 text-xs" data-active-classes="text-primary font-semibold"><a class="text-on-surface-variant hover:text-primary py-0.5" data-path="home" href="#">Home</a><a class="text-on-surface-variant hover:text-primary py-0.5" data-path="about-us" href="#">About Us</a><a class="text-on-surface-variant hover:text-primary py-0.5" data-path="all-services" href="#">All Services</a><a class="text-on-surface-variant hover:text-primary py-0.5" data-path="hair-care" href="#">Hair Care</a><a class="text-on-surface-variant hover:text-primary py-0.5" data-path="skin-care-facials" href="#">Skin Care &amp; Facials</a><a class="text-on-surface-variant hover:text-primary py-0.5" data-path="advanced-skin-care" href="#">Advanced Skin Care</a><a class="text-on-surface-variant hover:text-primary py-0.5" data-path="bridal-makeup" href="#">Bridal &amp; Makeup</a><a class="text-on-surface-variant hover:text-primary py-0.5" data-path="gallery" href="#">Gallery</a><a class="text-on-surface-variant hover:text-primary py-0.5" data-path="testimonials" href="#">Testimonials</a><a class="text-on-surface-variant hover:text-primary py-0.5" data-path="contact-book-appointment" href="#">Contact &amp; Book</a></div></div><div class="pt-4 border-t border-outline-variant/30 text-center"><p class="font-label-sm text-[11px] text-outline">© 2025 Smietz Beauty Hub. Mulund West, Mumbai.</p></div></div></footer><nav aria-label="Bottom Action Bar" class="fixed bottom-0 max-w-[430px] w-full z-50 bg-surface/95 backdrop-blur-xl shadow-[0_-4px_16px_rgba(26,38,33,0.08)] px-4 py-2.5 pb-safe"><div class="flex items-center gap-3"><a class="flex-1 flex items-center justify-center gap-1.5 py-3 px-3 rounded-full bg-surface-container-high text-primary hover:bg-secondary-fixed font-label-md text-label-md font-semibold active:scale-[0.98] transition-all shadow-sm" href="tel:+919604523931"><span class="material-symbols-outlined text-[20px]">call</span><span>Call Reception</span></a><a class="flex-1 flex items-center justify-center gap-1.5 py-3 px-3 rounded-full bg-tertiary-container text-on-tertiary font-label-md text-label-md font-semibold shadow-[0_4px_14px_rgba(158,70,0,0.3)] active:scale-[0.98] transition-all" href="https://wa.me/919604523931?text=Hello%20Smietz%20Beauty%20Hub,%20I%20would%20like%20to%20book%20an%20appointment" rel="noopener noreferrer" target="_blank"><span class="material-symbols-outlined text-[20px]">chat_bubble</span><span>WhatsApp</span></a></div></nav></body></html>

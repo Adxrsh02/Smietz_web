@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}#mobile-drawer-toggle:checked ~ #mobile-menu-drawer{transform:translateX(0);pointer-events:auto;opacity:1;}#mobile-drawer-toggle:checked ~ #mobile-menu-backdrop{opacity:1;pointer-events:auto;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface": "#effdf4", "surface-tint": "#006b55", "primary-container": "#006d56", "tertiary-fixed": "#ffdbca", "primary": "#005240", "on-tertiary-container": "#ffd2bb", "on-error-container": "#93000a", "secondary-container": "#fdd487", "outline": "#6e7a74", "surface-variant": "#d8e6de", "tertiary-fixed-dim": "#ffb68e", "tertiary": "#793400", "surface-bright": "#effdf4", "on-secondary-fixed-variant": "#5d4200", "surface-dim": "#cfddd5", "on-primary-fixed": "#002118", "tertiary-container": "#9e4600", "surface-container": "#e3f1e9", "on-secondary-fixed": "#261900", "surface-container-low": "#e9f7ef", "on-tertiary": "#ffffff", "surface-container-highest": "#d8e6de", "primary-fixed": "#9df3d6", "on-tertiary-fixed": "#331200", "on-surface": "#121e19", "on-error": "#ffffff", "secondary-fixed": "#ffdea4", "error-container": "#ffdad6", "on-primary": "#ffffff", "surface-container-lowest": "#ffffff", "inverse-surface": "#27332e", "secondary-fixed-dim": "#e8c176", "inverse-primary": "#81d7ba", "on-primary-container": "#95ebce", "on-background": "#121e19", "outline-variant": "#bec9c3", "on-secondary": "#ffffff", "on-primary-fixed-variant": "#00513f", "secondary": "#775a19", "background": "#effdf4", "on-surface-variant": "#3e4945", "error": "#ba1a1a", "on-tertiary-fixed-variant": "#773300", "primary-fixed-dim": "#81d7ba", "surface-container-high": "#deebe3", "on-secondary-container": "#785a19", "inverse-on-surface": "#e6f4ec" }, "borderRadius": { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" }, "spacing": { "gutter": "1.5rem", "margin-desktop": "3.5rem", "space-lg": "1.5rem", "space-xs": "0.25rem", "gutter-desktop": "2rem", "space-xl": "2.5rem", "margin": "1.25rem", "space-md": "1rem", "space-sm": "0.5rem" }, "fontFamily": { "display-hero-mobile": [ "Playfair Display" ], "eyebrow": [ "Plus Jakarta Sans" ], "display-hero": [ "Playfair Display" ], "body-md": [ "Plus Jakarta Sans" ], "title-md": [ "Plus Jakarta Sans" ], "headline-lg": [ "Playfair Display" ], "headline-lg-mobile": [ "Playfair Display" ], "label-sm": [ "Plus Jakarta Sans" ], "body-lg": [ "Plus Jakarta Sans" ], "headline-md": [ "Playfair Display" ], "headline-sm": [ "Playfair Display" ], "body-sm": [ "Plus Jakarta Sans" ], "headline-md-mobile": [ "Playfair Display" ], "label-md": [ "Plus Jakarta Sans" ] }, "fontSize": { "display-hero-mobile": [ "36px", { "lineHeight": "46px", "letterSpacing": "-0.01em", "fontWeight": "600" } ], "eyebrow": [ "12px", { "lineHeight": "16px", "letterSpacing": "0.18em", "fontWeight": "700" } ], "display-hero": [ "56px", { "lineHeight": "68px", "letterSpacing": "-0.02em", "fontWeight": "600" } ], "body-md": [ "16px", { "lineHeight": "26px", "fontWeight": "400" } ], "title-md": [ "18px", { "lineHeight": "26px", "fontWeight": "600" } ], "headline-lg": [ "40px", { "lineHeight": "52px", "letterSpacing": "-0.01em", "fontWeight": "500" } ], "headline-lg-mobile": [ "28px", { "lineHeight": "38px", "fontWeight": "500" } ], "label-sm": [ "12px", { "lineHeight": "16px", "fontWeight": "600" } ], "body-lg": [ "18px", { "lineHeight": "28px", "fontWeight": "400" } ], "headline-md": [ "32px", { "lineHeight": "42px", "fontWeight": "500" } ], "headline-sm": [ "22px", { "lineHeight": "30px", "fontWeight": "600" } ], "body-sm": [ "14px", { "lineHeight": "22px", "fontWeight": "400" } ], "headline-md-mobile": [ "24px", { "lineHeight": "32px", "fontWeight": "500" } ], "label-md": [ "14px", { "lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "600" } ] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-on-surface antialiased selection:bg-secondary-fixed selection:text-on-secondary-fixed max-w-[430px] mx-auto min-h-screen relative shadow-2xl flex flex-col"><input class="hidden" id="mobile-drawer-toggle" type="checkbox"/><header class="fixed top-0 max-w-[430px] w-full z-50 bg-surface/95 backdrop-blur-xl shadow-[0_2px_16px_rgba(26,38,33,0.06)]"><div class="h-16 px-4 flex items-center justify-between"><a class="flex items-center gap-2.5" data-path="home" href="#"><img alt="Smietz Beauty Hub Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ALJJyrA27V14_dXUb964qE5WWM8SpZZxR6ii0TCaO5mPZzq3mfzKLObH2JhTjowxtoWaJ1XEcnzbSH5OYshadODHaauhZZthqqCe4heNy8owb_F8WBaTzUsjAH_iqDyjcegkGDBmmvAyq8d0mg24ofe0BhXxtseWZKzskseO3Bz7qk60GfY4ufKbWaus80B46-iiQB8Oem_HC9Z-265sL5yOarNUZ_Qa_wKHblzMPviU02rA"/><div class="flex flex-col"><span class="font-headline-sm text-[18px] leading-tight text-primary font-semibold tracking-tight">Smietz</span><span class="font-eyebrow text-[9px] uppercase text-secondary font-bold tracking-widest">Beauty Hub</span></div></a><div class="flex items-center gap-2"><a aria-label="Call Salon" class="w-10 h-10 rounded-full flex items-center justify-center bg-surface-container text-primary hover:bg-secondary-fixed active:scale-95 transition-transform" href="tel:+919604523931"><span class="material-symbols-outlined text-[20px]">call</span></a><label aria-label="Toggle Navigation Menu" class="w-10 h-10 rounded-full flex items-center justify-center bg-primary text-on-primary active:scale-95 transition-transform cursor-pointer shadow-sm" for="mobile-drawer-toggle"><span class="material-symbols-outlined text-[22px]">menu</span></label></div></div></header><div class="fixed inset-0 bg-inverse-surface/60 backdrop-blur-sm z-50 opacity-0 pointer-events-none transition-opacity duration-300 max-w-[430px] mx-auto" id="mobile-menu-backdrop"><label class="absolute inset-0 cursor-pointer" for="mobile-drawer-toggle"></label></div><div class="fixed inset-y-0 right-0 w-[88%] max-w-[360px] bg-surface z-50 shadow-2xl transform translate-x-full transition-all duration-300 ease-out flex flex-col justify-between overflow-y-auto" id="mobile-menu-drawer"><div class="p-5"><div class="flex items-center justify-between pb-4 border-b border-outline-variant/40"><div class="flex items-center gap-2.5"><img alt="Smietz Logo" class="h-7 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ALJJyrA27V14_dXUb964qE5WWM8SpZZxR6ii0TCaO5mPZzq3mfzKLObH2JhTjowxtoWaJ1XEcnzbSH5OYshadODHaauhZZthqqCe4heNy8owb_F8WBaTzUsjAH_iqDyjcegkGDBmmvAyq8d0mg24ofe0BhXxtseWZKzskseO3Bz7qk60GfY4ufKbWaus80B46-iiQB8Oem_HC9Z-265sL5yOarNUZ_Qa_wKHblzMPviU02rA"/><span class="font-headline-sm text-base text-primary font-semibold">Smietz Luxury Menu</span></div><label aria-label="Close Menu" class="w-9 h-9 rounded-full flex items-center justify-center bg-surface-container text-on-surface hover:bg-surface-variant cursor-pointer" for="mobile-drawer-toggle"><span class="material-symbols-outlined text-[20px]">close</span></label></div><nav class="py-4 flex flex-col gap-1" data-active-classes="bg-surface-container-high text-primary font-semibold"><a class="flex items-center justify-between px-3.5 py-3 rounded-lg text-on-surface hover:bg-surface-container font-label-md text-label-md transition-colors" data-path="home" href="#"><span class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px] text-primary">spa</span>Home</span><span class="material-symbols-outlined text-[16px] text-outline">chevron_right</span></a><a class="flex items-center justify-between px-3.5 py-3 rounded-lg text-on-surface hover:bg-surface-container font-label-md text-label-md transition-colors" data-path="about-us" href="#"><span class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px] text-primary">auto_awesome</span>About Us</span><span class="material-symbols-outlined text-[16px] text-outline">chevron_right</span></a><a class="flex items-center justify-between px-3.5 py-3 rounded-lg text-on-surface hover:bg-surface-container font-label-md text-label-md transition-colors" data-path="all-services" href="#"><span class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px] text-primary">list_alt</span>All Services</span><span class="material-symbols-outlined text-[16px] text-outline">chevron_right</span></a><a class="flex items-center justify-between px-3.5 py-3 rounded-lg text-on-surface hover:bg-surface-container font-label-md text-label-md transition-colors pl-6" data-path="hair-care" href="#"><span class="flex items-center gap-3"><span class="material-symbols-outlined text-[18px] text-secondary">content_cut</span>Hair Care</span><span class="material-symbols-outlined text-[16px] text-outline">chevron_right</span></a><a class="flex items-center justify-between px-3.5 py-3 rounded-lg text-on-surface hover:bg-surface-container font-label-md text-label-md transition-colors pl-6" data-path="skin-care-facials" href="#"><span class="flex items-center gap-3"><span class="material-symbols-outlined text-[18px] text-secondary">face_3</span>Skin Care &amp; Facials</span><span class="material-symbols-outlined text-[16px] text-outline">chevron_right</span></a><a class="flex items-center justify-between px-3.5 py-3 rounded-lg text-on-surface hover:bg-surface-container font-label-md text-label-md transition-colors" data-path="advanced-skin-care" href="#"><span class="flex items-center gap-3"><span class="material-symbols-outlined text-[18px] text-secondary">biotech</span>Advanced Skin Care</span><span class="material-symbols-outlined text-[16px] text-outline">chevron_right</span></a><a class="flex items-center justify-between px-3.5 py-3 rounded-lg text-on-surface hover:bg-surface-container font-label-md text-label-md transition-colors" data-path="bridal-makeup" href="#"><span class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px] text-primary">diamond</span>Bridal &amp; Makeup</span><span class="material-symbols-outlined text-[16px] text-outline">chevron_right</span></a><a class="flex items-center justify-between px-3.5 py-3 rounded-lg text-on-surface hover:bg-surface-container font-label-md text-label-md transition-colors" data-path="gallery" href="#"><span class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px] text-primary">photo_library</span>Gallery</span><span class="material-symbols-outlined text-[16px] text-outline">chevron_right</span></a><a class="flex items-center justify-between px-3.5 py-3 rounded-lg text-on-surface hover:bg-surface-container font-label-md text-label-md transition-colors" data-path="testimonials" href="#"><span class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px] text-primary">reviews</span>Testimonials</span><span class="material-symbols-outlined text-[16px] text-outline">chevron_right</span></a><a class="flex items-center justify-between px-3.5 py-3 rounded-lg text-on-surface hover:bg-surface-container font-label-md text-label-md transition-colors" data-path="contact-book-appointment" href="#"><span class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px] text-primary">calendar_month</span>Contact &amp; Book Appointment</span><span class="material-symbols-outlined text-[16px] text-outline">chevron_right</span></a></nav></div><div class="p-5 bg-surface-container-low border-t border-outline-variant/30 flex flex-col gap-3"><a class="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-full bg-tertiary-container hover:bg-tertiary text-on-tertiary font-label-md text-label-md shadow-md active:scale-[0.98] transition-transform" href="https://wa.me/919604523931?text=Hello%20Smietz%20Beauty%20Hub,%20I%20would%20like%20to%20book%20an%20appointment" rel="noopener noreferrer" target="_blank"><span class="material-symbols-outlined text-[18px]">calendar_month</span><span>WhatsApp Appointment</span></a><a class="w-full flex items-center justify-center gap-2 py-2.5 px-4 rounded-full border border-primary text-primary font-label-md text-label-md hover:bg-primary hover:text-on-primary transition-colors" href="tel:+919604523931"><span class="material-symbols-outlined text-[18px]">call</span><span>+91 96045 23931</span></a><div class="text-center font-eyebrow text-[10px] text-outline uppercase tracking-wider pt-1">35 Years Heritage • Mulund West</div></div></div><main class="w-full pt-16 pb-28 bg-surface flex-grow"><div class="flex flex-col w-full">
+<!-- Interactive Toast Notification State (Hidden by default, triggered on submit) -->
+<div class="fixed top-20 left-4 right-4 z-50 transform -translate-y-24 opacity-0 transition-all duration-500 pointer-events-none max-w-[398px] mx-auto" id="booking-toast">
+<div class="bg-primary text-on-primary p-4 rounded-xl shadow-2xl flex items-start gap-3">
+<div class="w-8 h-8 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+</div>
+<div class="flex-1 min-w-0">
+<p class="font-title-md text-label-md font-semibold text-primary-fixed">Inquiry Dispatched With Joy!</p>
+<p class="font-body-sm text-label-sm text-surface-container-low mt-0.5">Thank you! Your slot inquiry has been received. Our reception will confirm your timing on WhatsApp shortly.</p>
+</div>
+<button class="text-surface-container-high hover:text-white p-1" onclick="dismissToast()">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+</div>
+<!-- Breadcrumbs & Editorial Header -->
+<section class="px-5 pt-4 pb-2">
+<nav class="flex items-center gap-1.5 text-secondary font-label-sm text-label-sm mb-3">
+<a class="hover:text-primary transition-colors flex items-center gap-1" href="#">
+<span class="material-symbols-outlined text-[14px]">home</span>
+<span>Home</span>
+</a>
+<span class="text-outline-variant text-[12px]">•</span>
+<span class="text-primary font-semibold">Contact &amp; Book</span>
+</nav>
+<div class="flex items-center gap-2 mb-1.5">
+<span class="w-5 h-[1.5px] bg-secondary"></span>
+<span class="font-eyebrow text-eyebrow uppercase text-secondary font-bold tracking-widest">We Are Here For You</span>
+<span class="w-5 h-[1.5px] bg-secondary"></span>
+</div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary font-semibold tracking-tight">
+      Connect &amp; Schedule
+    </h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2 leading-relaxed">
+      Book your personalized skin, hair or bridal consultation with our master aestheticians at Mulund West. We craft bespoke treatments designed around your rhythm.
+    </p>
+</section>
+<!-- High-Touch Quick Contact Hub -->
+<section class="px-5 py-3 space-y-3.5">
+<!-- WhatsApp VIP Card (Primary Tap Target) -->
+<div class="relative overflow-hidden bg-primary-container text-on-primary rounded-2xl p-5 shadow-lg shadow-primary-container/20 group">
+<div class="absolute -right-8 -top-8 w-28 h-28 rounded-full bg-primary-fixed/10 pointer-events-none"></div>
+<div class="relative z-10 flex flex-col gap-3">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-10 h-10 rounded-full bg-surface-container-lowest text-primary flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[24px]">chat</span>
+</div>
+<div>
+<span class="font-eyebrow text-[10px] uppercase text-primary-fixed tracking-wider font-bold block">Fastest Response</span>
+<h2 class="font-headline-sm text-[18px] text-surface-container-lowest leading-tight font-medium">WhatsApp Priority Desk</h2>
+</div>
+</div>
+<span class="bg-secondary-fixed text-on-secondary-fixed text-label-sm font-label-sm px-2.5 py-0.5 rounded-full font-bold">Online</span>
+</div>
+<p class="font-body-sm text-body-sm text-surface-container-low leading-snug">
+          Instant slot booking, customized treatment menus, and direct aesthetic consultation.
+        </p>
+<div class="pt-1">
+<a class="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-md text-label-md font-semibold hover:bg-secondary-container active:scale-[0.98] transition-all shadow-md" href="https://wa.me/919604523931?text=Hello%20Smietz%20Beauty%20Hub,%20I%20would%20like%20to%20reserve%20an%20appointment" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[20px]">send</span>
+<span>Message +91 96045 23931</span>
+</a>
+</div>
+</div>
+</div>
+<!-- 2-Column Action Tiles: Call Desk & Instagram Story -->
+<div class="grid grid-cols-2 gap-3">
+<!-- Call Reception -->
+<a class="bg-surface-container-lowest p-4 rounded-xl shadow-sm flex flex-col justify-between hover:bg-surface-container transition-colors group" href="tel:+919604523931">
+<div>
+<div class="w-9 h-9 rounded-full bg-surface-container text-primary flex items-center justify-center mb-2.5 group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">call</span>
+</div>
+<span class="font-eyebrow text-[9px] uppercase text-secondary font-bold block tracking-wider">Direct Desk</span>
+<h3 class="font-headline-sm text-label-md text-on-surface font-semibold mt-0.5">Call Reception</h3>
+<p class="font-body-sm text-[11px] text-on-surface-variant mt-1 leading-tight">+91 96045 23931</p>
+</div>
+<div class="pt-3 flex items-center text-primary font-label-sm text-[12px] font-semibold">
+<span>Call Now</span>
+<span class="material-symbols-outlined text-[14px] ml-1">north_east</span>
+</div>
+</a>
+<!-- Instagram Showcase -->
+<a class="bg-surface-container-lowest p-4 rounded-xl shadow-sm flex flex-col justify-between hover:bg-surface-container transition-colors group" href="https://instagram.com" rel="noopener noreferrer" target="_blank">
+<div>
+<div class="w-9 h-9 rounded-full bg-secondary-fixed/50 text-secondary flex items-center justify-center mb-2.5 group-hover:bg-secondary group-hover:text-on-secondary transition-colors">
+<span class="material-symbols-outlined text-[20px]">photo_camera</span>
+</div>
+<span class="font-eyebrow text-[9px] uppercase text-secondary font-bold block tracking-wider">Daily Artistry</span>
+<h3 class="font-headline-sm text-label-md text-on-surface font-semibold mt-0.5">@smietzbeautyhub</h3>
+<p class="font-body-sm text-[11px] text-on-surface-variant mt-1 leading-tight">Bridal stories &amp; care tips</p>
+</div>
+<div class="pt-3 flex items-center text-secondary font-label-sm text-[12px] font-semibold">
+<span>Explore Reel</span>
+<span class="material-symbols-outlined text-[14px] ml-1">north_east</span>
+</div>
+</a>
+</div>
+<!-- Address & Landmark Card -->
+<div class="bg-surface-container-lowest p-4 rounded-2xl shadow-sm flex flex-col gap-3">
+<div class="flex items-start gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-high text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px]">storefront</span>
+</div>
+<div class="flex-1 min-w-0">
+<span class="font-eyebrow text-[10px] uppercase text-secondary font-bold tracking-wider">Sanctuary Address</span>
+<h2 class="font-headline-sm text-title-md text-on-surface font-semibold mt-0.5">BPS Plaza Landmark</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-snug">
+            Shop No. 2, BPS Plaza, Devidayal Road, Mulund West, Mumbai 400080
+          </p>
+</div>
+</div>
+<a class="flex items-center justify-center gap-1.5 py-2.5 px-4 rounded-full bg-surface-container text-primary hover:bg-surface-container-high font-label-md text-label-md font-semibold transition-colors" href="https://maps.google.com/?q=BPS+Plaza+Devidayal+Road+Mulund+West+Mumbai" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[18px]">near_me</span>
+<span>Get Google Directions</span>
+</a>
+</div>
+</section>
+<!-- Interactive Map Card Component -->
+<section class="px-5 py-2">
+<div class="relative overflow-hidden rounded-2xl bg-surface-container-low shadow-sm">
+<div class="w-full h-44 bg-cover bg-center" data-alt="Stylized clean map view of Mulund West Mumbai around Devidayal Road and BPS Plaza with minimalist emerald pins, pristine street layouts, warm champagne tones matching luxury salon aesthetics." data-location="BPS Plaza, Devidayal Road, Mulund West, Mumbai" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDU9aIyTngd_Ic9MdvYzuW3aD3QsXxpgc0OYl4YohbemkGHqy4pFIXqAbuTih_d8Gc_89aRPta4wBCUd8rL_DU7rocWaaOmwXD827NgdHh6KRJYJpMwFn9fRsuuoC1irh9RmJkgtiYKPYz1i5AG_FGx5654BeHXPk_CvEVG6rPmgEzA_bcx_15k1XwMawyY5hf2AncMv1iSgtNIk1oHFLuiD1VFHGAUGqIkIUi5I0w')">
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/85 via-inverse-surface/20 to-transparent flex flex-col justify-end p-4">
+<div class="flex items-center justify-between text-on-primary">
+<div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-secondary-fixed">pin_drop</span>
+<span class="font-title-md text-label-md font-semibold">Mulund West Flagship</span>
+</div>
+<p class="font-body-sm text-label-sm text-surface-variant">Central location with valet parking assistance</p>
+</div>
+<a class="px-3 py-1.5 rounded-full bg-surface-container-lowest text-primary text-label-sm font-label-sm font-semibold shadow-md active:scale-95 transition-transform" href="https://maps.google.com/?q=BPS+Plaza+Devidayal+Road+Mulund+West+Mumbai" rel="noopener noreferrer" target="_blank">
+              Open Map
+            </a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Business Hours Table -->
+<section class="px-5 py-3">
+<div class="bg-surface-container-lowest rounded-2xl p-5 shadow-sm space-y-3.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[22px]">cloud_download</span>
+<h2 class="font-headline-sm text-title-md text-on-surface font-semibold">Salon Operating Hours</h2>
+</div>
+<span class="text-secondary font-label-sm text-label-sm font-bold bg-secondary-fixed/30 px-2 py-0.5 rounded-full">35 Yrs Trust</span>
+</div>
+<div class="space-y-2 text-label-md">
+<div class="flex items-center justify-between py-2 px-3 rounded-lg bg-surface-container-low">
+<span class="font-body-md text-on-surface font-medium">Tuesday – Sunday</span>
+<span class="font-label-md text-primary font-bold">10:00 AM – 8:00 PM</span>
+</div>
+<div class="flex items-center justify-between py-2 px-3 rounded-lg bg-error-container/40">
+<span class="font-body-md text-on-surface font-medium">Monday</span>
+<span class="font-label-md text-error font-bold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span>
+            Weekly Day Off
+          </span>
+</div>
+</div>
+<div class="p-3 rounded-xl bg-surface-container flex items-start gap-2.5">
+<span class="material-symbols-outlined text-secondary text-[18px] shrink-0 mt-0.5">diamond</span>
+<p class="font-body-sm text-[12px] text-on-surface-variant leading-snug">
+<strong class="text-on-surface">Early Bridal Hours:</strong> We accommodate morning muhoorat trousseau calls by advance reservation. Contact reception directly to book bespoke wedding slots.
+        </p>
+</div>
+</div>
+</section>
+<!-- Complimentary Skin Analysis Banner -->
+<section class="px-5 py-2">
+<div class="bg-primary text-on-primary rounded-2xl p-4.5 shadow-md flex items-center gap-3.5">
+<div class="w-12 h-12 rounded-xl bg-surface-container-lowest text-primary flex items-center justify-center shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[26px]">biotech</span>
+</div>
+<div class="flex-1 min-w-0">
+<span class="font-eyebrow text-[9px] uppercase tracking-wider text-secondary-fixed font-bold">Exclusive Privilege</span>
+<h3 class="font-headline-sm text-label-md text-white font-semibold">Free Digital Derm-Analysis</h3>
+<p class="font-body-sm text-label-sm text-surface-variant mt-0.5 line-clamp-2">Receive an expert cellular moisture &amp; pore health scan prior to your facial.</p>
+</div>
+</div>
+</section>
+<!-- Comprehensive Mobile Appointment Form -->
+<section class="px-5 py-4">
+<div class="bg-surface-container-lowest rounded-2xl p-5 shadow-sm space-y-4">
+<div>
+<div class="flex items-center gap-1.5 mb-1">
+<span class="material-symbols-outlined text-secondary text-[18px]">calendar_add_on</span>
+<span class="font-eyebrow text-eyebrow uppercase text-secondary font-bold tracking-wider">Direct Reservation</span>
+</div>
+<h2 class="font-headline-md-mobile text-headline-md-mobile text-on-surface font-semibold">Reserve Your Appointment</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-normal">
+          Fill in your details and our team will get in touch on WhatsApp to confirm your exact seat.
+        </p>
+</div>
+<form class="space-y-3.5" id="appointment-form" onsubmit="handleFormSubmit(event)">
+<!-- Full Name -->
+<div class="space-y-1">
+<label class="font-label-md text-label-md text-on-surface font-semibold block" for="client-name">
+            Full Name <span class="text-error">*</span>
+</label>
+<div class="relative">
+<input class="w-full bg-surface-container-low text-on-surface placeholder:text-outline text-body-md py-3 px-3.5 pl-10 rounded-xl focus:outline-none focus:bg-surface-container-lowest transition-all" id="client-name" placeholder="e.g. Radhika Sharma" required="" type="text"/>
+<span class="material-symbols-outlined text-outline text-[20px] absolute left-3 top-3.5 pointer-events-none">person</span>
+</div>
+</div>
+<!-- Phone Number with +91 indicator -->
+<div class="space-y-1">
+<label class="font-label-md text-label-md text-on-surface font-semibold block" for="client-phone">
+            WhatsApp Phone Number <span class="text-error">*</span>
+</label>
+<div class="flex items-center bg-surface-container-low rounded-xl focus-within:bg-surface-container-lowest transition-all">
+<span class="font-label-md text-on-surface-variant font-semibold pl-3.5 pr-2 py-3 flex items-center gap-1 shrink-0">
+<span class="material-symbols-outlined text-[18px] text-secondary">phone_iphone</span>
+              +91
+            </span>
+<input class="w-full bg-transparent text-on-surface placeholder:text-outline text-body-md py-3 pr-3.5 focus:outline-none" id="client-phone" pattern="[0-9]{10}" placeholder="98765 43210" required="" type="tel"/>
+</div>
+</div>
+<!-- Service Category Selector -->
+<div class="space-y-1">
+<div class="flex items-center justify-between">
+<label class="font-label-md text-label-md text-on-surface font-semibold block" for="service-category">
+              Service Category <span class="text-error">*</span>
+</label>
+<span class="hidden text-error font-label-sm text-[11px] font-semibold" id="service-error-badge">Selection Required</span>
+</div>
+<div class="relative">
+<select class="w-full appearance-none bg-surface-container-low text-on-surface text-body-md py-3 px-3.5 pl-10 pr-9 rounded-xl focus:outline-none focus:bg-surface-container-lowest transition-all" id="service-category" required="">
+<option disabled="" selected="" value="">Select from 9 signature domains...</option>
+<option value="Hair Services">Hair Services (Cuts &amp; Styling)</option>
+<option value="Hair Spa">Hair Spa (Deep Nourishment)</option>
+<option value="Hair Colour">Hair Colour (Global, Highlights, Balayage)</option>
+<option value="Hand &amp; Foot Care">Hand &amp; Foot Care (Luxury Pedicures)</option>
+<option value="Skin Care &amp; Bleach/D-Tan">Skin Care &amp; Bleach / D-Tan</option>
+<option value="Clean-Ups &amp; Facials">Clean-Ups &amp; Organic Facials</option>
+<option value="Advanced Skin Care">Advanced Skin Care &amp; Clinical Peels</option>
+<option value="Bridal &amp; Makeup">Bridal &amp; Occasion Makeup</option>
+<option value="Laser &amp; Hair Reduction">Laser &amp; Hair Reduction Therapy</option>
+</select>
+<span class="material-symbols-outlined text-outline text-[20px] absolute left-3 top-3.5 pointer-events-none">spa</span>
+<span class="material-symbols-outlined text-outline text-[20px] absolute right-3 top-3.5 pointer-events-none">expand_more</span>
+</div>
+</div>
+<!-- Preferred Date & Slot (2 Cols) -->
+<div class="grid grid-cols-2 gap-2.5">
+<div class="space-y-1">
+<label class="font-label-md text-label-md text-on-surface font-semibold block" for="booking-date">
+              Preferred Date <span class="text-error">*</span>
+</label>
+<input class="w-full bg-surface-container-low text-on-surface text-body-md py-2.5 px-3 rounded-xl focus:outline-none focus:bg-surface-container-lowest transition-all" id="booking-date" required="" type="date"/>
+</div>
+<div class="space-y-1">
+<label class="font-label-md text-label-md text-on-surface font-semibold block" for="booking-time">
+              Preferred Slot <span class="text-error">*</span>
+</label>
+<div class="relative">
+<select class="w-full appearance-none bg-surface-container-low text-on-surface text-body-md py-2.5 px-3 pr-8 rounded-xl focus:outline-none focus:bg-surface-container-lowest transition-all" id="booking-time" required="">
+<option disabled="" selected="" value="">Time slot...</option>
+<option value="Morning (10:00 AM - 01:00 PM)">Morning: 10AM - 1PM</option>
+<option value="Afternoon (01:00 PM - 04:00 PM)">Afternoon: 1PM - 4PM</option>
+<option value="Evening (04:00 PM - 08:00 PM)">Evening: 4PM - 8PM</option>
+</select>
+<span class="material-symbols-outlined text-outline text-[18px] absolute right-2 top-3 pointer-events-none">schedule</span>
+</div>
+</div>
+</div>
+<!-- Message / Notes -->
+<div class="space-y-1">
+<label class="font-label-md text-label-md text-on-surface font-semibold block" for="booking-notes">
+            Special Notes or Skin/Hair Concerns
+          </label>
+<textarea class="w-full bg-surface-container-low text-on-surface placeholder:text-outline text-body-md py-2.5 px-3.5 rounded-xl focus:outline-none focus:bg-surface-container-lowest transition-all" id="booking-notes" placeholder="Mention skin sensitivities, preferred stylist, or event date..." rows="2"></textarea>
+</div>
+<!-- WhatsApp / Phone Consent Checkbox -->
+<div class="pt-1">
+<label class="flex items-start gap-2.5 cursor-pointer">
+<input checked="" class="mt-1 w-4 h-4 rounded text-primary focus:ring-primary accent-primary" required="" type="checkbox"/>
+<span class="font-body-sm text-[12px] text-on-surface-variant leading-snug">
+              I agree to be contacted via WhatsApp/phone regarding my appointment inquiry and custom preparation advice.
+            </span>
+</label>
+</div>
+<!-- Primary Action Trigger -->
+<div class="pt-2">
+<button class="w-full flex items-center justify-center gap-2 py-3.5 px-6 rounded-full bg-tertiary-container hover:bg-tertiary text-on-tertiary font-label-md text-label-md font-semibold shadow-lg shadow-tertiary-container/30 active:scale-[0.98] transition-all" type="submit">
+<span class="material-symbols-outlined text-[20px]">calendar_month</span>
+<span>Submit Appointment Request</span>
+</button>
+</div>
+</form>
+</div>
+</section>
+<!-- Interactive Form States Showcase (Design Demonstration & Guidance) -->
+<section class="px-5 py-2">
+<div class="bg-surface-container-high rounded-2xl p-4.5 space-y-3">
+<div class="flex items-center justify-between">
+<span class="font-eyebrow text-[10px] uppercase text-secondary font-bold tracking-widest">Design System Preview</span>
+<span class="font-label-sm text-[11px] text-outline">Interactive Guide</span>
+</div>
+<h3 class="font-headline-sm text-title-md text-on-surface font-semibold">Form Feedback States</h3>
+<!-- State: Focused Field -->
+<div class="space-y-1">
+<div class="flex items-center justify-between text-[11px]">
+<span class="font-label-sm text-primary font-semibold">1. Active Focus State</span>
+<span class="text-outline">Tonal Emerald</span>
+</div>
+<div class="relative">
+<input class="w-full bg-surface-container-lowest text-on-surface text-body-sm py-2 px-3 rounded-lg shadow-sm font-medium" readonly="" type="text" value="Deep Botanical Facial Treatment"/>
+<span class="material-symbols-outlined text-primary text-[18px] absolute right-2.5 top-2.5">check_circle</span>
+</div>
+</div>
+<!-- State: Error State -->
+<div class="space-y-1">
+<div class="flex items-center justify-between text-[11px]">
+<span class="font-label-sm text-error font-semibold">2. Validation Alert State</span>
+<span class="text-error font-medium">Please select a service category</span>
+</div>
+<div class="relative">
+<input class="w-full bg-error-container text-on-error-container text-body-sm py-2 px-3 rounded-lg font-medium" readonly="" type="text" value="No service selected"/>
+<span class="material-symbols-outlined text-error text-[18px] absolute right-2.5 top-2.5">error</span>
+</div>
+</div>
+<!-- State: Success State -->
+<div class="space-y-1">
+<span class="font-label-sm text-secondary font-semibold text-[11px]">3. Confirmation Notification State</span>
+<div class="p-3 bg-surface-container-lowest rounded-xl flex items-center gap-2.5 shadow-sm">
+<div class="w-6 h-6 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[14px]">done_all</span>
+</div>
+<p class="font-body-sm text-[11px] text-on-surface leading-tight">
+            Slot reserved on hold! WhatsApp notification sent with receptionist pin.
+          </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Reassurance & Heritage Sign-Off -->
+<section class="px-5 pt-3 pb-8 text-center space-y-2">
+<div class="inline-flex items-center justify-center gap-2 px-4 py-1.5 rounded-full bg-surface-container-high text-secondary font-label-sm text-[11px] font-bold">
+<span class="material-symbols-outlined text-[16px]">verified_user</span>
+<span>35 Years Serving Mumbai Families</span>
+</div>
+<p class="font-body-sm text-body-sm text-outline max-w-[320px] mx-auto leading-relaxed">
+      Need urgent support for a same-day bridal or event transformation? Tap WhatsApp below for live desk assistance.
+    </p>
+</section>
+<!-- Client-Side Form Interaction Script -->
+<script>
+    function handleFormSubmit(event) {
+      event.preventDefault();
+      const service = document.getElementById('service-category').value;
+      const errorBadge = document.getElementById('service-error-badge');
+      
+      if (!service) {
+        errorBadge.classList.remove('hidden');
+        return;
+      } else {
+        errorBadge.classList.add('hidden');
+      }
+
+      // Display Toast
+      const toast = document.getElementById('booking-toast');
+      toast.classList.remove('opacity-0', '-translate-y-24', 'pointer-events-none');
+      toast.classList.add('opacity-100', 'translate-y-0');
+
+      // Reset form fields
+      setTimeout(() => {
+        document.getElementById('appointment-form').reset();
+      }, 400);
+
+      // Auto dismiss after 6 seconds
+      setTimeout(() => {
+        dismissToast();
+      }, 6000);
+    }
+
+    function dismissToast() {
+      const toast = document.getElementById('booking-toast');
+      toast.classList.remove('opacity-100', 'translate-y-0');
+      toast.classList.add('opacity-0', '-translate-y-24', 'pointer-events-none');
+    }
+
+    // Set minimum date selector to today
+    try {
+      const today = new Date().toISOString().split('T')[0];
+      const dateInput = document.getElementById('booking-date');
+      if (dateInput) {
+        dateInput.min = today;
+      }
+    } catch (e) {
+      // Graceful fallback
+    }
+  </script>
+</div></main><aside class="fixed bottom-20 right-4 z-40 max-w-[430px]"><a aria-label="Chat on WhatsApp" class="group relative flex items-center justify-center w-12 h-12 bg-primary-container text-on-tertiary rounded-full shadow-[0_8px_20px_rgba(0,109,86,0.4)] active:scale-95 transition-all" href="https://wa.me/919604523931?text=Hello%20Smietz%20Beauty%20Hub" rel="noopener noreferrer" target="_blank"><span class="absolute -inset-1 rounded-full bg-secondary-fixed/50 animate-ping opacity-60 pointer-events-none"></span><span class="material-symbols-outlined text-2xl group-hover:scale-110 transition-transform">chat</span></a></aside><footer class="w-full bg-surface-container-low text-on-surface-variant pt-10 pb-24 px-5 border-t border-outline-variant/30"><div class="flex flex-col gap-6"><div class="flex items-center gap-3"><img alt="Smietz Beauty Hub" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ALJJyrA27V14_dXUb964qE5WWM8SpZZxR6ii0TCaO5mPZzq3mfzKLObH2JhTjowxtoWaJ1XEcnzbSH5OYshadODHaauhZZthqqCe4heNy8owb_F8WBaTzUsjAH_iqDyjcegkGDBmmvAyq8d0mg24ofe0BhXxtseWZKzskseO3Bz7qk60GfY4ufKbWaus80B46-iiQB8Oem_HC9Z-265sL5yOarNUZ_Qa_wKHblzMPviU02rA"/><div class="flex flex-col"><span class="font-headline-sm text-base text-primary font-semibold">Smietz</span><span class="font-eyebrow text-[9px] uppercase text-secondary font-bold -mt-0.5 tracking-widest">Beauty Hub</span></div></div><p class="font-title-md text-sm text-primary font-serif italic">35 Years of Beauty &amp; Wellness Expertise</p><p class="font-body-sm text-xs leading-relaxed text-on-surface-variant">Premier destination in Mumbai for restorative clinical facials, hair transformation therapies, and bespoke bridal trousseau makeovers.</p><div class="flex flex-col gap-2.5 pt-2"><div class="flex items-start gap-2.5"><span class="material-symbols-outlined text-secondary text-[18px] shrink-0 mt-0.5">location_on</span><p class="font-body-sm text-xs text-on-surface-variant">Shop No. 2, BPS Plaza, Devidayal Road, Mulund West, Mumbai 400080</p></div><div class="flex items-center gap-2.5"><span class="material-symbols-outlined text-secondary text-[18px] shrink-0">schedule</span><p class="font-body-sm text-xs text-on-surface-variant">Tue – Sun: 10:00 AM – 8:00 PM (Mon Closed)</p></div><div class="flex items-center gap-2.5"><span class="material-symbols-outlined text-secondary text-[18px] shrink-0">call</span><a class="font-body-sm text-xs text-primary font-medium hover:underline" href="tel:+919604523931">+91 96045 23931</a></div></div><div class="pt-2"><span class="font-eyebrow text-[10px] text-secondary font-bold uppercase tracking-wider block mb-2">Quick Navigation</span><div class="grid grid-cols-2 gap-2 text-xs" data-active-classes="text-primary font-semibold"><a class="text-on-surface-variant hover:text-primary py-0.5" data-path="home" href="#">Home</a><a class="text-on-surface-variant hover:text-primary py-0.5" data-path="about-us" href="#">About Us</a><a class="text-on-surface-variant hover:text-primary py-0.5" data-path="all-services" href="#">All Services</a><a class="text-on-surface-variant hover:text-primary py-0.5" data-path="hair-care" href="#">Hair Care</a><a class="text-on-surface-variant hover:text-primary py-0.5" data-path="skin-care-facials" href="#">Skin Care &amp; Facials</a><a class="text-on-surface-variant hover:text-primary py-0.5" data-path="advanced-skin-care" href="#">Advanced Skin Care</a><a class="text-on-surface-variant hover:text-primary py-0.5" data-path="bridal-makeup" href="#">Bridal &amp; Makeup</a><a class="text-on-surface-variant hover:text-primary py-0.5" data-path="gallery" href="#">Gallery</a><a class="text-on-surface-variant hover:text-primary py-0.5" data-path="testimonials" href="#">Testimonials</a><a class="text-on-surface-variant hover:text-primary py-0.5" data-path="contact-book-appointment" href="#">Contact &amp; Book</a></div></div><div class="pt-4 border-t border-outline-variant/30 text-center"><p class="font-label-sm text-[11px] text-outline">© 2025 Smietz Beauty Hub. Mulund West, Mumbai.</p></div></div></footer><nav aria-label="Bottom Action Bar" class="fixed bottom-0 max-w-[430px] w-full z-50 bg-surface/95 backdrop-blur-xl shadow-[0_-4px_16px_rgba(26,38,33,0.08)] px-4 py-2.5 pb-safe"><div class="flex items-center gap-3"><a class="flex-1 flex items-center justify-center gap-1.5 py-3 px-3 rounded-full bg-surface-container-high text-primary hover:bg-secondary-fixed font-label-md text-label-md font-semibold active:scale-[0.98] transition-all shadow-sm" href="tel:+919604523931"><span class="material-symbols-outlined text-[20px]">call</span><span>Call Reception</span></a><a class="flex-1 flex items-center justify-center gap-1.5 py-3 px-3 rounded-full bg-tertiary-container text-on-tertiary font-label-md text-label-md font-semibold shadow-[0_4px_14px_rgba(158,70,0,0.3)] active:scale-[0.98] transition-all" href="https://wa.me/919604523931?text=Hello%20Smietz%20Beauty%20Hub,%20I%20would%20like%20to%20book%20an%20appointment" rel="noopener noreferrer" target="_blank"><span class="material-symbols-outlined text-[20px]">chat_bubble</span><span>WhatsApp</span></a></div></nav></body></html>

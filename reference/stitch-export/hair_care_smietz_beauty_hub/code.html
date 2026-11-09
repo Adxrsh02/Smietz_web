@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}#mobile-drawer-toggle:checked ~ #mobile-menu-drawer{transform:translateX(0);pointer-events:auto;opacity:1;}#mobile-drawer-toggle:checked ~ #mobile-menu-backdrop{opacity:1;pointer-events:auto;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface": "#effdf4", "surface-tint": "#006b55", "primary-container": "#006d56", "tertiary-fixed": "#ffdbca", "primary": "#005240", "on-tertiary-container": "#ffd2bb", "on-error-container": "#93000a", "secondary-container": "#fdd487", "outline": "#6e7a74", "surface-variant": "#d8e6de", "tertiary-fixed-dim": "#ffb68e", "tertiary": "#793400", "surface-bright": "#effdf4", "on-secondary-fixed-variant": "#5d4200", "surface-dim": "#cfddd5", "on-primary-fixed": "#002118", "tertiary-container": "#9e4600", "surface-container": "#e3f1e9", "on-secondary-fixed": "#261900", "surface-container-low": "#e9f7ef", "on-tertiary": "#ffffff", "surface-container-highest": "#d8e6de", "primary-fixed": "#9df3d6", "on-tertiary-fixed": "#331200", "on-surface": "#121e19", "on-error": "#ffffff", "secondary-fixed": "#ffdea4", "error-container": "#ffdad6", "on-primary": "#ffffff", "surface-container-lowest": "#ffffff", "inverse-surface": "#27332e", "secondary-fixed-dim": "#e8c176", "inverse-primary": "#81d7ba", "on-primary-container": "#95ebce", "on-background": "#121e19", "outline-variant": "#bec9c3", "on-secondary": "#ffffff", "on-primary-fixed-variant": "#00513f", "secondary": "#775a19", "background": "#effdf4", "on-surface-variant": "#3e4945", "error": "#ba1a1a", "on-tertiary-fixed-variant": "#773300", "primary-fixed-dim": "#81d7ba", "surface-container-high": "#deebe3", "on-secondary-container": "#785a19", "inverse-on-surface": "#e6f4ec" }, "borderRadius": { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" }, "spacing": { "gutter": "1.5rem", "margin-desktop": "3.5rem", "space-lg": "1.5rem", "space-xs": "0.25rem", "gutter-desktop": "2rem", "space-xl": "2.5rem", "margin": "1.25rem", "space-md": "1rem", "space-sm": "0.5rem" }, "fontFamily": { "display-hero-mobile": [ "Playfair Display" ], "eyebrow": [ "Plus Jakarta Sans" ], "display-hero": [ "Playfair Display" ], "body-md": [ "Plus Jakarta Sans" ], "title-md": [ "Plus Jakarta Sans" ], "headline-lg": [ "Playfair Display" ], "headline-lg-mobile": [ "Playfair Display" ], "label-sm": [ "Plus Jakarta Sans" ], "body-lg": [ "Plus Jakarta Sans" ], "headline-md": [ "Playfair Display" ], "headline-sm": [ "Playfair Display" ], "body-sm": [ "Plus Jakarta Sans" ], "headline-md-mobile": [ "Playfair Display" ], "label-md": [ "Plus Jakarta Sans" ] }, "fontSize": { "display-hero-mobile": [ "36px", { "lineHeight": "46px", "letterSpacing": "-0.01em", "fontWeight": "600" } ], "eyebrow": [ "12px", { "lineHeight": "16px", "letterSpacing": "0.18em", "fontWeight": "700" } ], "display-hero": [ "56px", { "lineHeight": "68px", "letterSpacing": "-0.02em", "fontWeight": "600" } ], "body-md": [ "16px", { "lineHeight": "26px", "fontWeight": "400" } ], "title-md": [ "18px", { "lineHeight": "26px", "fontWeight": "600" } ], "headline-lg": [ "40px", { "lineHeight": "52px", "letterSpacing": "-0.01em", "fontWeight": "500" } ], "headline-lg-mobile": [ "28px", { "lineHeight": "38px", "fontWeight": "500" } ], "label-sm": [ "12px", { "lineHeight": "16px", "fontWeight": "600" } ], "body-lg": [ "18px", { "lineHeight": "28px", "fontWeight": "400" } ], "headline-md": [ "32px", { "lineHeight": "42px", "fontWeight": "500" } ], "headline-sm": [ "22px", { "lineHeight": "30px", "fontWeight": "600" } ], "body-sm": [ "14px", { "lineHeight": "22px", "fontWeight": "400" } ], "headline-md-mobile": [ "24px", { "lineHeight": "32px", "fontWeight": "500" } ], "label-md": [ "14px", { "lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "600" } ] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-on-surface antialiased selection:bg-secondary-fixed selection:text-on-secondary-fixed max-w-[430px] mx-auto min-h-screen relative shadow-2xl flex flex-col"><input class="hidden" id="mobile-drawer-toggle" type="checkbox"/><header class="fixed top-0 max-w-[430px] w-full z-50 bg-surface/95 backdrop-blur-xl shadow-[0_2px_16px_rgba(26,38,33,0.06)]"><div class="h-16 px-4 flex items-center justify-between"><a class="flex items-center gap-2.5" data-path="home" href="#"><img alt="Smietz Beauty Hub Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ALJJyrA27V14_dXUb964qE5WWM8SpZZxR6ii0TCaO5mPZzq3mfzKLObH2JhTjowxtoWaJ1XEcnzbSH5OYshadODHaauhZZthqqCe4heNy8owb_F8WBaTzUsjAH_iqDyjcegkGDBmmvAyq8d0mg24ofe0BhXxtseWZKzskseO3Bz7qk60GfY4ufKbWaus80B46-iiQB8Oem_HC9Z-265sL5yOarNUZ_Qa_wKHblzMPviU02rA"/><div class="flex flex-col"><span class="font-headline-sm text-[18px] leading-tight text-primary font-semibold tracking-tight">Smietz</span><span class="font-eyebrow text-[9px] uppercase text-secondary font-bold tracking-widest">Beauty Hub</span></div></a><div class="flex items-center gap-2"><a aria-label="Call Salon" class="w-10 h-10 rounded-full flex items-center justify-center bg-surface-container text-primary hover:bg-secondary-fixed active:scale-95 transition-transform" href="tel:+919604523931"><span class="material-symbols-outlined text-[20px]">call</span></a><label aria-label="Toggle Navigation Menu" class="w-10 h-10 rounded-full flex items-center justify-center bg-primary text-on-primary active:scale-95 transition-transform cursor-pointer shadow-sm" for="mobile-drawer-toggle"><span class="material-symbols-outlined text-[22px]">menu</span></label></div></div></header><div class="fixed inset-0 bg-inverse-surface/60 backdrop-blur-sm z-50 opacity-0 pointer-events-none transition-opacity duration-300 max-w-[430px] mx-auto" id="mobile-menu-backdrop"><label class="absolute inset-0 cursor-pointer" for="mobile-drawer-toggle"></label></div><div class="fixed inset-y-0 right-0 w-[88%] max-w-[360px] bg-surface z-50 shadow-2xl transform translate-x-full transition-all duration-300 ease-out flex flex-col justify-between overflow-y-auto" id="mobile-menu-drawer"><div class="p-5"><div class="flex items-center justify-between pb-4 border-b border-outline-variant/40"><div class="flex items-center gap-2.5"><img alt="Smietz Logo" class="h-7 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ALJJyrA27V14_dXUb964qE5WWM8SpZZxR6ii0TCaO5mPZzq3mfzKLObH2JhTjowxtoWaJ1XEcnzbSH5OYshadODHaauhZZthqqCe4heNy8owb_F8WBaTzUsjAH_iqDyjcegkGDBmmvAyq8d0mg24ofe0BhXxtseWZKzskseO3Bz7qk60GfY4ufKbWaus80B46-iiQB8Oem_HC9Z-265sL5yOarNUZ_Qa_wKHblzMPviU02rA"/><span class="font-headline-sm text-base text-primary font-semibold">Smietz Luxury Menu</span></div><label aria-label="Close Menu" class="w-9 h-9 rounded-full flex items-center justify-center bg-surface-container text-on-surface hover:bg-surface-variant cursor-pointer" for="mobile-drawer-toggle"><span class="material-symbols-outlined text-[20px]">close</span></label></div><nav class="py-4 flex flex-col gap-1" data-active-classes="bg-surface-container-high text-primary font-semibold"><a class="flex items-center justify-between px-3.5 py-3 rounded-lg text-on-surface hover:bg-surface-container font-label-md text-label-md transition-colors" data-path="home" href="#"><span class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px] text-primary">spa</span>Home</span><span class="material-symbols-outlined text-[16px] text-outline">chevron_right</span></a><a class="flex items-center justify-between px-3.5 py-3 rounded-lg text-on-surface hover:bg-surface-container font-label-md text-label-md transition-colors" data-path="about-us" href="#"><span class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px] text-primary">auto_awesome</span>About Us</span><span class="material-symbols-outlined text-[16px] text-outline">chevron_right</span></a><a class="flex items-center justify-between px-3.5 py-3 rounded-lg text-on-surface hover:bg-surface-container font-label-md text-label-md transition-colors" data-path="all-services" href="#"><span class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px] text-primary">list_alt</span>All Services</span><span class="material-symbols-outlined text-[16px] text-outline">chevron_right</span></a><a aria-current="page" class="flex items-center justify-between px-3.5 py-3 rounded-lg transition-colors pl-6 bg-surface-container-high text-primary font-semibold" data-path="hair-care" href="#"><span class="flex items-center gap-3"><span class="material-symbols-outlined text-[18px] text-secondary">content_cut</span>Hair Care</span><span class="material-symbols-outlined text-[16px] text-outline">chevron_right</span></a><a class="flex items-center justify-between px-3.5 py-3 rounded-lg text-on-surface hover:bg-surface-container font-label-md text-label-md transition-colors pl-6" data-path="skin-care-facials" href="#"><span class="flex items-center gap-3"><span class="material-symbols-outlined text-[18px] text-secondary">face_3</span>Skin Care &amp; Facials</span><span class="material-symbols-outlined text-[16px] text-outline">chevron_right</span></a><a class="flex items-center justify-between px-3.5 py-3 rounded-lg text-on-surface hover:bg-surface-container font-label-md text-label-md transition-colors pl-6" data-path="advanced-skin-care" href="#"><span class="flex items-center gap-3"><span class="material-symbols-outlined text-[18px] text-secondary">biotech</span>Advanced Skin Care</span><span class="material-symbols-outlined text-[16px] text-outline">chevron_right</span></a><a class="flex items-center justify-between px-3.5 py-3 rounded-lg text-on-surface hover:bg-surface-container font-label-md text-label-md transition-colors" data-path="bridal" href="#"><span class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px] text-primary">diamond</span>Bridal Trousseau</span><span class="material-symbols-outlined text-[16px] text-outline">chevron_right</span></a><a class="flex items-center justify-between px-3.5 py-3 rounded-lg text-on-surface hover:bg-surface-container font-label-md text-label-md transition-colors" data-path="gallery" href="#"><span class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px] text-primary">photo_library</span>Gallery</span><span class="material-symbols-outlined text-[16px] text-outline">chevron_right</span></a><a class="flex items-center justify-between px-3.5 py-3 rounded-lg text-on-surface hover:bg-surface-container font-label-md text-label-md transition-colors" data-path="contact" href="#"><span class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px] text-primary">pin_drop</span>Contact &amp; Location</span><span class="material-symbols-outlined text-[16px] text-outline">chevron_right</span></a></nav></div><div class="p-5 bg-surface-container-low border-t border-outline-variant/30 flex flex-col gap-3"><a class="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-full bg-tertiary-container hover:bg-tertiary text-on-tertiary font-label-md text-label-md shadow-md active:scale-[0.98] transition-transform" href="https://wa.me/919604523931?text=Hello%20Smietz%20Beauty%20Hub,%20I%20would%20like%20to%20book%20an%20appointment" rel="noopener noreferrer" target="_blank"><span class="material-symbols-outlined text-[18px]">calendar_month</span><span>WhatsApp Appointment</span></a><a class="w-full flex items-center justify-center gap-2 py-2.5 px-4 rounded-full border border-primary text-primary font-label-md text-label-md hover:bg-primary hover:text-on-primary transition-colors" href="tel:+919604523931"><span class="material-symbols-outlined text-[18px]">call</span><span>+91 96045 23931</span></a><div class="text-center font-eyebrow text-[10px] text-outline uppercase tracking-wider pt-1">35 Years Heritage • Mulund West</div></div></div><main class="w-full pt-16 pb-28 bg-surface flex-grow"><div class="flex flex-col w-full">
+<!-- Breadcrumbs -->
+<div class="px-5 pt-3 pb-2 flex items-center gap-1.5 font-label-sm text-label-sm text-outline">
+<a class="hover:text-primary transition-colors" data-path="home" href="#">Home</a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<a class="hover:text-primary transition-colors" data-path="all-services" href="#">Services</a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-primary font-semibold">Hair Care</span>
+</div>
+<!-- Hero Section -->
+<section class="px-5 pt-2 pb-6 flex flex-col gap-4">
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="font-eyebrow text-eyebrow uppercase tracking-widest text-secondary font-bold">Hair Artistry &amp; Care</span>
+</div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary font-medium tracking-tight">Hair Care &amp; Styling</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+        Precision styling, deeply nourishing hair spas, and multidimensional ammonia-free colour treatments tailored to your hair texture.
+      </p>
+</div>
+<!-- Editorial Hero Visual Frame -->
+<div class="relative w-full h-52 rounded-lg overflow-hidden shadow-md">
+<img alt="Smietz Hair Salon Artistry" class="w-full h-full object-cover" data-alt="Editorial luxury hair styling session inside an emerald green and ivory high-end salon atelier in Mumbai. Elegant female client receiving a glossy professional blowout, soft golden natural rim lighting, warm velvet tones, sleek reflective mirrors, and restorative salon ambiance." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8pE3uTqRMnPsQi5zMcI8Vi9gFV0mT95r4qf0EdzH8q8SE1T37VODdHQ9690UF4DEV73s-43vq8c1lfv2v15yevhifDuEpO0cl6bgNlKun_H9jw2i4dB4pRxOT4SvXhrLvLY3H9sCeEG5F43jIj-1vOk6TIEOXvY8ZRFIMNZcen4lnyGdJZF2VVWeI69BCHzczo5oEelstplkG9Yyfv8HjlYwVHSkCYBQt_SCrzHY"/>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/80 via-transparent to-transparent flex items-end p-4">
+<div class="flex items-center gap-2 text-on-primary">
+<span class="material-symbols-outlined text-[18px] text-secondary-fixed">award_star</span>
+<span class="font-label-sm text-label-sm tracking-wide">35 Years of Botanical &amp; Modern Hair Science</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Sticky Category Sub-navigation (Chips) -->
+<nav class="sticky top-16 z-30 bg-surface/95 backdrop-blur-md py-2.5 px-5 shadow-[0_2px_12px_rgba(26,38,33,0.05)] overflow-x-auto no-scrollbar">
+<div class="flex items-center gap-2 min-w-max" id="categoryChips">
+<button class="px-3.5 py-1.5 rounded-full bg-primary text-on-primary font-label-md text-label-md font-semibold transition-all active:scale-95 shadow-sm" onclick="scrollToSection('all-hair-services')">
+        All Hair Services
+      </button>
+<button class="px-3.5 py-1.5 rounded-full bg-surface-container-high text-on-surface-variant hover:text-primary font-label-md text-label-md transition-all active:scale-95" onclick="scrollToSection('styling-cuts')">
+        Hair Styling &amp; Cuts
+      </button>
+<button class="px-3.5 py-1.5 rounded-full bg-surface-container-high text-on-surface-variant hover:text-primary font-label-md text-label-md transition-all active:scale-95" onclick="scrollToSection('spa-rituals')">
+        Hair Spa Rituals
+      </button>
+<button class="px-3.5 py-1.5 rounded-full bg-surface-container-high text-on-surface-variant hover:text-primary font-label-md text-label-md transition-all active:scale-95" onclick="scrollToSection('colouring')">
+        Hair Colouring
+      </button>
+</div>
+</nav>
+<!-- Content Stream -->
+<div class="px-5 pt-6 flex flex-col gap-8" id="all-hair-services">
+<!-- SERVICE GROUP 1: Styling & Cuts -->
+<section class="flex flex-col gap-4 scroll-mt-32" id="styling-cuts">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">content_cut</span>
+<span class="font-eyebrow text-eyebrow text-secondary uppercase font-bold tracking-wider">Group 01</span>
+</div>
+<h2 class="font-headline-md-mobile text-headline-md-mobile text-primary font-medium">Hair Services &amp; Styling</h2>
+</div>
+<!-- Stylist Note Box -->
+<div class="bg-surface-container-high rounded-DEFAULT p-3.5 flex items-start gap-3 shadow-sm">
+<span class="material-symbols-outlined text-primary text-[22px] shrink-0 mt-0.5">info</span>
+<p class="font-body-sm text-body-sm text-on-surface leading-snug font-medium">
+          Junior and senior stylists available for all cutting and styling appointments.
+        </p>
+</div>
+<!-- Service List Cards -->
+<div class="flex flex-col gap-3">
+<!-- Item 1 -->
+<div class="bg-surface-container-lowest rounded-DEFAULT p-4 flex flex-col gap-2.5 shadow-sm">
+<div class="flex justify-between items-start">
+<h3 class="font-title-md text-title-md text-on-surface font-semibold">Hair Wash &amp; Blow Dry</h3>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Refreshing cleanse with volume styling.</p>
+<div class="pt-1 flex items-center justify-between">
+<a class="inline-flex items-center gap-1.5 text-tertiary-container font-label-md text-label-md font-semibold hover:text-tertiary active:scale-95 transition-transform" href="https://wa.me/919604523931?text=Hello%20Smietz%20Beauty%20Hub,%20I%20would%20like%20to%20enquire%20about%20Hair%20Wash%20%26%20Blow%20Dry" rel="noopener noreferrer" target="_blank">
+<span>Enquire on WhatsApp</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="bg-surface-container-lowest rounded-DEFAULT p-4 flex flex-col gap-2.5 shadow-sm">
+<div class="flex justify-between items-start">
+<h3 class="font-title-md text-title-md text-on-surface font-semibold">Hair Ironing</h3>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Silky smooth finish.</p>
+<div class="pt-1 flex items-center justify-between">
+<a class="inline-flex items-center gap-1.5 text-tertiary-container font-label-md text-label-md font-semibold hover:text-tertiary active:scale-95 transition-transform" href="https://wa.me/919604523931?text=Hello%20Smietz%20Beauty%20Hub,%20I%20would%20like%20to%20enquire%20about%20Hair%20Ironing" rel="noopener noreferrer" target="_blank">
+<span>Enquire on WhatsApp</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="bg-surface-container-lowest rounded-DEFAULT p-4 flex flex-col gap-2.5 shadow-sm">
+<div class="flex justify-between items-start">
+<h3 class="font-title-md text-title-md text-on-surface font-semibold">Hair Tong</h3>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Effortless glamorous curls and waves.</p>
+<div class="pt-1 flex items-center justify-between">
+<a class="inline-flex items-center gap-1.5 text-tertiary-container font-label-md text-label-md font-semibold hover:text-tertiary active:scale-95 transition-transform" href="https://wa.me/919604523931?text=Hello%20Smietz%20Beauty%20Hub,%20I%20would%20like%20to%20enquire%20about%20Hair%20Tong" rel="noopener noreferrer" target="_blank">
+<span>Enquire on WhatsApp</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Item 4 -->
+<div class="bg-surface-container-lowest rounded-DEFAULT p-4 flex flex-col gap-2.5 shadow-sm">
+<div class="flex justify-between items-start">
+<h3 class="font-title-md text-title-md text-on-surface font-semibold">Hair Wash &amp; Blast Dry</h3>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Quick refreshing cleanse and dry.</p>
+<div class="pt-1 flex items-center justify-between">
+<a class="inline-flex items-center gap-1.5 text-tertiary-container font-label-md text-label-md font-semibold hover:text-tertiary active:scale-95 transition-transform" href="https://wa.me/919604523931?text=Hello%20Smietz%20Beauty%20Hub,%20I%20would%20like%20to%20enquire%20about%20Hair%20Wash%20%26%20Blast%20Dry" rel="noopener noreferrer" target="_blank">
+<span>Enquire on WhatsApp</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Item 5 -->
+<div class="bg-surface-container-lowest rounded-DEFAULT p-4 flex flex-col gap-2.5 shadow-sm">
+<div class="flex justify-between items-start">
+<h3 class="font-title-md text-title-md text-on-surface font-semibold">Hair Cut with Wash</h3>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Customised precision cut tailored to face shape.</p>
+<div class="pt-1 flex items-center justify-between">
+<a class="inline-flex items-center gap-1.5 text-tertiary-container font-label-md text-label-md font-semibold hover:text-tertiary active:scale-95 transition-transform" href="https://wa.me/919604523931?text=Hello%20Smietz%20Beauty%20Hub,%20I%20would%20like%20to%20enquire%20about%20Hair%20Cut%20with%20Wash" rel="noopener noreferrer" target="_blank">
+<span>Enquire on WhatsApp</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Item 6 -->
+<div class="bg-surface-container-lowest rounded-DEFAULT p-4 flex flex-col gap-2.5 shadow-sm">
+<div class="flex justify-between items-start">
+<h3 class="font-title-md text-title-md text-on-surface font-semibold">Dandruff Treatment</h3>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Soothing scalp therapy addressing flakiness and balance.</p>
+<div class="pt-1 flex items-center justify-between">
+<a class="inline-flex items-center gap-1.5 text-tertiary-container font-label-md text-label-md font-semibold hover:text-tertiary active:scale-95 transition-transform" href="https://wa.me/919604523931?text=Hello%20Smietz%20Beauty%20Hub,%20I%20would%20like%20to%20enquire%20about%20Dandruff%20Treatment" rel="noopener noreferrer" target="_blank">
+<span>Enquire on WhatsApp</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Item 7 -->
+<div class="bg-surface-container-lowest rounded-DEFAULT p-4 flex flex-col gap-2.5 shadow-sm">
+<div class="flex justify-between items-start">
+<h3 class="font-title-md text-title-md text-on-surface font-semibold">Hair Oil Massage with Wash</h3>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Nourishing traditional warm herbal oil scalp therapy.</p>
+<div class="pt-1 flex items-center justify-between">
+<a class="inline-flex items-center gap-1.5 text-tertiary-container font-label-md text-label-md font-semibold hover:text-tertiary active:scale-95 transition-transform" href="https://wa.me/919604523931?text=Hello%20Smietz%20Beauty%20Hub,%20I%20would%20like%20to%20enquire%20about%20Hair%20Oil%20Massage%20with%20Wash" rel="noopener noreferrer" target="_blank">
+<span>Enquire on WhatsApp</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- SERVICE GROUP 2: Hair Spa Rituals -->
+<section class="flex flex-col gap-4 scroll-mt-32" id="spa-rituals">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">spa</span>
+<span class="font-eyebrow text-eyebrow text-secondary uppercase font-bold tracking-wider">Group 02</span>
+</div>
+<h2 class="font-headline-md-mobile text-headline-md-mobile text-primary font-medium">Hair Spa Rituals</h2>
+</div>
+<!-- Hair Length Selector Visual Module -->
+<div class="bg-surface-container rounded-DEFAULT p-4 flex flex-col gap-2.5 shadow-sm">
+<span class="font-eyebrow text-eyebrow uppercase text-secondary font-bold tracking-wider">Length &amp; Density Calibration</span>
+<div class="flex items-center gap-2">
+<button class="flex-1 py-2 px-1 text-center rounded-full bg-primary text-on-primary font-label-sm text-label-sm shadow-sm">Shoulder Length</button>
+<button class="flex-1 py-2 px-1 text-center rounded-full bg-surface-container-high text-on-surface-variant hover:text-primary font-label-sm text-label-sm transition-colors">Mid Length</button>
+<button class="flex-1 py-2 px-1 text-center rounded-full bg-surface-container-high text-on-surface-variant hover:text-primary font-label-sm text-label-sm transition-colors">Waist Length</button>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant italic pt-0.5">
+          Custom formulated for your hair density &amp; length.
+        </p>
+</div>
+<!-- Spa Services -->
+<div class="flex flex-col gap-3">
+<!-- Spa 1 -->
+<div class="bg-surface-container-lowest rounded-DEFAULT p-4 flex flex-col gap-2 shadow-sm">
+<h3 class="font-title-md text-title-md text-on-surface font-semibold">L'Oréal Essential Hair Spa</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Deep conditioning and scalp nourishment.</p>
+<div class="pt-1 flex items-center justify-between">
+<a class="inline-flex items-center gap-1.5 text-tertiary-container font-label-md text-label-md font-semibold hover:text-tertiary active:scale-95 transition-transform" href="https://wa.me/919604523931?text=Hello%20Smietz%20Beauty%20Hub,%20I%20would%20like%20to%20enquire%20about%20L'Oreal%20Essential%20Hair%20Spa" rel="noopener noreferrer" target="_blank">
+<span>Enquire on WhatsApp</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Spa 2 -->
+<div class="bg-surface-container-lowest rounded-DEFAULT p-4 flex flex-col gap-2 shadow-sm">
+<div class="flex items-center justify-between">
+<h3 class="font-title-md text-title-md text-on-surface font-semibold">Smietz Special Hair Spa</h3>
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-[11px] font-bold">Signature</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Proprietary 35-year signature restorative botanical blend.</p>
+<div class="pt-1 flex items-center justify-between">
+<a class="inline-flex items-center gap-1.5 text-tertiary-container font-label-md text-label-md font-semibold hover:text-tertiary active:scale-95 transition-transform" href="https://wa.me/919604523931?text=Hello%20Smietz%20Beauty%20Hub,%20I%20would%20like%20to%20enquire%20about%20Smietz%20Special%20Hair%20Spa" rel="noopener noreferrer" target="_blank">
+<span>Enquire on WhatsApp</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Spa 3 -->
+<div class="bg-surface-container-lowest rounded-DEFAULT p-4 flex flex-col gap-2 shadow-sm">
+<h3 class="font-title-md text-title-md text-on-surface font-semibold">Shea Butter Spa</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Intense lipid moisture therapy for dry or brittle strands.</p>
+<div class="pt-1 flex items-center justify-between">
+<a class="inline-flex items-center gap-1.5 text-tertiary-container font-label-md text-label-md font-semibold hover:text-tertiary active:scale-95 transition-transform" href="https://wa.me/919604523931?text=Hello%20Smietz%20Beauty%20Hub,%20I%20would%20like%20to%20enquire%20about%20Shea%20Butter%20Spa" rel="noopener noreferrer" target="_blank">
+<span>Enquire on WhatsApp</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Spa 4 -->
+<div class="bg-surface-container-lowest rounded-DEFAULT p-4 flex flex-col gap-2 shadow-sm">
+<h3 class="font-title-md text-title-md text-on-surface font-semibold">Kera Spa</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Protein-infused smoothing and cuticle alignment treatment.</p>
+<div class="pt-1 flex items-center justify-between">
+<a class="inline-flex items-center gap-1.5 text-tertiary-container font-label-md text-label-md font-semibold hover:text-tertiary active:scale-95 transition-transform" href="https://wa.me/919604523931?text=Hello%20Smietz%20Beauty%20Hub,%20I%20would%20like%20to%20enquire%20about%20Kera%20Spa" rel="noopener noreferrer" target="_blank">
+<span>Enquire on WhatsApp</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- SERVICE GROUP 3: Hair Colour -->
+<section class="flex flex-col gap-4 scroll-mt-32" id="colouring">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">palette</span>
+<span class="font-eyebrow text-eyebrow text-secondary uppercase font-bold tracking-wider">Group 03</span>
+</div>
+<h2 class="font-headline-md-mobile text-headline-md-mobile text-primary font-medium">Hair Colour</h2>
+</div>
+<div class="flex flex-col gap-3">
+<!-- Colour 1 -->
+<div class="bg-surface-container-lowest rounded-DEFAULT p-4 flex flex-col gap-2 shadow-sm">
+<h3 class="font-title-md text-title-md text-on-surface font-semibold">Crown Colour</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Seamless hairline and crown refresh.</p>
+<div class="pt-1 flex items-center justify-between">
+<a class="inline-flex items-center gap-1.5 text-tertiary-container font-label-md text-label-md font-semibold hover:text-tertiary active:scale-95 transition-transform" href="https://wa.me/919604523931?text=Hello%20Smietz%20Beauty%20Hub,%20I%20would%20like%20to%20enquire%20about%20Crown%20Colour" rel="noopener noreferrer" target="_blank">
+<span>Enquire on WhatsApp</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Colour 2 -->
+<div class="bg-surface-container-lowest rounded-DEFAULT p-4 flex flex-col gap-2 shadow-sm">
+<h3 class="font-title-md text-title-md text-on-surface font-semibold">Root Touch-Up</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Standard regrowth coverage.</p>
+<div class="pt-1 flex items-center justify-between">
+<a class="inline-flex items-center gap-1.5 text-tertiary-container font-label-md text-label-md font-semibold hover:text-tertiary active:scale-95 transition-transform" href="https://wa.me/919604523931?text=Hello%20Smietz%20Beauty%20Hub,%20I%20would%20like%20to%20enquire%20about%20Root%20Touch-Up" rel="noopener noreferrer" target="_blank">
+<span>Enquire on WhatsApp</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Colour 3: Ammonia-Free Badge -->
+<div class="bg-surface-container-lowest rounded-DEFAULT p-4 flex flex-col gap-2 shadow-sm">
+<div class="flex items-center justify-between">
+<h3 class="font-title-md text-title-md text-on-surface font-semibold">Ammonia-Free Root Touch-Up</h3>
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-[11px] font-bold">Ammonia-Free</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Gentle scalp-friendly organic infusion.</p>
+<div class="pt-1 flex items-center justify-between">
+<a class="inline-flex items-center gap-1.5 text-tertiary-container font-label-md text-label-md font-semibold hover:text-tertiary active:scale-95 transition-transform" href="https://wa.me/919604523931?text=Hello%20Smietz%20Beauty%20Hub,%20I%20would%20like%20to%20enquire%20about%20Ammonia-Free%20Root%20Touch-Up" rel="noopener noreferrer" target="_blank">
+<span>Enquire on WhatsApp</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Colour 4 -->
+<div class="bg-surface-container-lowest rounded-DEFAULT p-4 flex flex-col gap-2 shadow-sm">
+<h3 class="font-title-md text-title-md text-on-surface font-semibold">Global Colour</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Full head radiant rich coverage.</p>
+<div class="pt-1 flex items-center justify-between">
+<a class="inline-flex items-center gap-1.5 text-tertiary-container font-label-md text-label-md font-semibold hover:text-tertiary active:scale-95 transition-transform" href="https://wa.me/919604523931?text=Hello%20Smietz%20Beauty%20Hub,%20I%20would%20like%20to%20enquire%20about%20Global%20Colour" rel="noopener noreferrer" target="_blank">
+<span>Enquire on WhatsApp</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Colour 5: Ammonia-Free Badge -->
+<div class="bg-surface-container-lowest rounded-DEFAULT p-4 flex flex-col gap-2 shadow-sm">
+<div class="flex items-center justify-between">
+<h3 class="font-title-md text-title-md text-on-surface font-semibold">Ammonia-Free Global Colour</h3>
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-[11px] font-bold">Ammonia-Free</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Premium odorless conditioning colour.</p>
+<div class="pt-1 flex items-center justify-between">
+<a class="inline-flex items-center gap-1.5 text-tertiary-container font-label-md text-label-md font-semibold hover:text-tertiary active:scale-95 transition-transform" href="https://wa.me/919604523931?text=Hello%20Smietz%20Beauty%20Hub,%20I%20would%20like%20to%20enquire%20about%20Ammonia-Free%20Global%20Colour" rel="noopener noreferrer" target="_blank">
+<span>Enquire on WhatsApp</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Colour 6 -->
+<div class="bg-surface-container-lowest rounded-DEFAULT p-4 flex flex-col gap-2 shadow-sm">
+<h3 class="font-title-md text-title-md text-on-surface font-semibold">Fashion Highlights</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Balayage, babylights, and bespoke dimensional foils.</p>
+<div class="pt-1 flex items-center justify-between">
+<a class="inline-flex items-center gap-1.5 text-tertiary-container font-label-md text-label-md font-semibold hover:text-tertiary active:scale-95 transition-transform" href="https://wa.me/919604523931?text=Hello%20Smietz%20Beauty%20Hub,%20I%20would%20like%20to%20enquire%20about%20Fashion%20Highlights" rel="noopener noreferrer" target="_blank">
+<span>Enquire on WhatsApp</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- CALLOUT BAND: Complimentary Hair & Scalp Consultation -->
+<section class="rounded-DEFAULT bg-primary-container text-on-tertiary p-5 flex flex-col gap-3 shadow-md">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary-fixed text-[22px]">auto_awesome</span>
+<span class="font-eyebrow text-eyebrow uppercase text-secondary-fixed tracking-wider font-bold">Complimentary Service</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm font-medium text-surface-lowest">
+        Complimentary Hair &amp; Scalp Consultation
+      </h3>
+<p class="font-body-sm text-body-sm text-surface-container-low leading-relaxed">
+        Let our senior trichology-trained stylists evaluate your hair porosity, density, and scalp micro-flora before recommending your ideal ritual.
+      </p>
+<div class="pt-1">
+<a class="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-tertiary-container text-on-tertiary font-label-md text-label-md font-semibold shadow-md active:scale-95 transition-transform" href="https://wa.me/919604523931?text=Hello%20Smietz%20Beauty%20Hub,%20I%20would%20like%20to%20book%20a%20Complimentary%20Hair%20%26%20Scalp%20Consultation" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[18px]">calendar_today</span>
+<span>Claim Consultation</span>
+</a>
+</div>
+</section>
+<!-- FAQ Accordion -->
+<section class="flex flex-col gap-3">
+<div class="flex flex-col gap-1">
+<span class="font-eyebrow text-eyebrow text-secondary uppercase font-bold tracking-wider">Hair Care Inquiries</span>
+<h2 class="font-headline-md-mobile text-headline-md-mobile text-primary font-medium">Frequently Asked Questions</h2>
+</div>
+<div class="flex flex-col gap-2.5 pt-1" id="faqGroup">
+<!-- FAQ 1 -->
+<div class="bg-surface-container-lowest rounded-DEFAULT overflow-hidden shadow-sm">
+<button class="w-full text-left p-4 flex items-center justify-between gap-3 text-on-surface font-title-md text-title-md font-semibold transition-colors" onclick="toggleFaq(this)">
+<span>What is the difference between junior and senior stylists?</span>
+<span class="material-symbols-outlined text-outline text-[20px] transition-transform duration-200">expand_more</span>
+</button>
+<div class="px-4 pb-4 hidden">
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+              Junior stylists are fully certified salon professionals perfect for core washes, blow drys, and everyday cuts. Senior stylists bring over 8+ years of advanced editorial precision, complex multidimensional colour formulation, and bespoke client consultations.
+            </p>
+</div>
+</div>
+<!-- FAQ 2 -->
+<div class="bg-surface-container-lowest rounded-DEFAULT overflow-hidden shadow-sm">
+<button class="w-full text-left p-4 flex items-center justify-between gap-3 text-on-surface font-title-md text-title-md font-semibold transition-colors" onclick="toggleFaq(this)">
+<span>How do I know which hair spa is best for my hair?</span>
+<span class="material-symbols-outlined text-outline text-[20px] transition-transform duration-200">expand_more</span>
+</button>
+<div class="px-4 pb-4 hidden">
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+              Our specialists run a strand elasticity and scalp texture assessment upon your arrival. Dry and frizzy hair responds exceptionally to Shea Butter Spa, chemically sensitized or unmanageable hair flourishes with Kera Spa, while scalp balancing needs our signature 35-year Smietz blend.
+            </p>
+</div>
+</div>
+<!-- FAQ 3 -->
+<div class="bg-surface-container-lowest rounded-DEFAULT overflow-hidden shadow-sm">
+<button class="w-full text-left p-4 flex items-center justify-between gap-3 text-on-surface font-title-md text-title-md font-semibold transition-colors" onclick="toggleFaq(this)">
+<span>Are the hair colours safe for sensitive scalps?</span>
+<span class="material-symbols-outlined text-outline text-[20px] transition-transform duration-200">expand_more</span>
+</button>
+<div class="px-4 pb-4 hidden">
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+              Yes, we exclusively stock dermatologically verified ammonia-free and botanical formulas designed specifically to prevent scalp irritation, burning, and harsh chemical vapors while providing radiant, lasting coverage.
+            </p>
+</div>
+</div>
+</div>
+</section>
+<!-- FINAL WHATSAPP CALL TO ACTION -->
+<section class="bg-surface-container-low rounded-DEFAULT p-6 flex flex-col items-center text-center gap-3.5 shadow-sm mb-4">
+<div class="w-12 h-12 rounded-full bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed">
+<span class="material-symbols-outlined text-[24px]">chat_spark</span>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="font-headline-sm text-headline-sm text-primary font-medium">Ready for your Transformation?</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-xs mx-auto">
+          Connect directly with our Mulund West salon reception to reserve your tailored styling or spa session.
+        </p>
+</div>
+<a class="w-full py-3.5 px-6 rounded-full bg-tertiary-container text-on-tertiary font-label-md text-label-md font-semibold shadow-[0_8px_20px_-4px_rgba(244,119,33,0.35)] active:scale-[0.98] transition-transform flex items-center justify-center gap-2" href="https://wa.me/919604523931?text=Hello%20Smietz%20Beauty%20Hub,%20I%20would%20like%20to%20book%20a%20Hair%20Appointment" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[20px]">chat</span>
+<span>Book Hair Appointment</span>
+</a>
+<span class="font-eyebrow text-[10px] text-outline uppercase tracking-wider">Walk-ins &amp; Appointments Welcome • Mulund West</span>
+</section>
+</div>
+</div>
+<script>
+  function scrollToSection(id) {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
+  function toggleFaq(button) {
+    const content = button.nextElementSibling;
+    const icon = button.querySelector('.material-symbols-outlined');
+    const isHidden = content.classList.contains('hidden');
+    
+    // Close other FAQ contents
+    document.querySelectorAll('#faqGroup > div > div').forEach(div => {
+      div.classList.add('hidden');
+    });
+    document.querySelectorAll('#faqGroup button .material-symbols-outlined').forEach(i => {
+      i.style.transform = 'rotate(0deg)';
+    });
+
+    if (isHidden) {
+      content.classList.remove('hidden');
+      icon.style.transform = 'rotate(180deg)';
+    }
+  }
+</script></main><aside class="fixed bottom-20 right-4 z-40 max-w-[430px]"><a aria-label="Chat on WhatsApp" class="group relative flex items-center justify-center w-12 h-12 bg-primary-container text-on-tertiary rounded-full shadow-[0_8px_20px_rgba(0,109,86,0.4)] active:scale-95 transition-all" href="https://wa.me/919604523931?text=Hello%20Smietz%20Beauty%20Hub" rel="noopener noreferrer" target="_blank"><span class="absolute -inset-1 rounded-full bg-secondary-fixed/50 animate-ping opacity-60 pointer-events-none"></span><span class="material-symbols-outlined text-2xl group-hover:scale-110 transition-transform">chat</span></a></aside><footer class="w-full bg-surface-container-low text-on-surface-variant pt-10 pb-24 px-5 border-t border-outline-variant/30"><div class="flex flex-col gap-6"><div class="flex items-center gap-3"><img alt="Smietz Beauty Hub" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ALJJyrA27V14_dXUb964qE5WWM8SpZZxR6ii0TCaO5mPZzq3mfzKLObH2JhTjowxtoWaJ1XEcnzbSH5OYshadODHaauhZZthqqCe4heNy8owb_F8WBaTzUsjAH_iqDyjcegkGDBmmvAyq8d0mg24ofe0BhXxtseWZKzskseO3Bz7qk60GfY4ufKbWaus80B46-iiQB8Oem_HC9Z-265sL5yOarNUZ_Qa_wKHblzMPviU02rA"/><div class="flex flex-col"><span class="font-headline-sm text-base text-primary font-semibold">Smietz</span><span class="font-eyebrow text-[9px] uppercase text-secondary font-bold -mt-0.5 tracking-widest">Beauty Hub</span></div></div><p class="font-title-md text-sm text-primary font-serif italic">35 Years of Beauty &amp; Wellness Expertise</p><p class="font-body-sm text-xs leading-relaxed text-on-surface-variant">Premier destination in Mumbai for restorative clinical facials, hair transformation therapies, and bespoke bridal trousseau makeovers.</p><div class="flex flex-col gap-2.5 pt-2"><div class="flex items-start gap-2.5"><span class="material-symbols-outlined text-secondary text-[18px] shrink-0 mt-0.5">location_on</span><p class="font-body-sm text-xs text-on-surface-variant">Shop No. 2, BPS Plaza, Devidayal Road, Mulund West, Mumbai 400080</p></div><div class="flex items-center gap-2.5"><span class="material-symbols-outlined text-secondary text-[18px] shrink-0">schedule</span><p class="font-body-sm text-xs text-on-surface-variant">Tue – Sun: 10:00 AM – 8:00 PM (Mon Closed)</p></div><div class="flex items-center gap-2.5"><span class="material-symbols-outlined text-secondary text-[18px] shrink-0">call</span><a class="font-body-sm text-xs text-primary font-medium hover:underline" href="tel:+919604523931">+91 96045 23931</a></div></div><div class="pt-2"><span class="font-eyebrow text-[10px] text-secondary font-bold uppercase tracking-wider block mb-2">Quick Navigation</span><div class="grid grid-cols-2 gap-2 text-xs" data-active-classes="text-primary font-semibold"><a class="text-on-surface-variant hover:text-primary py-0.5" data-path="home" href="#">Home</a><a class="text-on-surface-variant hover:text-primary py-0.5" data-path="about-us" href="#">About Us</a><a class="text-on-surface-variant hover:text-primary py-0.5" data-path="all-services" href="#">All Services</a><a class="text-on-surface-variant hover:text-primary py-0.5" data-path="hair-care" href="#">Hair Care</a><a class="text-on-surface-variant hover:text-primary py-0.5" data-path="skin-care-facials" href="#">Skin Care &amp; Facials</a><a class="text-on-surface-variant hover:text-primary py-0.5" data-path="advanced-skin-care" href="#">Advanced Skin Care</a><a class="text-on-surface-variant hover:text-primary py-0.5" data-path="bridal" href="#">Bridal Trousseau</a><a class="text-on-surface-variant hover:text-primary py-0.5" data-path="contact" href="#">Contact &amp; Map</a></div></div><div class="pt-4 border-t border-outline-variant/30 text-center"><p class="font-label-sm text-[11px] text-outline">© 2025 Smietz Beauty Hub. Mulund West, Mumbai.</p></div></div></footer><nav aria-label="Bottom Action Bar" class="fixed bottom-0 max-w-[430px] w-full z-50 bg-surface/95 backdrop-blur-xl shadow-[0_-4px_16px_rgba(26,38,33,0.08)] px-4 py-2.5 pb-safe"><div class="flex items-center gap-3"><a class="flex-1 flex items-center justify-center gap-1.5 py-3 px-3 rounded-full bg-surface-container-high text-primary hover:bg-secondary-fixed font-label-md text-label-md font-semibold active:scale-[0.98] transition-all shadow-sm" href="tel:+919604523931"><span class="material-symbols-outlined text-[20px]">call</span><span>Call Reception</span></a><a class="flex-1 flex items-center justify-center gap-1.5 py-3 px-3 rounded-full bg-tertiary-container text-on-tertiary font-label-md text-label-md font-semibold shadow-[0_4px_14px_rgba(158,70,0,0.3)] active:scale-[0.98] transition-all" href="https://wa.me/919604523931?text=Hello%20Smietz%20Beauty%20Hub,%20I%20would%20like%20to%20book%20an%20appointment" rel="noopener noreferrer" target="_blank"><span class="material-symbols-outlined text-[20px]">chat_bubble</span><span>WhatsApp</span></a></div></nav></body></html>
